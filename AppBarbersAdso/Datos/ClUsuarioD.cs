@@ -30,5 +30,34 @@ namespace AppBarbersAdso.Datos
 
 
         }
+		public ClUsuarioM MtLogin(string user, string pass)
+		{
+			SqlConnection conex = conexion.MtabrirConexion();
+
+			string consulta = $"select * from usuario where email = @user and contraseña = @pass";
+
+			SqlCommand cmd = new SqlCommand(consulta, conex);
+			cmd.Parameters.AddWithValue("@user", user);
+			cmd.Parameters.AddWithValue("@pass", pass);
+
+			SqlDataReader lea = cmd.ExecuteReader();
+
+			ClUsuarioM usuario = null;
+
+			if (lea.Read())
+			{
+				usuario = new ClUsuarioM();
+				usuario.nombre = lea["nombre"].ToString();
+				usuario.apellido = lea["apellido"].ToString();
+				usuario.documento = lea["documento"].ToString();
+				usuario.email = lea["email"].ToString();
+				usuario.contraseña = lea["contraseña"].ToString();
+				usuario.telefono = lea["telefono"].ToString();
+			}
+
+			conexion.MtcerrarConexion();
+
+			return usuario;
+		}
 	}
 }
