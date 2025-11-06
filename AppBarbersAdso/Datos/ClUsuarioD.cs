@@ -14,7 +14,7 @@ namespace AppBarbersAdso.Datos
 		{
 			SqlConnection conex = conexion.MtabrirConexion();
 
-			string consulta = "update usuario " + "set nombre = @nombre, apellido = @apellido, documento = @documento,email = @email, contraseña = @contraseña, telefono = @telefono " + "where email = @email AND contraseña = @contraseña";
+			string consulta = "update usuario " + "set nombre = @nombre, apellido = @apellido, documento = @documento,email = @email, contraseña = @contraseña, telefono = @telefono " + "where email = @email";
 			SqlCommand cmd = new SqlCommand(consulta, conex);
 
 			cmd.Parameters.AddWithValue("@nombre",actualizar.nombre);
@@ -47,12 +47,8 @@ namespace AppBarbersAdso.Datos
 			if (lea.Read())
 			{
 				usuario = new ClUsuarioM();
-				usuario.nombre = lea["nombre"].ToString();
-				usuario.apellido = lea["apellido"].ToString();
-				usuario.documento = lea["documento"].ToString();
 				usuario.email = lea["email"].ToString();
 				usuario.contraseña = lea["contraseña"].ToString();
-				usuario.telefono = lea["telefono"].ToString();
 			}
 
 			conexion.MtcerrarConexion();

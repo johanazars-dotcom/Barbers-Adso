@@ -16,11 +16,18 @@ namespace AppBarbersAdso.Logica
 
 			if (oDatos != null)
 			{
-				HttpContext.Current.Session["usuarioLogueado"] = oDatos.email;
+				HttpContext.Current.Session["usuarioLogueado"] = oDatos;
 				return true;
 			}
 
 			return false;
 		}
+        public string MtActualizarPerfilL(ClUsuarioM usuario)
+        {
+            ClUsuarioD oUsuarioD = new ClUsuarioD();
+            oUsuarioD.MtActualizarPerfil(usuario);
+            return "Datos actualizados correctamente.";
+        }
+
     }
 }
