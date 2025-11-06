@@ -12,8 +12,7 @@ namespace AppBarbersAdso.Modelo
 		public string apellido { get; set; }
 		public int documento { get; set; }
 		public string email { get; set; }
+		public string contraseña { get; set; }
 		public string telefono { get; set; }
-		public string hojaVida { get; set; }
-		public string fotoPerfil { get; set; }
 	}
 }
