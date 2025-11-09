@@ -28,6 +28,12 @@ namespace AppBarbersAdso.Logica
             oUsuarioD.MtActualizarPerfil(usuario);
             return "Datos actualizados correctamente.";
         }
+		public string MtRegitroUsuario(ClUsuarioM usuario)
+		{
+			ClUsuarioD usuariodatos = new ClUsuarioD();
+			usuariodatos.MtRegistrarUsuario(usuario);
+			return "Su usuario ha sido registrado exitosamente";
+		}
 
     }
 }

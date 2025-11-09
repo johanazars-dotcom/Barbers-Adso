@@ -55,5 +55,24 @@ namespace AppBarbersAdso.Datos
 
 			return usuario;
 		}
+
+		public void MtRegistrarUsuario(ClUsuarioM datos)
+		{
+            SqlConnection conex = conexion.MtabrirConexion();
+
+            string consulta = "insert into Usuarios (nombre, apellido, documento, email, contraseña, telefono) values (@nom, @ape, @docu, @email, @contraseña, @telefono)";
+
+			SqlCommand cmd = new SqlCommand(consulta, conex);
+				cmd.Parameters.AddWithValue("@nom", datos.nombre);
+				cmd.Parameters.AddWithValue("@ape", datos.apellido);
+				cmd.Parameters.AddWithValue("@docu", datos.documento);
+				cmd.Parameters.AddWithValue("@email", datos.email);
+				cmd.Parameters.AddWithValue("@contraseña", datos.contraseña);
+				cmd.Parameters.AddWithValue("@telefono", datos.telefono);
+
+			conexion.MtcerrarConexion();
+
+		}
+
 	}
 }
