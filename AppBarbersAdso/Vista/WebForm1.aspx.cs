@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppBarbersAdso.Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,19 @@ namespace AppBarbersAdso.Vista
 		{
 
 		}
-	}
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            ClUsuarioL logica = new ClUsuarioL();
+            bool ingreso = logica.MtLoginL(txtEmail.Text, txtContra.Text);
+
+            if (ingreso)
+            {
+                Response.Redirect("Actualizar.aspx");
+            }
+            else
+            {
+                lblMensaje.Text = "Correo o contraseña incorrectos.";
+            }
+        }
+    }
 }
