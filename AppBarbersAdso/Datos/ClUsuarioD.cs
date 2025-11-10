@@ -27,8 +27,6 @@ namespace AppBarbersAdso.Datos
 			cmd.ExecuteNonQuery();
 
 			conexion.MtcerrarConexion();
-
-
         }
 		public ClUsuarioM MtLogin(string user, string pass)
 		{
