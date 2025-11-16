@@ -28,6 +28,10 @@ namespace AppBarbersAdso.Logica
             oUsuarioD.MtActualizarPerfil(usuario);
             return "Datos actualizados correctamente.";
         }
-
+        public ClUsuarioM MtObtenerUsuarioL(string email)
+        {
+            ClUsuarioD datos = new ClUsuarioD();
+            return datos.MtObtenerUsuario(email);
+        }
     }
 }

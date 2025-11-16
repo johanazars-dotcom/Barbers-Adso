@@ -12,7 +12,7 @@ namespace AppBarbersAdso.Datos
 
         public ClConexion()
         {
-            oConexion = new SqlConnection("Data Source=.;Initial Catalog=dbBarbersAdso;Integrated Security=True;");
+            oConexion = new SqlConnection("Data Source=KERNELOS-PC\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;");
         }
         public SqlConnection MtabrirConexion()
         {
