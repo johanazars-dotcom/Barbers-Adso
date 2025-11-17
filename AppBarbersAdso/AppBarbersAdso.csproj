@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Vista\Actualizar.aspx" />
+    <Content Include="Vista\envioCorreo.aspx" />
+    <Content Include="Vista\recuperacion.aspx" />
     <Content Include="Vista\Registro.aspx" />
     <Content Include="Vista\WebForm1.aspx" />
     <Content Include="Web.config" />
@@ -84,6 +86,20 @@
     </Compile>
     <Compile Include="Vista\Actualizar.aspx.designer.cs">
       <DependentUpon>Actualizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\envioCorreo.aspx.cs">
+      <DependentUpon>envioCorreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\envioCorreo.aspx.designer.cs">
+      <DependentUpon>envioCorreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\recuperacion.aspx.cs">
+      <DependentUpon>recuperacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\recuperacion.aspx.designer.cs">
+      <DependentUpon>recuperacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>

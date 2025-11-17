@@ -14,5 +14,8 @@ namespace AppBarbersAdso.Modelo
 		public string email { get; set; }
 		public string contraseña { get; set; }
 		public string telefono { get; set; }
+		public string TokenRecuperacion { get; set; }
+		public DateTime TokenExpira {  get; set; }
+
 	}
 }
