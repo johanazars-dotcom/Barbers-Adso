@@ -54,5 +54,38 @@ namespace AppBarbersAdso.Datos
 
             conexion.MtcerrarConexion();
         }
+
+        public string MtRegistrarBarbero(ClBarberoM datos)
+        {
+            SqlConnection conex = conexion.MtabrirConexion();
+
+            string consultaExiste = "select count(*) from barbero where email = @correo";
+            SqlCommand cmdExiste = new SqlCommand(consultaExiste, conex);
+            cmdExiste.Parameters.AddWithValue("@correo", datos.email);
+
+            int existe = (int)cmdExiste.ExecuteScalar();
+
+            if (existe > 0)
+            {
+                conexion.MtcerrarConexion();
+                return "duplicado";
+            }
+
+      
+            string consulta = "insert into barbero (nombre, apellido, documento, email, contraseña, telefono) " + "values (@nom, @ape, @docu, @email, @contra, @tel)";
+
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@nom", datos.nombreBarbero);
+            cmd.Parameters.AddWithValue("@ape", datos.apellidoBarbero);
+            cmd.Parameters.AddWithValue("@docu", datos.documento);
+            cmd.Parameters.AddWithValue("@email", datos.email);
+            cmd.Parameters.AddWithValue("@contra", datos.contraseña);
+            cmd.Parameters.AddWithValue("@tel", datos.telefono);
+
+            cmd.ExecuteNonQuery();
+            conexion.MtcerrarConexion();
+
+            return "ok";
+        }
     }
 }

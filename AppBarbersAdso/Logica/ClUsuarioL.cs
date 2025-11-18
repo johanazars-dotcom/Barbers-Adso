@@ -33,5 +33,22 @@ namespace AppBarbersAdso.Logica
             ClUsuarioD datos = new ClUsuarioD();
             return datos.MtObtenerUsuario(email);
         }
+        public string MtRegitroUsuario(ClUsuarioM usuario)
+        {
+            ClUsuarioD datos = new ClUsuarioD();
+            string resultado = datos.MtRegistrarUsuario(usuario);
+
+            if (resultado == "duplicado")
+            {
+                return "El correo ya está registrado.";
+            }
+
+            if (resultado == "ok")
+            {
+                return "Registro exitoso.";
+            }
+
+            return "Ocurrió un error inesperado.";
+        }
     }
 }
