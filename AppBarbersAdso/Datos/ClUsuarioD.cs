@@ -27,8 +27,6 @@ namespace AppBarbersAdso.Datos
 			cmd.ExecuteNonQuery();
 
 			conexion.MtcerrarConexion();
-
-
         }
         public ClUsuarioM MtObtenerUsuario(string email)
         {
