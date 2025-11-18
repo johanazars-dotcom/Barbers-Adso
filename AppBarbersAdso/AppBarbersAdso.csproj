@@ -72,6 +72,7 @@
     <Content Include="Vista\foto\1096197850.jpg" />
     <Content Include="Vista\LoginBarbero.aspx" />
     <Content Include="Vista\Registro.aspx" />
+    <Content Include="Vista\RegistroBarbero.aspx" />
     <Content Include="Vista\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="Vista\Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\RegistroBarbero.aspx.cs">
+      <DependentUpon>RegistroBarbero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\RegistroBarbero.aspx.designer.cs">
+      <DependentUpon>RegistroBarbero.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

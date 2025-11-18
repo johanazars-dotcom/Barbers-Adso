@@ -72,7 +72,7 @@ namespace AppBarbersAdso.Datos
             }
 
       
-            string consulta = "insert into barbero (nombre, apellido, documento, email, contraseña, telefono) " + "values (@nom, @ape, @docu, @email, @contra, @tel)";
+            string consulta = "insert into barbero (nombreBarbero, apellidoBarbero, documento, email, contraseña, foto, hojaVida,  telefono) " + "values (@nom, @ape, @docu, @email, @contra, @foto, @hojaVida, @tel)";
 
             SqlCommand cmd = new SqlCommand(consulta, conex);
             cmd.Parameters.AddWithValue("@nom", datos.nombreBarbero);
@@ -80,12 +80,42 @@ namespace AppBarbersAdso.Datos
             cmd.Parameters.AddWithValue("@docu", datos.documento);
             cmd.Parameters.AddWithValue("@email", datos.email);
             cmd.Parameters.AddWithValue("@contra", datos.contraseña);
+            cmd.Parameters.AddWithValue("@foto", datos.foto);
+            cmd.Parameters.AddWithValue("@hojaVida", datos.hojaVida);
             cmd.Parameters.AddWithValue("@tel", datos.telefono);
 
             cmd.ExecuteNonQuery();
             conexion.MtcerrarConexion();
 
             return "ok";
+        }
+        public ClBarberoM MtObtenerBarbero(string email)
+        {
+            SqlConnection conex = conexion.MtabrirConexion();
+
+            string consulta = "select * from barbero where email = @correo";
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@correo", email);
+
+            SqlDataReader lea = cmd.ExecuteReader();
+
+            ClBarberoM barbero = null;
+
+            if (lea.Read())
+            {
+                barbero = new ClBarberoM();
+                barbero.nombreBarbero = lea["nombreBarbero"].ToString();
+                barbero.apellidoBarbero = lea["apellidoBarbero"].ToString();
+                barbero.documento = lea["documento"].ToString();
+                barbero.email = lea["email"].ToString();
+                barbero.contraseña = lea["contraseña"].ToString();
+                barbero.telefono = lea["telefono"].ToString();
+            }
+
+            lea.Close();
+
+            conexion.MtcerrarConexion();
+            return barbero;
         }
     }
 }
