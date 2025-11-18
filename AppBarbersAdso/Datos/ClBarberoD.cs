@@ -54,5 +54,69 @@ namespace AppBarbersAdso.Datos
 
             conexion.MtcerrarConexion();
         }
+
+        public string MtRegistrarBarbero(ClBarberoM datos)
+        {
+            SqlConnection conex = conexion.MtabrirConexion();
+
+            string consultaExiste = "select count(*) from barbero where email = @correo";
+            SqlCommand cmdExiste = new SqlCommand(consultaExiste, conex);
+            cmdExiste.Parameters.AddWithValue("@correo", datos.email);
+
+            int existe = (int)cmdExiste.ExecuteScalar();
+
+            if (existe > 0)
+            {
+                conexion.MtcerrarConexion();
+                return "duplicado";
+            }
+
+      
+            string consulta = "insert into barbero (nombreBarbero, apellidoBarbero, documento, email, contraseña, foto, hojaVida,  telefono) " + "values (@nom, @ape, @docu, @email, @contra, @foto, @hojaVida, @tel)";
+
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@nom", datos.nombreBarbero);
+            cmd.Parameters.AddWithValue("@ape", datos.apellidoBarbero);
+            cmd.Parameters.AddWithValue("@docu", datos.documento);
+            cmd.Parameters.AddWithValue("@email", datos.email);
+            cmd.Parameters.AddWithValue("@contra", datos.contraseña);
+            cmd.Parameters.AddWithValue("@foto", datos.foto);
+            cmd.Parameters.AddWithValue("@hojaVida", datos.hojaVida);
+            cmd.Parameters.AddWithValue("@tel", datos.telefono);
+
+            cmd.ExecuteNonQuery();
+            
+
+            return "ok";
+            conexion.MtcerrarConexion();
+        }
+        public ClBarberoM MtObtenerBarbero(string email)
+        {
+            SqlConnection conex = conexion.MtabrirConexion();
+
+            string consulta = "select * from barbero where email = @correo";
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@correo", email);
+
+            SqlDataReader lea = cmd.ExecuteReader();
+
+            ClBarberoM barbero = null;
+
+            if (lea.Read())
+            {
+                barbero = new ClBarberoM();
+                barbero.nombreBarbero = lea["nombreBarbero"].ToString();
+                barbero.apellidoBarbero = lea["apellidoBarbero"].ToString();
+                barbero.documento = lea["documento"].ToString();
+                barbero.email = lea["email"].ToString();
+                barbero.contraseña = lea["contraseña"].ToString();
+                barbero.telefono = lea["telefono"].ToString();
+            }
+
+            lea.Close();
+
+            conexion.MtcerrarConexion();
+            return barbero;
+        }
     }
 }

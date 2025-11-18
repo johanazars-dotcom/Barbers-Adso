@@ -28,5 +28,17 @@ namespace AppBarbersAdso.Logica
             oBarberoD.MtActualizarPerfilBarbero(barbero);
             return "Datos actualizados correctamente.";
         }
+        public ClBarberoM MtObtenerBarberoL(string email)
+        {
+            ClBarberoD datos = new ClBarberoD();
+            return datos.MtObtenerBarbero(email);
+        }
+        public string MtRegitroBarbero(ClBarberoM barbero)
+        {
+            ClBarberoD datos = new ClBarberoD();
+            return datos.MtRegistrarBarbero(barbero);
+
+           
+        }
     }
 }

@@ -28,6 +28,27 @@ namespace AppBarbersAdso.Logica
             oUsuarioD.MtActualizarPerfil(usuario);
             return "Datos actualizados correctamente.";
         }
+        public ClUsuarioM MtObtenerUsuarioL(string email)
+        {
+            ClUsuarioD datos = new ClUsuarioD();
+            return datos.MtObtenerUsuario(email);
+        }
+        public string MtRegitroUsuario(ClUsuarioM usuario)
+        {
+            ClUsuarioD datos = new ClUsuarioD();
+            string resultado = datos.MtRegistrarUsuario(usuario);
 
+            if (resultado == "duplicado")
+            {
+                return "El correo ya está registrado.";
+            }
+
+            if (resultado == "ok")
+            {
+                return "Registro exitoso.";
+            }
+
+            return "Ocurrió un error inesperado.";
+        }
     }
 }
