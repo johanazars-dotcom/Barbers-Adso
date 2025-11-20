@@ -16,7 +16,7 @@ namespace AppBarbersAdso.Vista
             if (!IsPostBack)
             {
                 ClBarberoM usuario = (ClBarberoM)Session["usuarioLogueado"];
-                if (usuario == null) Response.Redirect("WebForm1.aspx");
+                if (usuario == null) Response.Redirect("LoginBarbero.aspx");
 
                 txtNombre.Text = usuario.nombreBarbero;
                 txtApellido.Text = usuario.apellidoBarbero;

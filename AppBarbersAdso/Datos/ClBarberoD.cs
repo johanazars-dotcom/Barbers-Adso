@@ -85,10 +85,9 @@ namespace AppBarbersAdso.Datos
             cmd.Parameters.AddWithValue("@tel", datos.telefono);
 
             cmd.ExecuteNonQuery();
-            
+            conexion.MtcerrarConexion();
 
             return "ok";
-            conexion.MtcerrarConexion();
         }
         public ClBarberoM MtObtenerBarbero(string email)
         {

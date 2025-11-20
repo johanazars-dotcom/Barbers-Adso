@@ -36,9 +36,18 @@ namespace AppBarbersAdso.Logica
         public string MtRegitroBarbero(ClBarberoM barbero)
         {
             ClBarberoD datos = new ClBarberoD();
-            return datos.MtRegistrarBarbero(barbero);
+            string resultado = datos.MtRegistrarBarbero(barbero);
 
-           
+            if (resultado == "duplicado")
+            {
+                return "el correo ya está registrado";
+            }
+            if (resultado == "ok")
+            {
+                return "registro exitoso";
+            }
+            return "ha ocurrido un error";
         }
+
     }
 }

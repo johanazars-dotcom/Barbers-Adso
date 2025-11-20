@@ -56,9 +56,6 @@
                     <p id="pdfNombre" class="mt-2 text-muted"></p>
                 </div>
 
-                <asp:Button ID="btnRegistrar" runat="server" Text="Registrarse" CssClass="btn btn-success" OnClick="btnRegistrar_Click" />
-                <asp:Button ID="btnReg" runat="server" Text="Button" OnClick="btnReg_Click" />
-                
                 <asp:Label ID="lblResultado" runat="server" CssClass="form-text mt-3 text-success" />
 
             </div>
