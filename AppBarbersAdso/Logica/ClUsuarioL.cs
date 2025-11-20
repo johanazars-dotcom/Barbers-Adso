@@ -3,6 +3,8 @@ using AppBarbersAdso.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 
 namespace AppBarbersAdso.Logica
@@ -52,6 +54,79 @@ namespace AppBarbersAdso.Logica
             }
 
             return "Ocurrió un error inesperado.";
+        }
+        public bool EnviarToken(string correo)
+        {
+            var user = datos.ObtenerUsuarioPorCorreo(correo);
+            if (user == null)
+                return false;
+
+
+            string token = Guid.NewGuid().ToString();
+            DateTime expira = DateTime.Now.AddMinutes(15);
+
+
+            datos.GuardarToken(user.idUsuario, token, expira);
+
+
+            return enviarCorreoRecuperacion(correo, token);
+        }
+
+
+        private bool enviarCorreoRecuperacion(string correo, string token)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("jhonale19pr@gmail.com");
+                mail.To.Add(correo);
+                mail.Subject = "Restablecimiento de contraseña";
+                mail.Body = $"Tu token es: {token}\nVence en 15 minutos.";
+
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.EnableSsl = true;
+                smtp.Credentials = new NetworkCredential("jhonale19pr@gmail.com", "mahz owcn glwx yxf");
+                smtp.Send(mail);
+
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        public bool RestablecerContrasena(string token, string nuevaPass)
+        {
+            return datos.ActualizarContraseñaToken(token, nuevaPass);
+        }
+        public bool ConfirmacionCorreo(string correo)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("jhonale19pr@gmail.com");
+                mail.To.Add(correo);
+                mail.Subject = "Envio de correo de confirmacion para creacion de cuenta";
+                mail.Body = $"¡Gracias por hacer parte de esta familia BarbersADSO donde tenemos a los mejores Barberos de Colombia! Su link ded confirmacion es el siguiente";
+
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.EnableSsl = true;
+                smtp.Credentials = new NetworkCredential("jhonale19pr@gmail.com", "mahz owcn glwx yxf");
+                smtp.Send(mail);
+
+
+                return true;
+            }
+            catch
+            {
+
+                return false;
+            }
         }
     }
 }

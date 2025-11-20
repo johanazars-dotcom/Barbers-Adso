@@ -113,5 +113,71 @@ namespace AppBarbersAdso.Datos
 
             return "ok";
         }
+        public ClUsuarioM ObtenerUsuarioPorCorreo(string email)
+        {
+            string cadena = "";
+            SqlConnection conexx = conexion.MtabrirConexion();
+            using (SqlConnection conn = new SqlConnection(cadena))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios WHERE email=@email", conn);
+                cmd.Parameters.AddWithValue("@email", email);
+
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    return new ClUsuarioM
+                    {
+                        idUsuario = Convert.ToInt32(dr["idUsuario"]),
+                        email = dr["email"].ToString(),
+                        contraseña = dr["contraseña"].ToString(),
+                        TokenRecuperacion = dr["tokenRecuperacion"].ToString(),
+                        TokenExpira = dr["tokenExpira"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(dr["TokenExpira"])
+                    };
+                }
+                return null;
+            }
+        }
+
+
+        public void GuardarToken(int idUsuario, string token, DateTime expira)
+        {
+            string cadena = "";
+            using (SqlConnection conn = new SqlConnection(cadena))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(
+                "UPDATE Usuarios SET TokenRecuperacion=@token, TokenExpira=@exp WHERE IdUsuario=@id", conn);
+
+
+                cmd.Parameters.AddWithValue("@token", token);
+                cmd.Parameters.AddWithValue("@exp", expira);
+                cmd.Parameters.AddWithValue("@id", idUsuario);
+
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        public bool ActualizarContraseñaToken(string token, string nuevaPass)
+        {
+            string cadena = "";
+            using (SqlConnection conn = new SqlConnection(cadena))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(
+                "UPDATE Usuarios SET Contrasena=@pass, TokenRecuperacion=NULL, TokenExpira=NULL " +
+                "WHERE TokenRecuperacion=@token AND TokenExpira > GETDATE()", conn);
+
+
+                cmd.Parameters.AddWithValue("@pass", nuevaPass);
+                cmd.Parameters.AddWithValue("@token", token);
+
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
     }
 }
