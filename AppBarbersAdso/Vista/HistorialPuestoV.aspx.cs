@@ -9,12 +9,12 @@ namespace Vista
 {
     public partial class HistorialPuesto : System.Web.UI.Page
     {
-        protected void btnBuscar_Click(object sender, System.EventArgs e)
+        protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            int idPuesto = System.Convert.ToInt32(txtIdPuesto.Text);
+            int idPuesto = Convert.ToInt32(txtIdPuesto.Text);
 
             Logica.HistorialPuestoL logica = new Logica.HistorialPuestoL();
-            System.Collections.Generic.List<Modelos.HistorialPuestoM> lista = logica.ListarHistorial(idPuesto);
+            List<Modelos.HistorialPuestoM> lista = logica.ListarHistorial(idPuesto);
 
             GridHistorial.DataSource = lista;
             GridHistorial.DataBind();

@@ -1,43 +1,47 @@
-﻿using System;
+﻿using AppBarbersAdso.Modelo;
+using Modelos;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Datos
+namespace AppBarbersAdso.Datos
 {
     public class HistorialPuestoD
     {
-        private string cadenaConexion = "Data Source=DESKTOP-MUT4LN4\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;";
+        ClConexion conexion = new ClConexion();
 
-        public System.Collections.Generic.List<Modelos.HistorialPuestoM> ObtenerHistorialPorPuesto(int idPuesto)
+        public List<HistorialPuestoM> ObtenerHistorialPorPuesto(int idPuesto)
         {
-            System.Collections.Generic.List<Modelos.HistorialPuestoM> lista = new System.Collections.Generic.List<Modelos.HistorialPuestoM>();
+            SqlConnection conex = conexion.MtabrirConexion();
 
-            System.Data.SqlClient.SqlConnection conexion = new System.Data.SqlClient.SqlConnection(cadenaConexion);
-            string consulta = "SELECT idCita, idUsuario, idBarbero, idPuesto, hora, fechaCita, idEstado FROM cita WHERE idPuesto = @idPuesto";
-            System.Data.SqlClient.SqlCommand comando = new System.Data.SqlClient.SqlCommand(consulta, conexion);
-            comando.Parameters.AddWithValue("@idPuesto", idPuesto);
+            string consulta = "SELECT idCita, idUsuario, idBarbero, idPuesto, hora, fechaCita, idEstado " +
+                              "FROM cita WHERE idPuesto = @idPuesto";
 
-            conexion.Open();
-            System.Data.SqlClient.SqlDataReader lector = comando.ExecuteReader();
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@idPuesto", idPuesto);
+
+            SqlDataReader lector = cmd.ExecuteReader();
+
+            List<HistorialPuestoM> lista = new List<HistorialPuestoM>();
 
             while (lector.Read())
             {
-                Modelos.HistorialPuestoM cita = new Modelos.HistorialPuestoM();
-                cita.IdCita = System.Convert.ToInt32(lector["idCita"]);
-                cita.IdUsuario = System.Convert.ToInt32(lector["idUsuario"]);
-                cita.IdBarbero = System.Convert.ToInt32(lector["idBarbero"]);
-                cita.IdPuesto = System.Convert.ToInt32(lector["idPuesto"]);
+                HistorialPuestoM cita = new HistorialPuestoM();
+
+                cita.IdCita = Convert.ToInt32(lector["idCita"]);
+                cita.IdUsuario = Convert.ToInt32(lector["idUsuario"]);
+                cita.IdBarbero = Convert.ToInt32(lector["idBarbero"]);
+                cita.IdPuesto = Convert.ToInt32(lector["idPuesto"]);
                 cita.Hora = lector["hora"].ToString();
                 cita.FechaCita = lector["fechaCita"].ToString();
-                cita.IdEstado = System.Convert.ToInt32(lector["idEstado"]);
+                cita.IdEstado = Convert.ToInt32(lector["idEstado"]);
 
                 lista.Add(cita);
             }
 
-            lector.Close();
-            conexion.Close();
-
+            conexion.MtcerrarConexion();
             return lista;
         }
     }

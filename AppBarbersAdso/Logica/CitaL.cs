@@ -12,7 +12,7 @@ namespace Logica
     {
         CitaD datos = new CitaD();
 
-        public List<CitaM> Listar() => datos.Listar();
+        public List<CM> Listar() => datos.Listar();
         public void GuardarCita(CitaM c) => datos.Guardar(c);
         public void Eliminar(int id) => datos.Eliminar(id);
     }
