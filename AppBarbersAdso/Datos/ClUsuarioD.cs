@@ -56,7 +56,7 @@ namespace AppBarbersAdso.Datos
             conexion.MtcerrarConexion();
             return usuario;
         }
-        public ClUsuarioM MtLogin(string user, string pass)
+        public ClUsuarioM MtLogin(string user, string contraseña)
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
@@ -64,7 +64,7 @@ namespace AppBarbersAdso.Datos
 
             SqlCommand cmd = new SqlCommand(consulta, conex);
             cmd.Parameters.AddWithValue("@user", user);
-            cmd.Parameters.AddWithValue("@pass", pass);
+            cmd.Parameters.AddWithValue("@pass", contraseña);
 
             SqlDataReader lea = cmd.ExecuteReader();
 
