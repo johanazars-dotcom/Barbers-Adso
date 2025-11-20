@@ -1,13 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistroBarbero.aspx.cs" Inherits="AppBarbersAdso.Vista.RegistroBarbero" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Vista/Site1.Master" CodeBehind="RegistroBarbero.aspx.cs" Inherits="AppBarbersAdso.Vista.RegistroBarbero" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Registro de Barbero</title>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
-    <form id="formRegistro" runat="server" class="container mt-5">
+
+    <div class="container mt-5">
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
                 <h3 class="mb-0">Formulario de Registro</h3>
@@ -46,8 +43,8 @@
 
                 <div class="mb-3">
                     <label class="form-label">Foto (JPG/PNG)</label>
-                    <asp:FileUpload ID="fuFoto" runat="server" CssClass="form-control" OnChange="previewImage(this)" />
-                    <img id="imgPreview" style="max-width:150px; margin-top:10px; display:none;" />
+                    <asp:FileUpload ID="fuFoto" runat="server" CssClass="form-control" onchange="previewImage(this)" />
+                    <img id="imgPreview" style="max-width: 150px; margin-top: 10px; display: none;" />
                 </div>
 
                 <div class="mb-3">
@@ -56,11 +53,14 @@
                     <p id="pdfNombre" class="mt-2 text-muted"></p>
                 </div>
 
+                <asp:Button ID="btnRegistrar" runat="server" Text="Registrarse" CssClass="btn btn-success" OnClick="btnRegistrar_Click" />
+                <br />
+                <br />
                 <asp:Label ID="lblResultado" runat="server" CssClass="form-text mt-3 text-success" />
 
             </div>
         </div>
-    </form>
+    </div>
 
     <script>
         function previewImage(input) {
@@ -78,5 +78,4 @@
         });
     </script>
 
-</body>
-</html>
+</asp:Content>

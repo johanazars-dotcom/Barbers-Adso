@@ -55,6 +55,7 @@ namespace AppBarbersAdso.Logica
 
             return "Ocurrió un error inesperado.";
         }
+        ClUsuarioD datos = new ClUsuarioD();
         public bool EnviarToken(string correo)
         {
             var user = datos.ObtenerUsuarioPorCorreo(correo);

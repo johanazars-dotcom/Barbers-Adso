@@ -90,17 +90,25 @@ namespace AppBarbersAdso.Vista
             ClBarberoL logica = new ClBarberoL();
             string mensaje = logica.MtRegitroBarbero(registroBarber);
 
-            if (mensaje == "duplicado")
+            if (mensaje == null)
+            {
+                lblResultado.Text = "Mensaje llegó vacío";
+                return;
+            }
+
+            string r = mensaje.Trim().ToLower();
+
+            if (r == "duplicado")
             {
                 lblResultado.Text = "El correo ya está registrado.";
             }
-            else if (mensaje == "ok")
+            else if (r == "ok")
             {
                 lblResultado.Text = "Registrado correctamente.";
             }
             else
             {
-                lblResultado.Text = "Ocurrió un error.";
+                lblResultado.Text = "Ha ocurrido un error: " + mensaje;
             }
         }
     }

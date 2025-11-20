@@ -73,6 +73,7 @@
     <Content Include="Vista\LoginBarbero.aspx" />
     <Content Include="Vista\Registro.aspx" />
     <Content Include="Vista\RegistroBarbero.aspx" />
+    <Content Include="Vista\Site1.Master" />
     <Content Include="Vista\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="Vista\RegistroBarbero.aspx.designer.cs">
       <DependentUpon>RegistroBarbero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
     <Compile Include="Vista\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

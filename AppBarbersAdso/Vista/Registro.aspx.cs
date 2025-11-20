@@ -32,5 +32,10 @@ namespace AppBarbersAdso.Vista
 
             lblResultado.Text = mensaje;
         }
+
+        protected void btnRegresarLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("WebForm1.aspx");
+        }
     }
 }

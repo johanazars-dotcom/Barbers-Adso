@@ -1,24 +1,33 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="AppBarbersAdso.Vista.WebForm1" %>
+﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/Vista/Site1.master"AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs"Inherits="AppBarbersAdso.Vista.WebForm1" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="utf-8" />
-    <title>Inicio de Sesión</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <h2>Iniciar Sesión</h2>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <asp:Label ID="Label1" runat="server" Text="Correo:"></asp:Label><br />
-        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox><br /><br />
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg p-4 rounded">
+                <h3 class="text-center mb-4">Iniciar Sesión</h3>
 
-        <asp:Label ID="Label2" runat="server" Text="Contraseña:"></asp:Label><br />
-        <asp:TextBox ID="txtContra" TextMode="Password" runat="server"></asp:TextBox><br /><br />
+                <div class="mb-3">
+                    <label class="form-label">Correo</label>
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" />
+                </div>
 
-        <asp:Button ID="btnLogin" runat="server" Text="Ingresar" OnClick="btnLogin_Click" /><br /><br />
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <asp:TextBox ID="txtContra" runat="server" TextMode="Password" CssClass="form-control" />
+                </div>
 
-        <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
-    </form>
-</body>
-</html>
+                <div class="d-grid gap-2">
+                    <asp:Button ID="btnLogin" runat="server" Text="Ingresar"
+                        CssClass="btn btn-dark" OnClick="btnLogin_Click" />
+
+                    <asp:Button ID="btnRegistroCliente" runat="server" Text="Registrarse"
+                        CssClass="btn btn-outline-secondary" OnClick="btnRegistro_Click" />
+                </div>
+
+                <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger mt-3 d-block text-center"></asp:Label>
+            </div>
+        </div>
+    </div>
+
+</asp:Content>
