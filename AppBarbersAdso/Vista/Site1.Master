@@ -94,7 +94,7 @@
                     <div class="collapse navbar-collapse justify-content-end" id="menuBarbers">
                         <ul class="navbar-nav">
 
-                            <!-- LOGIN DESPLEGABLE -->
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Login
                                 </a>
@@ -113,10 +113,6 @@
                                 </ul>
                             </li>
 
-                            <!-- REGISTRO -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="Registro.aspx">Registro</a>
-                            </li>
 
                         </ul>
                     </div>

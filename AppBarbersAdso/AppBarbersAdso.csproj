@@ -70,6 +70,7 @@
     <Content Include="Vista\Actualizar.aspx" />
     <Content Include="Vista\ActualizarBarbero.aspx" />
     <Content Include="Vista\foto\1096197850.jpg" />
+    <Content Include="Vista\Inicio.aspx" />
     <Content Include="Vista\LoginBarbero.aspx" />
     <Content Include="Vista\Registro.aspx" />
     <Content Include="Vista\RegistroBarbero.aspx" />
@@ -99,6 +100,13 @@
     </Compile>
     <Compile Include="Vista\ActualizarBarbero.aspx.designer.cs">
       <DependentUpon>ActualizarBarbero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\LoginBarbero.aspx.cs">
       <DependentUpon>LoginBarbero.aspx</DependentUpon>
