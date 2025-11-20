@@ -15,6 +15,7 @@ namespace AppBarbersAdso.Vista
     {
 
         /// <summary>
+<<<<<<< HEAD
         /// Control form1.
         /// </summary>
         /// <remarks>
@@ -24,6 +25,8 @@ namespace AppBarbersAdso.Vista
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+=======
+>>>>>>> salazar
         /// Control txtNombre.
         /// </summary>
         /// <remarks>

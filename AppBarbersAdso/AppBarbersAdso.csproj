@@ -69,12 +69,21 @@
   <ItemGroup>
     <Content Include="Vista\Actualizar.aspx" />
     <Content Include="Vista\ActualizarBarbero.aspx" />
+<<<<<<< HEAD
     <Content Include="Vista\confirmacionCuenta.aspx" />
     <Content Include="Vista\envioCorreo.aspx" />
     <Content Include="Vista\LoginBarbero.aspx" />
     <Content Include="Vista\recuperacion.aspx" />
     <Content Include="Vista\Registro.aspx" />
     <Content Include="Vista\RegistroBarbero.aspx" />
+=======
+    <Content Include="Vista\foto\1096197850.jpg" />
+    <Content Include="Vista\Inicio.aspx" />
+    <Content Include="Vista\LoginBarbero.aspx" />
+    <Content Include="Vista\Registro.aspx" />
+    <Content Include="Vista\RegistroBarbero.aspx" />
+    <Content Include="Vista\Site1.Master" />
+>>>>>>> salazar
     <Content Include="Vista\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -101,6 +110,7 @@
     <Compile Include="Vista\ActualizarBarbero.aspx.designer.cs">
       <DependentUpon>ActualizarBarbero.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Vista\confirmacionCuenta.aspx.cs">
       <DependentUpon>confirmacionCuenta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -114,6 +124,14 @@
     </Compile>
     <Compile Include="Vista\envioCorreo.aspx.designer.cs">
       <DependentUpon>envioCorreo.aspx</DependentUpon>
+=======
+    <Compile Include="Vista\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+>>>>>>> salazar
     </Compile>
     <Compile Include="Vista\LoginBarbero.aspx.cs">
       <DependentUpon>LoginBarbero.aspx</DependentUpon>
@@ -122,6 +140,7 @@
     <Compile Include="Vista\LoginBarbero.aspx.designer.cs">
       <DependentUpon>LoginBarbero.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Vista\recuperacion.aspx.cs">
       <DependentUpon>recuperacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,6 +148,8 @@
     <Compile Include="Vista\recuperacion.aspx.designer.cs">
       <DependentUpon>recuperacion.aspx</DependentUpon>
     </Compile>
+=======
+>>>>>>> salazar
     <Compile Include="Vista\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,6 +164,16 @@
     <Compile Include="Vista\RegistroBarbero.aspx.designer.cs">
       <DependentUpon>RegistroBarbero.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Vista\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+>>>>>>> salazar
     <Compile Include="Vista\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Vista\hojaVida\1096197850.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

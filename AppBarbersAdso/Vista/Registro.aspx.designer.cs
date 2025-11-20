@@ -15,6 +15,7 @@ namespace AppBarbersAdso.Vista
     {
 
         /// <summary>
+<<<<<<< HEAD
         /// Control formRegistro.
         /// </summary>
         /// <remarks>
@@ -24,6 +25,8 @@ namespace AppBarbersAdso.Vista
         protected global::System.Web.UI.HtmlControls.HtmlForm formRegistro;
 
         /// <summary>
+=======
+>>>>>>> salazar
         /// Control lblNombre.
         /// </summary>
         /// <remarks>
@@ -141,6 +144,18 @@ namespace AppBarbersAdso.Vista
         protected global::System.Web.UI.WebControls.Button btnRegistrar;
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Control btnRegresar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegresar;
+
+        /// <summary>
+>>>>>>> salazar
         /// Control lblResultado.
         /// </summary>
         /// <remarks>

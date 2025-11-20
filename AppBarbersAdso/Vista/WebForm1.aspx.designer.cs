@@ -15,12 +15,13 @@ namespace AppBarbersAdso.Vista
     {
 
         /// <summary>
-        /// Control form1.
+        /// Control txtEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
@@ -51,6 +52,11 @@ namespace AppBarbersAdso.Vista
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
+=======
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
+>>>>>>> salazar
         /// Control txtContra.
         /// </summary>
         /// <remarks>
@@ -69,6 +75,18 @@ namespace AppBarbersAdso.Vista
         protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Control btnRegistroCliente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegistroCliente;
+
+        /// <summary>
+>>>>>>> salazar
         /// Control lblMensaje.
         /// </summary>
         /// <remarks>

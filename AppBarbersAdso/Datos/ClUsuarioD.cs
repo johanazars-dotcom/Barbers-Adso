@@ -115,12 +115,20 @@ namespace AppBarbersAdso.Datos
         }
         public ClUsuarioM ObtenerUsuarioPorCorreo(string email)
         {
+<<<<<<< HEAD
             string cadena = "Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;";
+=======
+            string cadena = "";
+>>>>>>> salazar
             SqlConnection conexx = conexion.MtabrirConexion();
             using (SqlConnection conn = new SqlConnection(cadena))
             {
                 conn.Open();
+<<<<<<< HEAD
                 SqlCommand cmd = new SqlCommand("SELECT * FROM usuario WHERE email=@email", conn);
+=======
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios WHERE email=@email", conn);
+>>>>>>> salazar
                 cmd.Parameters.AddWithValue("@email", email);
 
 
@@ -143,12 +151,20 @@ namespace AppBarbersAdso.Datos
 
         public void GuardarToken(int idUsuario, string token, DateTime expira)
         {
+<<<<<<< HEAD
             string cadena = "Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;";
+=======
+            string cadena = "";
+>>>>>>> salazar
             using (SqlConnection conn = new SqlConnection(cadena))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(
+<<<<<<< HEAD
                 "UPDATE usuario SET tokenRecuperacion=@token, tokenExpira=@exp WHERE idUsuario=@id", conn);
+=======
+                "UPDATE Usuarios SET TokenRecuperacion=@token, TokenExpira=@exp WHERE IdUsuario=@id", conn);
+>>>>>>> salazar
 
 
                 cmd.Parameters.AddWithValue("@token", token);
@@ -163,13 +179,22 @@ namespace AppBarbersAdso.Datos
 
         public bool ActualizarContraseñaToken(string token, string nuevaPass)
         {
+<<<<<<< HEAD
             string cadena = "Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;";
+=======
+            string cadena = "";
+>>>>>>> salazar
             using (SqlConnection conn = new SqlConnection(cadena))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(
+<<<<<<< HEAD
                 "UPDATE usuario SET contraseña=@pass, tokenRecuperacion=NULL, tokenExpira=NULL " +
                 "WHERE tokenRecuperacion=@token AND tokenExpira > GETDATE()", conn);
+=======
+                "UPDATE Usuarios SET Contrasena=@pass, TokenRecuperacion=NULL, TokenExpira=NULL " +
+                "WHERE TokenRecuperacion=@token AND TokenExpira > GETDATE()", conn);
+>>>>>>> salazar
 
 
                 cmd.Parameters.AddWithValue("@pass", nuevaPass);
