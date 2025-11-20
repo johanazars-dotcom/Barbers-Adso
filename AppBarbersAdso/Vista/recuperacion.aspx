@@ -29,7 +29,7 @@
 
                             <div class="mb-3">
                                 <label class="form-label">Confirmar contraseña</label>
-                                <asp:TextBox ID="txtConfirmar" CssClass="form-control" runat="server" TextMode="Password" placeholder="Confirmar contraseña" required></asp:TextBox>
+                                <asp:TextBox ID="txtConfirmar" CssClass="form-control" runat="server" TextMode="Password" placeholder="Confirmar contraseña"></asp:TextBox>
                             </div>
 
 

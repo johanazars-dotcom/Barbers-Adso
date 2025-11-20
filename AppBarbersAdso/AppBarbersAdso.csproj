@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Vista\Actualizar.aspx" />
+    <Content Include="Vista\confirmacionCuenta.aspx" />
     <Content Include="Vista\envioCorreo.aspx" />
     <Content Include="Vista\recuperacion.aspx" />
     <Content Include="Vista\Registro.aspx" />
@@ -86,6 +87,13 @@
     </Compile>
     <Compile Include="Vista\Actualizar.aspx.designer.cs">
       <DependentUpon>Actualizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\confirmacionCuenta.aspx.cs">
+      <DependentUpon>confirmacionCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\confirmacionCuenta.aspx.designer.cs">
+      <DependentUpon>confirmacionCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\envioCorreo.aspx.cs">
       <DependentUpon>envioCorreo.aspx</DependentUpon>
