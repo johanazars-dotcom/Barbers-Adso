@@ -12,11 +12,7 @@ namespace AppBarbersAdso.Datos
 
         public ClConexion()
         {
-<<<<<<< HEAD
-            oConexion = new SqlConnection("Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;");
-=======
             oConexion = new SqlConnection("Data Source=DESKTOP-8S6S2G8\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;");
->>>>>>> salazar
         }
         public SqlConnection MtabrirConexion()
         {

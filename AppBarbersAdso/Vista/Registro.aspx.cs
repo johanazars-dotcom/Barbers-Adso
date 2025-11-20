@@ -32,13 +32,10 @@ namespace AppBarbersAdso.Vista
 
             lblResultado.Text = mensaje;
         }
-<<<<<<< HEAD
-=======
 
         protected void btnRegresarLogin_Click(object sender, EventArgs e)
         {
             Response.Redirect("WebForm1.aspx");
         }
->>>>>>> salazar
     }
 }

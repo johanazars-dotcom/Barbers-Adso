@@ -19,12 +19,6 @@ namespace AppBarbersAdso.Vista
                 return;
             }
 
-<<<<<<< HEAD
-		}
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-=======
->>>>>>> salazar
             ClUsuarioL logica = new ClUsuarioL();
             bool ingreso = logica.MtLoginL(txtEmail.Text, txtContra.Text);
 
@@ -38,12 +32,9 @@ namespace AppBarbersAdso.Vista
             }
         }
 
-<<<<<<< HEAD
-=======
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
             Response.Redirect("Registro.aspx");
         }
->>>>>>> salazar
     }
 }

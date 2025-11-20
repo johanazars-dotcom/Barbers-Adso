@@ -46,11 +46,7 @@ namespace AppBarbersAdso.Logica
             {
                 return "registro exitoso";
             }
-<<<<<<< HEAD
-            return resultado;
-=======
             return "ha ocurrido un error";
->>>>>>> salazar
         }
 
     }

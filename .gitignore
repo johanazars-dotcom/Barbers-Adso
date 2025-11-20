@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 bin/
 obj/
 .vs/
@@ -8,6 +9,8 @@ obj/
 *.json.user
 *.db
 =======
+=======
+>>>>>>> salazar
 # Archivos temporales y de Visual Studio
 .vs/
 *.suo
@@ -16,4 +19,7 @@ obj/
 *.log
 bin/
 obj/
+<<<<<<< HEAD
+>>>>>>> salazar
+=======
 >>>>>>> salazar
