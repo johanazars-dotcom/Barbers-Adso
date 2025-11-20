@@ -15,17 +15,26 @@ namespace AppBarbersAdso.Vista
         {
             if (!IsPostBack)
             {
-                ClUsuarioM usuario = (ClUsuarioM)Session["usuarioLogueado"];
-                if (usuario == null) Response.Redirect("WebForm1.aspx");
+                ClUsuarioM usuarioSesion = (ClUsuarioM)Session["usuarioLogueado"];
+                if (usuarioSesion == null) Response.Redirect("WebForm1.aspx");
 
-                txtNombre.Text = usuario.nombre;
-                txtApellido.Text = usuario.apellido;
-                txtTelefono.Text = usuario.telefono;
-                txtDocumento.Text = usuario.documento;
-                txtContra.Text = usuario.contraseña;
+                ClUsuarioL logica = new ClUsuarioL();
+                ClUsuarioM usuarioBD = logica.MtObtenerUsuarioL(usuarioSesion.email);
+
+                if (usuarioBD != null)
+                {
+                    txtNombre.Text = usuarioBD.nombre;
+                    txtApellido.Text = usuarioBD.apellido;
+                    txtTelefono.Text = usuarioBD.telefono;
+                    txtDocumento.Text = usuarioBD.documento;
+                    txtContra.Text = usuarioBD.contraseña;
+                }
+                else
+                {
+                    lblMensaje.Text = "No se encontraron datos del usuario.";
+                }
             }
         }
-
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
             ClUsuarioM usuarioSesion = (ClUsuarioM)Session["usuarioLogueado"];

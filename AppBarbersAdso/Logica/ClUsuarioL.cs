@@ -30,16 +30,32 @@ namespace AppBarbersAdso.Logica
             oUsuarioD.MtActualizarPerfil(usuario);
             return "Datos actualizados correctamente.";
         }
-		public string MtRegitroUsuario(ClUsuarioM usuario)
-		{
-			ClUsuarioD usuariodatos = new ClUsuarioD();
-			usuariodatos.MtRegistrarUsuario(usuario);
-			return "Su usuario ha sido registrado exitosamente";
-		}
-        
+        public ClUsuarioM MtObtenerUsuarioL(string email)
+        {
+            ClUsuarioD datos = new ClUsuarioD();
+            return datos.MtObtenerUsuario(email);
+        }
+        public string MtRegitroUsuario(ClUsuarioM usuario)
+        {
+            ClUsuarioD datos = new ClUsuarioD();
+            string resultado = datos.MtRegistrarUsuario(usuario);
+            if (resultado==null)
+            {
+                return "ocurrio un error";
+            }
+            if (resultado == "duplicado")
+            {
+                return "El correo ya está registrado.";
+            }
+
+            if (resultado == "ok")
+            {
+                return "Registro exitoso.";
+            }
+
+            return "Ocurrió un error inesperado.";
+        }
         ClUsuarioD datos = new ClUsuarioD();
-
-
         public bool EnviarToken(string correo)
         {
             var user = datos.ObtenerUsuarioPorCorreo(correo);
@@ -109,10 +125,9 @@ namespace AppBarbersAdso.Logica
             }
             catch
             {
-                
+
                 return false;
             }
         }
-
     }
 }

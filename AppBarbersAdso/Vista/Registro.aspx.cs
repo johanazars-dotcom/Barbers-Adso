@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppBarbersAdso.Logica;
+using AppBarbersAdso.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,18 +15,22 @@ namespace AppBarbersAdso.Vista
         {
 
         }
-
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text;
-            string apellidos = txtApellidos.Text;
-            string documento = txtDocumento.Text;
-            string email = txtEmail.Text;
-            string contrasena = txtContrasena.Text;
-            string telefono = txtTelefono.Text;
+            ClUsuarioM registro = new ClUsuarioM();
 
-            
+            registro.nombre = txtNombre.Text;
+            registro.apellido = txtApellidos.Text;
+            registro.documento = txtDocumento.Text;
+            registro.email = txtEmail.Text;
+            registro.contraseña = txtContrasena.Text;
+            registro.telefono = txtTelefono.Text;
 
+            ClUsuarioL logica = new ClUsuarioL();
+
+            string mensaje = logica.MtRegitroUsuario(registro);
+
+            lblResultado.Text = mensaje;
         }
     }
 }
