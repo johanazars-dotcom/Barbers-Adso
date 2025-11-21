@@ -1,27 +1,25 @@
-# Visual Studio
-.vs/
-*.user
-*.suo
-
-# Build
+<<<<<<< HEAD
+<<<<<<< HEAD
 bin/
 obj/
-Debug/
-Release/
-
-# NuGet
-packages/
-*.nupkg
-
-# IIS Express
-applicationhost.config
-
-# Archivos temporales
+.vs/
 *.dll
 *.pdb
 *.cache
-*.log
-
-# Archivos de configuración locales
+*.json.user
 *.db
-*.mdf
+=======
+=======
+>>>>>>> salazar
+# Archivos temporales y de Visual Studio
+.vs/
+*.suo
+*.user
+*.cache
+*.log
+bin/
+obj/
+<<<<<<< HEAD
+>>>>>>> salazar
+=======
+>>>>>>> salazar
