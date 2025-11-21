@@ -16,5 +16,6 @@ namespace AppBarbersAdso.Modelo
         public string foto { get; set; }
         public string hojaVida { get; set; }
         public string telefono { get; set; }
+        public string tokenRecuperacion {  get; set; }
     }
 }

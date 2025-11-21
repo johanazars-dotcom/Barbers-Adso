@@ -9,6 +9,7 @@ namespace AppBarbersAdso.Datos
 {
 	public class ClBarberoD
 	{
+        string cadena = "Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;";
         ClConexion conexion = new ClConexion();
         public ClBarberoM MtLoginBarbero(string user, string pass)
         {
@@ -116,6 +117,69 @@ namespace AppBarbersAdso.Datos
 
             conexion.MtcerrarConexion();
             return barbero;
+        }
+        public ClBarberoM ObtenerBarberoPorCorreo(string email)
+        {
+            ClBarberoM modelo = null;
+
+            using (SqlConnection conn = new SqlConnection(cadena))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM barbero WHERE email=@email", conn);
+
+                cmd.Parameters.AddWithValue("@email", email);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    modelo = new ClBarberoM
+                    {
+                        documento = dr["documento"].ToString(),
+                        email = dr["email"].ToString(),
+                        contraseña = dr["contraseña"].ToString(),
+                        tokenRecuperacion = dr["tokenRecuperacion"].ToString(),
+                        idBarbero = Convert.ToInt32(dr["idBarbero"])
+                    };
+                }
+            }
+
+            return modelo;
+        }
+
+
+        public void GuardarToken(int idUsuario, string token)
+        {
+            using (SqlConnection conn = new SqlConnection(cadena))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE barbero SET tokenRecuperacion=@token WHERE idBarbero=@id", conn);
+
+                cmd.Parameters.AddWithValue("@token", token);
+                cmd.Parameters.AddWithValue("@id", idUsuario);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        public bool ActualizarContraseñaToken(string token, string nuevaPass)
+        {
+            using (SqlConnection conn = new SqlConnection(cadena))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE barbero SET contraseña=@pass, tokenRecuperacion=NULL " +
+                    "WHERE tokenRecuperacion=@token", conn);
+
+                cmd.Parameters.AddWithValue("@pass", nuevaPass);
+                cmd.Parameters.AddWithValue("@token", token);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
         }
     }
 }
