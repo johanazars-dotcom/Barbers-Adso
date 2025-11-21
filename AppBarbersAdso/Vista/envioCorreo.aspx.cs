@@ -24,11 +24,11 @@ namespace AppBarbersAdso.Vista
             bool enviado = logica.EnviarToken(txtCorreo.Text);
 
 
-            if (enviado)
+            if (enviado == true)
             {
-                Response.Write("<script>alert('Se envió un token a tu correo.');</script>");
+                Response.Write("<script>alert('Se envió un link de restablecimiento a tu correo.');</script>");
             }
-            else
+            else 
             {
                 Response.Write("<script>alert('Correo no encontrado.');</script>");
             }

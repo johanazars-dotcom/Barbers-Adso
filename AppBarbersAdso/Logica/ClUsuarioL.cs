@@ -60,36 +60,39 @@ namespace AppBarbersAdso.Logica
         {
             var user = datos.ObtenerUsuarioPorCorreo(correo);
             if (user == null)
+            {
                 return false;
-
+            }
 
             string token = Guid.NewGuid().ToString();
-            DateTime expira = DateTime.Now.AddMinutes(15);
 
+            datos.GuardarToken(user.idUsuario, token);
 
-            datos.GuardarToken(user.idUsuario, token, expira);
-
-
-            return enviarCorreoRecuperacion(correo, token);
+            return EnviarCorreoRecuperacion(correo, token);
         }
 
-
-        private bool enviarCorreoRecuperacion(string correo, string token)
+        private bool EnviarCorreoRecuperacion(string correo, string token)
         {
             try
             {
+                // 🔥 CODIFICAR EL TOKEN PARA QUE NO SE ROMPA EN LA URL
+                string tokenSeguro = HttpUtility.UrlEncode(token);
+
+                string url = $"https://localhost:44369/Vista/recuperacion.aspx?token={tokenSeguro}";
+
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress("jhonale19pr@gmail.com");
                 mail.To.Add(correo);
-                mail.Subject = "Restablecimiento de contraseña";
-                mail.Body = $"Tu token es: {token}\nVence en 15 minutos.";
-
+                mail.Subject = "Recuperación de contraseña";
+                mail.Body =
+                    "Haz clic en el siguiente enlace para restablecer tu contraseña:\n" +
+                    url + "\n\n" +
+                    "Este enlace no expira hasta que lo uses.";
 
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                 smtp.EnableSsl = true;
-                smtp.Credentials = new NetworkCredential("jhonale19pr@gmail.com", "mahz owcn glwx yxf");
+                smtp.Credentials = new NetworkCredential("jhonale19pr@gmail.com", "hcwh xqbr uwod ysas");
                 smtp.Send(mail);
-
 
                 return true;
             }
@@ -98,36 +101,10 @@ namespace AppBarbersAdso.Logica
                 return false;
             }
         }
-
 
         public bool RestablecerContrasena(string token, string nuevaPass)
         {
             return datos.ActualizarContraseñaToken(token, nuevaPass);
-        }
-        public bool ConfirmacionCorreo(string correo)
-        {
-            try
-            {
-                MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("jhonale19pr@gmail.com");
-                mail.To.Add(correo);
-                mail.Subject = "Envio de correo de confirmacion para creacion de cuenta";
-                mail.Body = $"¡Gracias por hacer parte de esta familia BarbersADSO donde tenemos a los mejores Barberos de Colombia! Su link ded confirmacion es el siguiente";
-
-
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.EnableSsl = true;
-                smtp.Credentials = new NetworkCredential("jhonale19pr@gmail.com", "mahz owcn glwx yxf");
-                smtp.Send(mail);
-
-
-                return true;
-            }
-            catch
-            {
-
-                return false;
-            }
         }
     }
 }

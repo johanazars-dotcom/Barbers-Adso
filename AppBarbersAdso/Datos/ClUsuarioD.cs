@@ -9,6 +9,7 @@ namespace AppBarbersAdso.Datos
 {
     public class ClUsuarioD
     {
+        string cadena = "Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;";
         ClConexion conexion = new ClConexion();
         public void MtActualizarPerfil(ClUsuarioM actualizar)
         {
@@ -115,46 +116,46 @@ namespace AppBarbersAdso.Datos
         }
         public ClUsuarioM ObtenerUsuarioPorCorreo(string email)
         {
-            string cadena = "Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;";
-            SqlConnection conexx = conexion.MtabrirConexion();
+            ClUsuarioM modelo = null;
+
             using (SqlConnection conn = new SqlConnection(cadena))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM usuario WHERE email=@email", conn);
+
                 cmd.Parameters.AddWithValue("@email", email);
 
-
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 if (dr.Read())
                 {
-                    return new ClUsuarioM
+                    modelo = new ClUsuarioM
                     {
-                        idUsuario = Convert.ToInt32(dr["idUsuario"]),
+                        documento = dr["documento"].ToString(),
                         email = dr["email"].ToString(),
                         contraseña = dr["contraseña"].ToString(),
                         TokenRecuperacion = dr["tokenRecuperacion"].ToString(),
-                        TokenExpira = dr["tokenExpira"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(dr["TokenExpira"])
+                        idUsuario = Convert.ToInt32(dr["idUsuario"])
                     };
                 }
-                return null;
             }
+
+            return modelo;
         }
+        
 
 
-        public void GuardarToken(int idUsuario, string token, DateTime expira)
+        public void GuardarToken(int idUsuario, string token)
         {
-            string cadena = "Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;";
             using (SqlConnection conn = new SqlConnection(cadena))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(
-                "UPDATE usuario SET tokenRecuperacion=@token, tokenExpira=@exp WHERE idUsuario=@id", conn);
 
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE usuario SET tokenRecuperacion=@token WHERE idUsuario=@id", conn);
 
                 cmd.Parameters.AddWithValue("@token", token);
-                cmd.Parameters.AddWithValue("@exp", expira);
                 cmd.Parameters.AddWithValue("@id", idUsuario);
-
 
                 cmd.ExecuteNonQuery();
             }
@@ -163,18 +164,16 @@ namespace AppBarbersAdso.Datos
 
         public bool ActualizarContraseñaToken(string token, string nuevaPass)
         {
-            string cadena = "Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;";
             using (SqlConnection conn = new SqlConnection(cadena))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(
-                "UPDATE usuario SET contraseña=@pass, tokenRecuperacion=NULL, tokenExpira=NULL " +
-                "WHERE tokenRecuperacion=@token AND tokenExpira > GETDATE()", conn);
 
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE usuario SET contraseña=@pass, tokenRecuperacion=NULL " +
+                    "WHERE tokenRecuperacion=@token", conn);
 
                 cmd.Parameters.AddWithValue("@pass", nuevaPass);
                 cmd.Parameters.AddWithValue("@token", token);
-
 
                 return cmd.ExecuteNonQuery() > 0;
             }
