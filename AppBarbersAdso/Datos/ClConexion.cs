@@ -12,7 +12,11 @@ namespace AppBarbersAdso.Datos
 
         public ClConexion()
         {
+<<<<<<< HEAD
             oConexion = new SqlConnection("Data Source=DESKTOP-PT3DB8G;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;");
+=======
+            oConexion = new SqlConnection("Data Source=DESKTOP-MUT4LN4\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;");
+>>>>>>> Manrique
         }
         public SqlConnection MtabrirConexion()
         {
