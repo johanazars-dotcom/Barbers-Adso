@@ -130,10 +130,7 @@ namespace AppBarbersAdso.Vista
             {
                 lblResultado.Text = "Registrado correctamente.";
             }
-            else
-            {
-                lblResultado.Text = "Ha ocurrido un error: " + mensaje;
-            }
+            
         }
 
     }

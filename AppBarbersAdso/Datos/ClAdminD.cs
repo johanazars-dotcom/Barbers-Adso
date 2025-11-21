@@ -40,11 +40,9 @@ namespace AppBarbersAdso.Datos
             List<ClBarberoM> lista = new List<ClBarberoM>();
             SqlConnection cn = conexion.MtabrirConexion();
 
-
-            string sql = "SELECT * FROM barbero";
+            string sql = "select * from barbero";
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataReader listar = cmd.ExecuteReader();
-
 
             while (listar.Read())
             {
@@ -62,9 +60,10 @@ namespace AppBarbersAdso.Datos
                 });
             }
 
-
             conexion.MtcerrarConexion();
             return lista;
         }
+
+
     }
 }

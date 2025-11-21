@@ -17,8 +17,6 @@ namespace AppBarbersAdso.Vista
                 CargarBarberos();
             }
         }
-
-
         private void CargarBarberos()
         {
             ClAdminL logica = new ClAdminL();

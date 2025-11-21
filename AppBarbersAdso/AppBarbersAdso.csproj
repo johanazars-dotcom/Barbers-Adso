@@ -69,11 +69,18 @@
   <ItemGroup>
     <Content Include="Vista\Actualizar.aspx" />
     <Content Include="Vista\ActualizarBarbero.aspx" />
+    <Content Include="Vista\envioCorreo.aspx" />
+    <Content Include="Vista\foto\1093298177.jpg" />
+    <Content Include="Vista\foto\10932981774.jpg" />
     <Content Include="Vista\foto\1096197850.jpg" />
+    <Content Include="Vista\foto\14145521452.jpg" />
+    <Content Include="Vista\foto\14515145154145414541454151515145.jpg" />
+    <Content Include="Vista\foto\520510852105282.jpg" />
     <Content Include="Vista\Inicio.aspx" />
     <Content Include="Vista\LoginAdmin.aspx" />
     <Content Include="Vista\LoginBarbero.aspx" />
     <Content Include="Vista\PaginaAdmin.aspx" />
+    <Content Include="Vista\recuperacion.aspx" />
     <Content Include="Vista\Registro.aspx" />
     <Content Include="Vista\RegistroBarbero.aspx" />
     <Content Include="Vista\Site1.Master" />
@@ -106,6 +113,13 @@
     <Compile Include="Vista\ActualizarBarbero.aspx.designer.cs">
       <DependentUpon>ActualizarBarbero.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\envioCorreo.aspx.cs">
+      <DependentUpon>envioCorreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\envioCorreo.aspx.designer.cs">
+      <DependentUpon>envioCorreo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,6 +147,13 @@
     </Compile>
     <Compile Include="Vista\PaginaAdmin.aspx.designer.cs">
       <DependentUpon>PaginaAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\recuperacion.aspx.cs">
+      <DependentUpon>recuperacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\recuperacion.aspx.designer.cs">
+      <DependentUpon>recuperacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
@@ -166,6 +187,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Vista\hojaVida\1096197850.pdf" />
+    <Content Include="Vista\hojaVida\1093298177.pdf" />
+    <Content Include="Vista\hojaVida\10932981774.pdf" />
+    <Content Include="Vista\hojaVida\14145521452.pdf" />
+    <Content Include="Vista\hojaVida\14515145154145414541454151515145.pdf" />
+    <Content Include="Vista\hojaVida\520510852105282.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
