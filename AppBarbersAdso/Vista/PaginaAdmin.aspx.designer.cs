@@ -11,16 +11,25 @@ namespace AppBarbersAdso.Vista
 {
 
 
-    public partial class Inicio
+    public partial class PaginaAdmin
     {
 
         /// <summary>
-        /// Control form1.
+        /// Control btnRegistrarBarbero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button btnRegistrarBarbero;
+
+        /// <summary>
+        /// Control gvBarberos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvBarberos;
     }
 }

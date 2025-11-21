@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-5">
     <div class="col-md-4">
-        <div class="card card-barber shadow-lg p-4 rounded-4 text-center">
+        <div class="card shadow-lg p-4 rounded-4 text-center bg-dark text-white">
 
             <h3 class="mb-4" style="color:#d4af37;">INICIAR SESIÓN</h3>
 
@@ -19,7 +19,7 @@
             </div>
 
             <asp:Button ID="btnLogin" runat="server" Text="Ingresar"
-                CssClass="btn btn-dorado w-100 mb-3" OnClick="btnLogin_Click" />
+                CssClass="btn btn-warning w-100 mb-3" OnClick="btnLogin_Click" />
 
             <asp:Button ID="btnRegistroCliente" runat="server" Text="Registrarse"
                 CssClass="btn btn-outline-light w-100" OnClick="btnRegistro_Click" />

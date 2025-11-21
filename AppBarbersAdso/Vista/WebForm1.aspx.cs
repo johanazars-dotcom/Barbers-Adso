@@ -14,17 +14,17 @@ namespace AppBarbersAdso.Vista
         {
             if (string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtContra.Text))
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerta",
-                    "alert('Debes llenar todos los campos antes de ingresar');", true);
+                lblMensaje.Text = "Debes llenar todos los campos.";
                 return;
             }
 
             ClUsuarioL logica = new ClUsuarioL();
-            bool ingreso = logica.MtLoginL(txtEmail.Text, txtContra.Text);
+            bool ingreso = logica.MtLoginL(txtEmail.Text.Trim(), txtContra.Text.Trim());
 
             if (ingreso)
             {
-                Response.Redirect("Actualizar.aspx");
+                Session["usuario"] = txtEmail.Text;
+                Response.Redirect("Inicio.aspx");
             }
             else
             {

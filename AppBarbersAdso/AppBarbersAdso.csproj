@@ -71,7 +71,9 @@
     <Content Include="Vista\ActualizarBarbero.aspx" />
     <Content Include="Vista\foto\1096197850.jpg" />
     <Content Include="Vista\Inicio.aspx" />
+    <Content Include="Vista\LoginAdmin.aspx" />
     <Content Include="Vista\LoginBarbero.aspx" />
+    <Content Include="Vista\PaginaAdmin.aspx" />
     <Content Include="Vista\Registro.aspx" />
     <Content Include="Vista\RegistroBarbero.aspx" />
     <Content Include="Vista\Site1.Master" />
@@ -79,11 +81,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\ClAdminD.cs" />
     <Compile Include="Datos\ClBarberoD.cs" />
     <Compile Include="Datos\ClConexion.cs" />
     <Compile Include="Datos\ClUsuarioD.cs" />
+    <Compile Include="Logica\ClAdminL.cs" />
     <Compile Include="Logica\ClBarberoL.cs" />
     <Compile Include="Logica\ClUsuarioL.cs" />
+    <Compile Include="Modelo\ClAdminM.cs" />
     <Compile Include="Modelo\ClBarberoM.cs" />
     <Compile Include="Modelo\ClUsuarioM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,12 +113,26 @@
     <Compile Include="Vista\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\LoginAdmin.aspx.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\LoginAdmin.aspx.designer.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\LoginBarbero.aspx.cs">
       <DependentUpon>LoginBarbero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\LoginBarbero.aspx.designer.cs">
       <DependentUpon>LoginBarbero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PaginaAdmin.aspx.cs">
+      <DependentUpon>PaginaAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PaginaAdmin.aspx.designer.cs">
+      <DependentUpon>PaginaAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
