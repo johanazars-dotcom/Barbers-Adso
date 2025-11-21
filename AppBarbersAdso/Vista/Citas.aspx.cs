@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Logica;
 using Modelos;
 
-namespace TuProyecto
+namespace Vista
 {
     public partial class Citas : System.Web.UI.Page
     {
-        CitaL logica = new CitaL();
+        private CitaL logica = new CitaL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,7 +16,7 @@ namespace TuProyecto
                 CargarTabla();
         }
 
-        void CargarTabla()
+        private void CargarTabla()
         {
             gvCitas.DataSource = logica.Listar();
             gvCitas.DataBind();
@@ -30,9 +27,12 @@ namespace TuProyecto
             CitaM c = new CitaM
             {
                 idCita = string.IsNullOrEmpty(hfIdCita.Value) ? 0 : int.Parse(hfIdCita.Value),
-                nombreCliente = txtNombre.Text,
+                idUsuario = int.Parse(txtIdUsuario.Text),
+                idBarbero = int.Parse(txtIdBarbero.Text),
+                idPuesto = int.Parse(txtIdPuesto.Text),
                 fechaCita = DateTime.Parse(txtFecha.Text),
-                hora = txtHora.Text
+                hora = txtHora.Text,
+                idEstado = int.Parse(txtIdEstado.Text)
             };
 
             logica.GuardarCita(c);
@@ -40,7 +40,7 @@ namespace TuProyecto
             CargarTabla();
         }
 
-        protected void gvCitas_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
+        protected void gvCitas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);
             int id = Convert.ToInt32(gvCitas.Rows[index].Cells[0].Text);
@@ -48,9 +48,12 @@ namespace TuProyecto
             if (e.CommandName == "editar")
             {
                 hfIdCita.Value = gvCitas.Rows[index].Cells[0].Text;
-                txtNombre.Text = gvCitas.Rows[index].Cells[1].Text;
-                txtFecha.Text = Convert.ToDateTime(gvCitas.Rows[index].Cells[2].Text).ToString("yyyy-MM-dd");
-                txtHora.Text = gvCitas.Rows[index].Cells[3].Text;
+                txtIdUsuario.Text = gvCitas.Rows[index].Cells[1].Text;
+                txtIdBarbero.Text = gvCitas.Rows[index].Cells[2].Text;
+                txtIdPuesto.Text = gvCitas.Rows[index].Cells[3].Text;
+                txtFecha.Text = Convert.ToDateTime(gvCitas.Rows[index].Cells[4].Text).ToString("yyyy-MM-dd");
+                txtHora.Text = gvCitas.Rows[index].Cells[5].Text;
+                txtIdEstado.Text = gvCitas.Rows[index].Cells[6].Text;
             }
             else if (e.CommandName == "eliminar")
             {
@@ -59,12 +62,15 @@ namespace TuProyecto
             }
         }
 
-        void Limpiar()
+        private void Limpiar()
         {
             hfIdCita.Value = "";
-            txtNombre.Text = "";
+            txtIdUsuario.Text = "";
+            txtIdBarbero.Text = "";
+            txtIdPuesto.Text = "";
             txtFecha.Text = "";
             txtHora.Text = "";
+            txtIdEstado.Text = "";
         }
     }
 }

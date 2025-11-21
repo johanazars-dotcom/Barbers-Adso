@@ -1,20 +1,15 @@
-﻿using AppBarbersAdso.Modelo;
+﻿using System.Collections.Generic;
+using Modelos;
 using Datos;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Web;
 
 namespace Logica
 {
     public class CitaL
     {
-        CitaD datos = new CitaD();
+        private CitaD Datos = new CitaD();
 
-        public List<CM> Listar() => datos.Listar();
-        public void GuardarCita(CitaM c) => datos.Guardar(c);
-        public void Eliminar(int id) => datos.Eliminar(id);
+        public List<CitaM> Listar() => Datos.Listar();
+        public void GuardarCita(CitaM c) => Datos.Guardar(c);
+        public void Eliminar(int id) => Datos.Eliminar(id);
     }
 }
-

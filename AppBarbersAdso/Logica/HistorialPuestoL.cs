@@ -1,19 +1,18 @@
-﻿using AppBarbersAdso.Datos;
+﻿// Asume que HistorialPuestoD está en AppBarbersAdso.Datos
+using AppBarbersAdso.Datos;
 using Modelos;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Vista;
 
 namespace Logica
 {
     public class HistorialPuestoL
     {
         private HistorialPuestoD datos = new HistorialPuestoD();
+
         public List<HistorialPuestoM> ListarHistorial(int idPuesto)
         {
             return datos.ObtenerHistorialPorPuesto(idPuesto);
         }
-
     }
 }

@@ -7,12 +7,12 @@ namespace Modelos
 {
     public class HistorialPuestoM
     {
-        public int IdCita { get; set; }
-        public int IdUsuario { get; set; }
-        public int IdBarbero { get; set; }
-        public int IdPuesto { get; set; }
-        public string Hora { get; set; }
-        public string FechaCita { get; set; }
-        public int IdEstado { get; set; }
+        public int idCita { get; set; }
+        public int idUsuario { get; set; }
+        public int idBarbero { get; set; }
+        public int idPuesto { get; set; }
+        public string hora { get; set; }
+        public DateTime fechaCita { get; set; } // Mapea a la columna 'fecha'
+        // idEstado ha sido omitida
     }
 }

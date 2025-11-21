@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Vista
 {
@@ -11,13 +8,23 @@ namespace Vista
     {
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            int idPuesto = Convert.ToInt32(txtIdPuesto.Text);
+            int idPuesto = 0;
 
-            Logica.HistorialPuestoL logica = new Logica.HistorialPuestoL();
-            List<Modelos.HistorialPuestoM> lista = logica.ListarHistorial(idPuesto);
+            // Uso de TryParse para entrada segura
+            if (int.TryParse(txtIdPuesto.Text, out idPuesto))
+            {
+                Logica.HistorialPuestoL logica = new Logica.HistorialPuestoL();
+                List<Modelos.HistorialPuestoM> lista = logica.ListarHistorial(idPuesto);
 
-            GridHistorial.DataSource = lista;
-            GridHistorial.DataBind();
+                GridHistorial.DataSource = lista;
+                GridHistorial.DataBind();
+            }
+            else
+            {
+                // Limpiar el GridView si la entrada no es válida
+                GridHistorial.DataSource = null;
+                GridHistorial.DataBind();
+            }
         }
     }
 }

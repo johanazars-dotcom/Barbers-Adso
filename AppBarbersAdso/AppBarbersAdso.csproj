@@ -68,8 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Vista\Actualizar.aspx" />
-    <Content Include="Vista\HistorialCita.aspx" />
-    <Content Include="Vista\HistorialPuestoV.aspx" />
+    <Content Include="Vista\Citas.aspx" />
     <Content Include="Vista\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -77,15 +76,10 @@
     <Compile Include="Datos\CitaD.cs" />
     <Compile Include="Datos\ClConexion.cs" />
     <Compile Include="Datos\ClUsuarioD.cs" />
-    <Compile Include="Datos\HistorialCitaD.cs" />
-    <Compile Include="Datos\HistorialPuestoD.cs" />
+    <Compile Include="Logica\CitaL.cs" />
     <Compile Include="Logica\ClUsuarioL.cs" />
-    <Compile Include="Logica\HistorialCitaL.cs" />
-    <Compile Include="Logica\HistorialPuestoL.cs" />
     <Compile Include="Modelo\CitaM.cs" />
     <Compile Include="Modelo\ClUsuarioM.cs" />
-    <Compile Include="Modelo\HistorialCitaM.cs" />
-    <Compile Include="Modelo\HistorialPuestoM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\Actualizar.aspx.cs">
       <DependentUpon>Actualizar.aspx</DependentUpon>
@@ -94,19 +88,12 @@
     <Compile Include="Vista\Actualizar.aspx.designer.cs">
       <DependentUpon>Actualizar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vista\HistorialCita.aspx.cs">
-      <DependentUpon>HistorialCita.aspx</DependentUpon>
+    <Compile Include="Vista\Citas.aspx.cs">
+      <DependentUpon>Citas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\HistorialCita.aspx.designer.cs">
-      <DependentUpon>HistorialCita.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\HistorialPuestoV.aspx.cs">
-      <DependentUpon>HistorialPuestoV.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\HistorialPuestoV.aspx.designer.cs">
-      <DependentUpon>HistorialPuestoV.aspx</DependentUpon>
+    <Compile Include="Vista\Citas.aspx.designer.cs">
+      <DependentUpon>Citas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

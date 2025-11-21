@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Citas.aspx.cs" Inherits="TuProyecto.Citas" %>
+﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Citas.aspx.cs" Inherits="Vista.Citas" %>
 
 <!DOCTYPE html>
 <html>
@@ -14,8 +14,18 @@
     <asp:HiddenField ID="hfIdCita" runat="server" />
 
     <div class="mb-3">
-        <label>Nombre del cliente:</label>
-        <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server"></asp:TextBox>
+        <label>ID Usuario:</label>
+        <asp:TextBox ID="txtIdUsuario" CssClass="form-control" runat="server"></asp:TextBox>
+    </div>
+
+    <div class="mb-3">
+        <label>ID Barbero:</label>
+        <asp:TextBox ID="txtIdBarbero" CssClass="form-control" runat="server"></asp:TextBox>
+    </div>
+
+    <div class="mb-3">
+        <label>ID Puesto:</label>
+        <asp:TextBox ID="txtIdPuesto" CssClass="form-control" runat="server"></asp:TextBox>
     </div>
 
     <div class="mb-3">
@@ -28,6 +38,11 @@
         <asp:TextBox ID="txtHora" CssClass="form-control" runat="server"></asp:TextBox>
     </div>
 
+    <div class="mb-3">
+        <label>ID Estado:</label>
+        <asp:TextBox ID="txtIdEstado" CssClass="form-control" runat="server"></asp:TextBox>
+    </div>
+
     <asp:Button ID="btnGuardar" Text="Guardar" CssClass="btn btn-success w-100"
         runat="server" OnClick="btnGuardar_Click" />
 
@@ -37,15 +52,15 @@
         AutoGenerateColumns="False"
         OnRowCommand="gvCitas_RowCommand">
         <Columns>
-
             <asp:BoundField DataField="idCita" HeaderText="ID" />
-            <asp:BoundField DataField="nombreCliente" HeaderText="Cliente" />
+            <asp:BoundField DataField="idUsuario" HeaderText="Usuario" />
+            <asp:BoundField DataField="idBarbero" HeaderText="Barbero" />
+            <asp:BoundField DataField="idPuesto" HeaderText="Puesto" />
             <asp:BoundField DataField="fechaCita" HeaderText="Fecha" DataFormatString="{0:yyyy-MM-dd}" />
             <asp:BoundField DataField="hora" HeaderText="Hora" />
-
+            <asp:BoundField DataField="idEstado" HeaderText="Estado" />
             <asp:ButtonField Text="Editar" CommandName="editar" ControlStyle-CssClass="btn btn-primary btn-sm" />
             <asp:ButtonField Text="Eliminar" CommandName="eliminar" ControlStyle-CssClass="btn btn-danger btn-sm" />
-
         </Columns>
     </asp:GridView>
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Modelos;
 
 namespace Vista
 {
@@ -13,8 +14,11 @@ namespace Vista
         {
             if (!IsPostBack)
             {
-                Datos.HistorialCitaD datos = new Datos.HistorialCitaD();
-                var historial = datos.ObtenerHistorial(1); // Cambia el ID según el usuario logueado
+                // Usando la clase CitaD corregida
+                Datos.CitaD datos = new Datos.CitaD();
+
+                // Usando el modelo CitaM corregido
+                List<Modelos.CitaM> historial = datos.ObtenerHistorial(1);
 
                 gvHistorial.DataSource = historial;
                 gvHistorial.DataBind();
@@ -22,4 +26,3 @@ namespace Vista
         }
     }
 }
-

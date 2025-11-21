@@ -5,11 +5,18 @@ using System.Web;
 
 namespace Modelos
 {
-    public class HistorialCitaM
+    public class CitaM
     {
-        public int IdCita { get; set; }
-        public string nombreCliente { get; set; }
-        public string FechaCita { get; set; }
-        public string Hora { get; set; }
+        public int idCita { get; set; }        // Columna: idCita
+        public int idUsuario { get; set; }     // Columna: idUsuario
+        public int idBarbero { get; set; }     // Columna: idBarbero
+        public int idPuesto { get; set; }      // Columna: idPuesto
+
+        // Corregido a DateTime para manejar la columna 'fecha' (DATE en SQL)
+        public DateTime fechaCita { get; set; }
+
+        public string hora { get; set; }       // Columna: hora
+
+        // La propiedad idEstado ha sido eliminada.
     }
 }
