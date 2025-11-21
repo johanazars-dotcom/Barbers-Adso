@@ -16,8 +16,32 @@ namespace AppBarbersAdso.Vista
         {
 
         }
+        private bool HayCamposVacios(Control contenedor)
+        {
+            foreach (Control ctrl in contenedor.Controls)
+            {
+                if (ctrl is TextBox txt)
+                {
+                    if (string.IsNullOrWhiteSpace(txt.Text))
+                        return true;
+                }
+
+                if (ctrl.HasControls())
+                {
+                    if (HayCamposVacios(ctrl)) return true;
+                }
+            }
+            return false;
+        }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
+            if (HayCamposVacios(this))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerta",
+                    "alert('Debes llenar todos los campos antes de registrar');", true);
+                return;
+            }
+
             string documento = txtDocumento.Text.Trim();
 
             if (documento == "")
@@ -111,6 +135,7 @@ namespace AppBarbersAdso.Vista
                 lblResultado.Text = "Ha ocurrido un error: " + mensaje;
             }
         }
+
     }
 
 }
