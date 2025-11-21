@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build
+bin/
+obj/
+Debug/
+Release/
+
+# NuGet
+packages/
+*.nupkg
+
+# IIS Express
+applicationhost.config
+
+# Archivos temporales
+*.dll
+*.pdb
+*.cache
+*.log
+
+# Archivos de configuración locales
+*.db
+*.mdf
