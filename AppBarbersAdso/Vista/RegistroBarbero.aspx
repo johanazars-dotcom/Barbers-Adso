@@ -30,6 +30,12 @@
             font-weight: 600;
         }
 
+        .form-control, .form-select {
+            background-color: #ffffff !important;
+            color: #000 !important;
+            border: 1px solid #d4af37 !important;
+        }
+
         .btn-dorado {
             background: linear-gradient(135deg, #d4af37, #b8860b);
             border: none;
@@ -38,10 +44,10 @@
             width: 100%;
         }
 
-            .btn-dorado:hover {
-                background: #e6c200;
-                color: #000;
-            }
+        .btn-dorado:hover {
+            background: #e6c200;
+            color: #000;
+        }
     </style>
 
     <div class="container mt-5 mb-5">
@@ -65,7 +71,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <asp:Label ID="lblDocumento" runat="server" Text="Número de Documento" CssClass="form-label" />
+                    <asp:Label ID="lblDocumento" runat="server" Text="Documento" CssClass="form-label" />
                     <asp:TextBox ID="txtDocumento" runat="server" CssClass="form-control" />
                 </div>
 
@@ -84,12 +90,25 @@
                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" />
                 </div>
 
+                <!-- PUESTOS -->
+                <div class="mb-3">
+                    <asp:Label ID="lblPuesto" runat="server" Text="Puesto de la Barbería" CssClass="form-label" />
+                    <asp:DropDownList 
+                        ID="ddlPuestos" 
+                        runat="server" 
+                        CssClass="form-control form-select"
+                        Style="background:white; color:black; font-weight:bold;">
+                    </asp:DropDownList>
+                </div>
+
+                <!-- FOTO -->
                 <div class="mb-3">
                     <label class="form-label">Foto (JPG / PNG)</label>
                     <asp:FileUpload ID="fuFoto" runat="server" CssClass="form-control" onchange="previewImage(this)" />
                     <img id="imgPreview" style="max-width: 150px; margin-top: 10px; display: none;" />
                 </div>
 
+                <!-- HOJA DE VIDA -->
                 <div class="mb-3">
                     <label class="form-label">Hoja de Vida (PDF)</label>
                     <asp:FileUpload ID="fuHojaVida" runat="server" CssClass="form-control" />
@@ -98,8 +117,7 @@
 
                 <asp:Button ID="btnRegistrar" runat="server" Text="Registrarse" CssClass="btn-dorado" OnClick="btnRegistrar_Click" />
 
-                <br />
-                <br />
+                <br /><br />
 
                 <asp:Label ID="lblResultado" runat="server" CssClass="mt-3 fw-bold text-success" />
 

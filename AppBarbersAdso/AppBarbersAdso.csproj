@@ -70,12 +70,6 @@
     <Content Include="Vista\Actualizar.aspx" />
     <Content Include="Vista\ActualizarBarbero.aspx" />
     <Content Include="Vista\envioCorreo.aspx" />
-    <Content Include="Vista\foto\1093298177.jpg" />
-    <Content Include="Vista\foto\10932981774.jpg" />
-    <Content Include="Vista\foto\1096197850.jpg" />
-    <Content Include="Vista\foto\14145521452.jpg" />
-    <Content Include="Vista\foto\14515145154145414541454151515145.jpg" />
-    <Content Include="Vista\foto\520510852105282.jpg" />
     <Content Include="Vista\Inicio.aspx" />
     <Content Include="Vista\LoginAdmin.aspx" />
     <Content Include="Vista\LoginBarbero.aspx" />
@@ -91,12 +85,15 @@
     <Compile Include="Datos\ClAdminD.cs" />
     <Compile Include="Datos\ClBarberoD.cs" />
     <Compile Include="Datos\ClConexion.cs" />
+    <Compile Include="Datos\ClPuestosD.cs" />
     <Compile Include="Datos\ClUsuarioD.cs" />
     <Compile Include="Logica\ClAdminL.cs" />
     <Compile Include="Logica\ClBarberoL.cs" />
+    <Compile Include="Logica\ClPuestosL.cs" />
     <Compile Include="Logica\ClUsuarioL.cs" />
     <Compile Include="Modelo\ClAdminM.cs" />
     <Compile Include="Modelo\ClBarberoM.cs" />
+    <Compile Include="Modelo\ClPuestosM.cs" />
     <Compile Include="Modelo\ClUsuarioM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\Actualizar.aspx.cs">
@@ -186,12 +183,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Vista\hojaVida\1096197850.pdf" />
-    <Content Include="Vista\hojaVida\1093298177.pdf" />
-    <Content Include="Vista\hojaVida\10932981774.pdf" />
-    <Content Include="Vista\hojaVida\14145521452.pdf" />
-    <Content Include="Vista\hojaVida\14515145154145414541454151515145.pdf" />
-    <Content Include="Vista\hojaVida\520510852105282.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,7 +190,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Vista\foto\" />
+    <Folder Include="Vista\hojaVida\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

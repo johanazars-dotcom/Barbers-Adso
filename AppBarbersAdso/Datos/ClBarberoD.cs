@@ -7,14 +7,13 @@ using System.Web;
 
 namespace AppBarbersAdso.Datos
 {
-	public class ClBarberoD
-	{
+    public class ClBarberoD
+    {
         ClConexion conexion = new ClConexion();
         public ClBarberoM MtLoginBarbero(string user, string pass)
         {
             SqlConnection conex = conexion.MtabrirConexion();
-
-            string consulta = $"select * from barbero where email = @user and contraseña = @pass";
+            string consulta = @"select b.*, p.numeroPuesto from barbero b INNER JOIN puesto p ON b.idPuesto = p.idPuesto where b.email = @user AND b.contraseña = @pass";
 
             SqlCommand cmd = new SqlCommand(consulta, conex);
             cmd.Parameters.AddWithValue("@user", user);
@@ -27,15 +26,17 @@ namespace AppBarbersAdso.Datos
             if (lea.Read())
             {
                 barbero = new ClBarberoM();
+                barbero.idBarbero = Convert.ToInt32(lea["idBarbero"]);
+                barbero.nombreBarbero = lea["nombreBarbero"].ToString();
+                barbero.apellidoBarbero = lea["apellidoBarbero"].ToString();
                 barbero.email = lea["email"].ToString();
-                barbero.contraseña = lea["contraseña"].ToString();
+                barbero.idPuesto = Convert.ToInt32(lea["idPuesto"]);
+                barbero.numeroPuesto = lea["numeroPuesto"].ToString();
             }
 
             conexion.MtcerrarConexion();
-
             return barbero;
         }
-
         public void MtActualizarPerfilBarbero(ClBarberoM actualizar)
         {
             SqlConnection conex = conexion.MtabrirConexion();
@@ -71,22 +72,27 @@ namespace AppBarbersAdso.Datos
                 return "duplicado";
             }
 
-      
-            string consulta = "insert into barbero (nombreBarbero, apellidoBarbero, documento, email, contraseña, foto, hojaVida,  telefono) " + "values (@nom, @ape, @docu, @email, @contra, @foto, @hojaVida, @tel)";
+            string consulta = @"insert into barbero (nombreBarbero, apellidoBarbero, documento, email, contraseña, foto, hojaVida, telefono, idPuesto) values (@nom, @ape, @docu, @correo, @contra, @foto, @hoja, @tel, @puesto)";
 
             SqlCommand cmd = new SqlCommand(consulta, conex);
+
             cmd.Parameters.AddWithValue("@nom", datos.nombreBarbero);
             cmd.Parameters.AddWithValue("@ape", datos.apellidoBarbero);
             cmd.Parameters.AddWithValue("@docu", datos.documento);
-            cmd.Parameters.AddWithValue("@email", datos.email);
+            cmd.Parameters.AddWithValue("@correo", datos.email);
             cmd.Parameters.AddWithValue("@contra", datos.contraseña);
             cmd.Parameters.AddWithValue("@foto", datos.foto);
-            cmd.Parameters.AddWithValue("@hojaVida", datos.hojaVida);
+            cmd.Parameters.AddWithValue("@hoja", datos.hojaVida);
             cmd.Parameters.AddWithValue("@tel", datos.telefono);
-
+            cmd.Parameters.AddWithValue("@puesto", datos.idPuesto);
             cmd.ExecuteNonQuery();
-            conexion.MtcerrarConexion();
 
+            string consultaUpdate = "UPDATE puesto SET estado = 'Ocupado' WHERE idPuesto = @puesto";
+            SqlCommand cmd2 = new SqlCommand(consultaUpdate, conex);
+            cmd2.Parameters.AddWithValue("@puesto", datos.idPuesto);
+            cmd2.ExecuteNonQuery();
+
+            conexion.MtcerrarConexion();
             return "ok";
         }
         public ClBarberoM MtObtenerBarbero(string email)
