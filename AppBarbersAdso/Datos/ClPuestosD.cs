@@ -75,6 +75,64 @@ namespace AppBarbersAdso.Datos
             conexion.MtcerrarConexion();
             return lista;
         }
+        public List<ClPuestosM> ListarPuestosParaEditar(int idPuestoActual)
+        {
+            SqlConnection conex = conexion.MtabrirConexion();
+
+            string consulta = @"
+        SELECT * FROM puesto
+        WHERE estado = 'Disponible' OR idPuesto = @actual";
+
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@actual", idPuestoActual);
+
+            SqlDataReader lea = cmd.ExecuteReader();
+
+            List<ClPuestosM> lista = new List<ClPuestosM>();
+
+            while (lea.Read())
+            {
+                lista.Add(new ClPuestosM()
+                {
+                    idPuesto = int.Parse(lea["idPuesto"].ToString()),
+                    numeroPuesto = lea["numeroPuesto"].ToString(),
+                    estado = lea["estado"].ToString()
+                });
+            }
+
+            lea.Close();
+            conexion.MtcerrarConexion();
+
+            return lista;
+        }
+        public List<ClPuestosM> ListarPuestosDisponiblesSolo()
+        {
+            SqlConnection conex = conexion.MtabrirConexion();
+
+            string consulta = "SELECT * FROM puesto WHERE estado = 'Disponible'";
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+
+            SqlDataReader lea = cmd.ExecuteReader();
+
+            List<ClPuestosM> lista = new List<ClPuestosM>();
+
+            while (lea.Read())
+            {
+                lista.Add(new ClPuestosM()
+                {
+                    idPuesto = int.Parse(lea["idPuesto"].ToString()),
+                    numeroPuesto = lea["numeroPuesto"].ToString(),
+                    estado = lea["estado"].ToString()
+                });
+            }
+
+            lea.Close();
+            conexion.MtcerrarConexion();
+
+            return lista;
+        }
+
+
     }
 }
 

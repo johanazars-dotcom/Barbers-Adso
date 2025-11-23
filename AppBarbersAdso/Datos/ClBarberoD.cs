@@ -37,23 +37,34 @@ namespace AppBarbersAdso.Datos
             conexion.MtcerrarConexion();
             return barbero;
         }
-        public void MtActualizarPerfilBarbero(ClBarberoM actualizar)
+        public void MtActualizarBarberoPorId(ClBarberoM datos)
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
-            string consulta = "update barbero " + "set nombreBarbero = @nombre, apellidoBarbero = @apellido, documento = @documento, email = @email, contraseña = @contraseña, telefono = @telefono " + "where email = @email";
+            string consulta = @"
+        UPDATE barbero SET
+            nombreBarbero = @nombre,
+            apellidoBarbero = @apellido,
+            documento = @documento,
+            email = @correo,
+            contraseña = @contra,
+            telefono = @telefono,
+            idPuesto = @puesto
+        WHERE idBarbero = @id";
+
             SqlCommand cmd = new SqlCommand(consulta, conex);
 
-            cmd.Parameters.AddWithValue("@nombre", actualizar.nombreBarbero);
-            cmd.Parameters.AddWithValue("@apellido", actualizar.apellidoBarbero);
-            cmd.Parameters.AddWithValue("@documento", actualizar.documento);
-            cmd.Parameters.AddWithValue("@email", actualizar.email);
-            cmd.Parameters.AddWithValue("@contraseña", actualizar.contraseña);
-            cmd.Parameters.AddWithValue("@telefono", actualizar.telefono);
+            cmd.Parameters.AddWithValue("@id", datos.idBarbero);
+            cmd.Parameters.AddWithValue("@nombre", datos.nombreBarbero);
+            cmd.Parameters.AddWithValue("@apellido", datos.apellidoBarbero);
+            cmd.Parameters.AddWithValue("@documento", datos.documento);
+            cmd.Parameters.AddWithValue("@correo", datos.email);
+            cmd.Parameters.AddWithValue("@contra", datos.contraseña);
+            cmd.Parameters.AddWithValue("@telefono", datos.telefono);
+            cmd.Parameters.AddWithValue("@puesto", datos.idPuesto);
 
             cmd.ExecuteNonQuery();
-
-            conexion.MtcerrarConexion();
+            conex.Close();
         }
 
         public string MtRegistrarBarbero(ClBarberoM datos)
@@ -95,33 +106,56 @@ namespace AppBarbersAdso.Datos
             conexion.MtcerrarConexion();
             return "ok";
         }
-        public ClBarberoM MtObtenerBarbero(string email)
+        public ClBarberoM MtObtenerBarberoPorId(int id)
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
-            string consulta = "select * from barbero where email = @correo";
+            string consulta = @"
+        SELECT 
+            b.idBarbero,
+            b.nombreBarbero,
+            b.apellidoBarbero,
+            b.documento,
+            b.email,
+            b.contraseña,
+            b.foto,
+            b.hojaVida,
+            b.telefono,
+            b.idPuesto,
+            p.numeroPuesto
+        FROM barbero b
+        INNER JOIN puesto p ON b.idPuesto = p.idPuesto
+        WHERE b.idBarbero = @id";
+
             SqlCommand cmd = new SqlCommand(consulta, conex);
-            cmd.Parameters.AddWithValue("@correo", email);
+            cmd.Parameters.AddWithValue("@id", id);
 
-            SqlDataReader lea = cmd.ExecuteReader();
+            SqlDataReader dr = cmd.ExecuteReader();
 
-            ClBarberoM barbero = null;
+            ClBarberoM bar = null;
 
-            if (lea.Read())
+            if (dr.Read())
             {
-                barbero = new ClBarberoM();
-                barbero.nombreBarbero = lea["nombreBarbero"].ToString();
-                barbero.apellidoBarbero = lea["apellidoBarbero"].ToString();
-                barbero.documento = lea["documento"].ToString();
-                barbero.email = lea["email"].ToString();
-                barbero.contraseña = lea["contraseña"].ToString();
-                barbero.telefono = lea["telefono"].ToString();
+                bar = new ClBarberoM()
+                {
+                    idBarbero = Convert.ToInt32(dr["idBarbero"]),
+                    nombreBarbero = dr["nombreBarbero"].ToString(),
+                    apellidoBarbero = dr["apellidoBarbero"].ToString(),
+                    documento = dr["documento"].ToString(),
+                    email = dr["email"].ToString(),
+                    contraseña = dr["contraseña"].ToString(),
+                    foto = dr["foto"].ToString(),
+                    hojaVida = dr["hojaVida"].ToString(),
+                    telefono = dr["telefono"].ToString(),
+                    idPuesto = Convert.ToInt32(dr["idPuesto"]),
+                    numeroPuesto = dr["numeroPuesto"].ToString()
+                };
             }
 
-            lea.Close();
-
+            dr.Close();
             conexion.MtcerrarConexion();
-            return barbero;
+
+            return bar;
         }
     }
 }

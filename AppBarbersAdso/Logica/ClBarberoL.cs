@@ -22,17 +22,17 @@ namespace AppBarbersAdso.Logica
 
             return false;
         }
-        public string MtActualizarPerfilBarberoL(ClBarberoM barbero)
+        public void MtActualizarBarberoPorIdL(ClBarberoM datos)
         {
-            ClBarberoD oBarberoD = new ClBarberoD();
-            oBarberoD.MtActualizarPerfilBarbero(barbero);
-            return "Datos actualizados correctamente.";
+            ClBarberoD d = new ClBarberoD();
+            d.MtActualizarBarberoPorId(datos);
         }
-        public ClBarberoM MtObtenerBarberoL(string email)
+        public ClBarberoM MtObtenerBarberoPorIdL(int id)
         {
             ClBarberoD datos = new ClBarberoD();
-            return datos.MtObtenerBarbero(email);
+            return datos.MtObtenerBarberoPorId(id);
         }
+
         public string MtRegitroBarbero(ClBarberoM barbero)
         {
             ClBarberoD datos = new ClBarberoD();

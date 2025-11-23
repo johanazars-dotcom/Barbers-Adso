@@ -40,7 +40,21 @@ namespace AppBarbersAdso.Datos
             List<ClBarberoM> lista = new List<ClBarberoM>();
             SqlConnection cn = conexion.MtabrirConexion();
 
-            string sql = "select * from barbero";
+            string sql = @"SELECT 
+                        b.idBarbero,
+                        b.nombreBarbero,
+                        b.apellidoBarbero,
+                        b.documento,
+                        b.email,
+                        b.contraseña,
+                        b.foto,
+                        b.hojaVida,
+                        b.telefono,
+                        b.idPuesto,
+                        p.numeroPuesto
+                   FROM barbero b
+                   INNER JOIN puesto p ON b.idPuesto = p.idPuesto";
+
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataReader listar = cmd.ExecuteReader();
 
@@ -56,14 +70,14 @@ namespace AppBarbersAdso.Datos
                     contraseña = listar["contraseña"].ToString(),
                     foto = listar["foto"].ToString(),
                     hojaVida = listar["hojaVida"].ToString(),
-                    telefono = listar["telefono"].ToString()
+                    telefono = listar["telefono"].ToString(),
+                    idPuesto = int.Parse(listar["idPuesto"].ToString()),
+                    numeroPuesto = listar["numeroPuesto"].ToString()
                 });
             }
 
             conexion.MtcerrarConexion();
             return lista;
         }
-
-
     }
 }

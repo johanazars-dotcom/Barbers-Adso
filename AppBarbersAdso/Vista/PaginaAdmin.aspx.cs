@@ -17,6 +17,7 @@ namespace AppBarbersAdso.Vista
                 CargarBarberos();
             }
         }
+
         private void CargarBarberos()
         {
             ClAdminL logica = new ClAdminL();
@@ -28,5 +29,6 @@ namespace AppBarbersAdso.Vista
         {
             Response.Redirect("RegistroBarbero.aspx");
         }
+
     }
 }

@@ -1,5 +1,4 @@
-﻿<%@ Page Title="Panel Admin" Language="C#" MasterPageFile="~/Vista/Site1.master"
-    AutoEventWireup="true" CodeBehind="PaginaAdmin.aspx.cs" Inherits="AppBarbersAdso.Vista.PaginaAdmin" %>
+﻿<%@ Page Title="Panel Admin" Language="C#" MasterPageFile="~/Vista/Site1.master"AutoEventWireup="true" CodeBehind="PaginaAdmin.aspx.cs" Inherits="AppBarbersAdso.Vista.PaginaAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -27,6 +26,7 @@
                 <asp:BoundField DataField="idBarbero" HeaderText="ID" />
                 <asp:BoundField DataField="nombreBarbero" HeaderText="Nombre" />
                 <asp:BoundField DataField="apellidoBarbero" HeaderText="Apellido" />
+                <asp:BoundField DataField="numeroPuesto" HeaderText="Puesto" />
                 <asp:BoundField DataField="documento" HeaderText="Documento" />
                 <asp:BoundField DataField="email" HeaderText="Email" />
                 <asp:BoundField DataField="telefono" HeaderText="Teléfono" />
@@ -45,6 +45,16 @@
                            target="_blank"
                            class="btn btn-sm btn-outline-warning">
                             Ver PDF
+                        </a>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                <asp:TemplateField HeaderText="Editar">
+                    <ItemTemplate>
+                        <a href='ActualizarBarbero.aspx?id=<%# Eval("idBarbero") %>'
+                           class="btn btn-sm btn-outline-info"
+                           title="Editar">
+                            <i class="fa fa-pencil"></i>
                         </a>
                     </ItemTemplate>
                 </asp:TemplateField>

@@ -20,5 +20,16 @@ namespace AppBarbersAdso.Logica
             ClPuestosD datos = new ClPuestosD();
             datos.CambiarEstadoPuesto(idPuesto, estado);
         }
+        public List<ClPuestosM> ListarPuestosParaEditarL(int idPuestoActual)
+        {
+            ClPuestosD d = new ClPuestosD();
+            return d.ListarPuestosParaEditar(idPuestoActual);
+        }
+        public List<ClPuestosM> ListarPuestosDisponiblesSoloL()
+        {
+            ClPuestosD d = new ClPuestosD();
+            return d.ListarPuestosDisponiblesSolo();
+        }
+
     }
 }
