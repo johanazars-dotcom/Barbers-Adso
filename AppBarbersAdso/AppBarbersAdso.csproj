@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Vista\Actualizar.aspx" />
     <Content Include="Vista\ActualizarBarbero.aspx" />
+    <Content Include="Vista\Citas.aspx" />
     <Content Include="Vista\envioCorreo.aspx" />
     <Content Include="Vista\Inicio.aspx" />
     <Content Include="Vista\LoginAdmin.aspx" />
@@ -82,15 +83,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\CitaD.cs" />
     <Compile Include="Datos\ClAdminD.cs" />
     <Compile Include="Datos\ClBarberoD.cs" />
     <Compile Include="Datos\ClConexion.cs" />
     <Compile Include="Datos\ClPuestosD.cs" />
     <Compile Include="Datos\ClUsuarioD.cs" />
+    <Compile Include="Logica\CitaL.cs" />
     <Compile Include="Logica\ClAdminL.cs" />
     <Compile Include="Logica\ClBarberoL.cs" />
     <Compile Include="Logica\ClPuestosL.cs" />
     <Compile Include="Logica\ClUsuarioL.cs" />
+    <Compile Include="Modelo\CitaM.cs" />
     <Compile Include="Modelo\ClAdminM.cs" />
     <Compile Include="Modelo\ClBarberoM.cs" />
     <Compile Include="Modelo\ClPuestosM.cs" />
@@ -109,6 +113,13 @@
     </Compile>
     <Compile Include="Vista\ActualizarBarbero.aspx.designer.cs">
       <DependentUpon>ActualizarBarbero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Citas.aspx.cs">
+      <DependentUpon>Citas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Citas.aspx.designer.cs">
+      <DependentUpon>Citas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\envioCorreo.aspx.cs">
       <DependentUpon>envioCorreo.aspx</DependentUpon>

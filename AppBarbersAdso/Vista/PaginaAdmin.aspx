@@ -4,7 +4,6 @@
 
     <div class="card card-barber shadow-lg p-4 rounded-4">
 
-        <!-- PANEL DE REGISTRO -->
         <div class="card card-barber p-4 col-md-6 mx-auto text-center">
             <h2 class="text-warning mb-4">Panel de Registro</h2>
 
@@ -20,9 +19,12 @@
 
         <h3 class="text-center mb-4" style="color: #d4af37;">Listado de Barberos Registrados</h3>
 
-        <!-- TABLA DE BARBEROS -->
-        <asp:GridView ID="gvBarberos" runat="server" CssClass="table table-dark table-bordered text-center"
+        <asp:GridView 
+            ID="gvBarberos" 
+            runat="server"
+            CssClass="table table-dark table-bordered text-center"
             AutoGenerateColumns="False">
+
             <Columns>
 
                 <asp:BoundField DataField="nombreBarbero" HeaderText="Nombre" />
@@ -36,7 +38,7 @@
                     <ItemTemplate>
                         <img src='<%# ResolveUrl("~/Vista/foto/" + Eval("foto")) %>'
                              width="60" height="60"
-                             style="border-radius:50%; object-fit:cover;" />
+                             style="border-radius:50%; object-fit:cover; border:2px solid #d4af37;" />
                     </ItemTemplate>
                 </asp:TemplateField>
 
@@ -76,7 +78,6 @@
 
     </div>
 
-    <!-- CONFIRMAR ELIMINACIÓN -->
     <script>
         function ConfirmarEliminar(id) {
             var respuesta = confirm("¿Estás seguro de eliminar este barbero?");

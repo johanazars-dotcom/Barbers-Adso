@@ -16,9 +16,12 @@ namespace AppBarbersAdso.Vista
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            // Eliminar toda la sesión
             Session.Clear();
             Session.Abandon();
-            Response.Redirect("LoginAdmin.aspx");
+
+            // Redirigir al inicio general del sitio
+            Response.Redirect("Inicio.aspx");
         }
     }
 }

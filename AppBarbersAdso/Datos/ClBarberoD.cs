@@ -234,6 +234,42 @@ namespace AppBarbersAdso.Datos
             }
             catch { }
         }
+        public List<ClBarberoM> MtListarBarberos()
+        {
+            List<ClBarberoM> lista = new List<ClBarberoM>();
+            SqlConnection conex = conexion.MtabrirConexion();
+
+            string consulta = @"
+        SELECT 
+            b.idBarbero,
+            b.nombreBarbero,
+            b.apellidoBarbero,
+            b.idPuesto,
+            p.numeroPuesto
+        FROM barbero b
+        INNER JOIN puesto p ON b.idPuesto = p.idPuesto
+    ";
+
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                lista.Add(new ClBarberoM
+                {
+                    idBarbero = Convert.ToInt32(dr["idBarbero"]),
+                    nombreBarbero = dr["nombreBarbero"].ToString(),
+                    apellidoBarbero = dr["apellidoBarbero"].ToString(),
+                    idPuesto = Convert.ToInt32(dr["idPuesto"]),
+                    numeroPuesto = dr["numeroPuesto"].ToString()
+                });
+            }
+
+            dr.Close();
+            conexion.MtcerrarConexion();
+
+            return lista;
+        }
     }
 
 }

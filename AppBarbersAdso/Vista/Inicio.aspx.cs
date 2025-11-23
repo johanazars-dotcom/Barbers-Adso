@@ -20,6 +20,11 @@ namespace AppBarbersAdso.Vista
             Session.Abandon();   
             Response.Redirect("Inicio.aspx");
         }
+
+        protected void btnCitas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Citas.aspx");
+        }
     }
 
 }

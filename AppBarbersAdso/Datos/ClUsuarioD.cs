@@ -60,7 +60,7 @@ namespace AppBarbersAdso.Datos
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
-            string consulta = $"select * from usuario where email = @user and contraseña = @pass";
+            string consulta = "select * from usuario where email = @user and contraseña = @pass";
 
             SqlCommand cmd = new SqlCommand(consulta, conex);
             cmd.Parameters.AddWithValue("@user", user);
@@ -73,10 +73,16 @@ namespace AppBarbersAdso.Datos
             if (lea.Read())
             {
                 usuario = new ClUsuarioM();
+                usuario.idUsuario = Convert.ToInt32(lea["idUsuario"]);   // ← FALTABA
+                usuario.nombre = lea["nombre"].ToString();
+                usuario.apellido = lea["apellido"].ToString();
+                usuario.documento = lea["documento"].ToString();
                 usuario.email = lea["email"].ToString();
                 usuario.contraseña = lea["contraseña"].ToString();
+                usuario.telefono = lea["telefono"].ToString();
             }
 
+            lea.Close();
             conexion.MtcerrarConexion();
 
             return usuario;

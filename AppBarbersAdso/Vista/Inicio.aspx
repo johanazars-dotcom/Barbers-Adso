@@ -1,102 +1,12 @@
-﻿<%@ Page Title="Inicio" Language="C#" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="AppBarbersAdso.Vista.Inicio" %>
+﻿<%@ Page Title="Inicio" Language="C#" AutoEventWireup="true"
+    CodeBehind="Inicio.aspx.cs"
+    Inherits="AppBarbersAdso.Vista.Inicio"
+    MasterPageFile="~/Vista/Site1.master" %>
 
-<!DOCTYPE html>
-<html lang="es">
-<head runat="server">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BARBERS ADSO - Barbería Profesional</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-
-    <style>
-        body { background: #0d0d0d; color: #fff; }
-
-        .gold { color: #d4af37 !important; }
-
-        .btn-gold {
-            border: 1px solid #d4af37;
-            color: #d4af37 !important;
-            font-weight: bold;
-        }
-
-        .btn-gold:hover {
-            background: #d4af37;
-            color: #000 !important;
-        }
-
-        .section-box {
-            background: #111;
-            border: 1px solid #d4af37;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 0 20px #d4af3777;
-        }
-
-        html { scroll-behavior: smooth; }
-    </style>
-</head>
-
-<body>
-<form id="form1" runat="server">
-
-    <nav class="navbar navbar-expand-lg shadow-sm sticky-top"
-         style="background: #111; border-bottom: 2px solid #d4af37;">
-        <div class="container">
-
-            <a href="Inicio.aspx" class="navbar-brand fs-3 gold fw-bold">
-                <i class="bi bi-scissors"></i> BARBERS ADSO
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarMenu" aria-controls="navbarMenu"
-                    aria-expanded="false" aria-label="Menú"
-                    style="border: 1px solid #d4af37;">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav ms-auto fw-semibold">
-                    <li class="nav-item"><a href="#inicio" class="nav-link gold">Inicio</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link gold">Nosotros</a></li>
-                    <li class="nav-item"><a href="#services" class="nav-link gold">Servicios</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link gold">Contacto</a></li>
-
-                    <% if (Session["Usuario"] == null) { %>
-
-                        <li class="nav-item ms-3">
-                            <a href="WebForm1.aspx" class="btn btn-gold fw-bold">Iniciar Sesión</a>
-                        </li>
-
-                        <li class="nav-item ms-2">
-                            <a href="Registrar.aspx" class="btn btn-gold fw-bold">Registrar</a>
-                        </li>
-
-                    <% } else { %>
-
-                        <li class="nav-item ms-3 d-flex align-items-center">
-                            <span class="gold fw-bold me-2">
-                                <i class="bi bi-person-circle"></i>
-                                <%: Session["Usuario"] %>
-                            </span>
-
-                            <asp:Button ID="btnCerrarSesion" runat="server"
-                                        Text="Cerrar Sesión"
-                                        CssClass="btn btn-gold btn-sm"
-                                        OnClick="btnCerrarSesion_Click" />
-                        </li>
-
-                    <% } %>
-
-                </ul>
-            </div>
-
-        </div>
-    </nav>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <section id="inicio" class="text-center d-flex align-items-center justify-content-center"
-             style="height: 60vh; background: url('https://wallpapercave.com/wp/wp9537038.jpg') center/cover no-repeat; position: relative;">
+        style="height: 60vh; background: url('https://wallpapercave.com/wp/wp9537038.jpg') center/cover no-repeat; position: relative;">
 
         <div class="position-absolute top-0 w-100 h-100" style="background: rgba(0,0,0,0.75);"></div>
 
@@ -173,17 +83,6 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 mb-4">
-                    <div class="section-box">
-                        <h4 class="mb-4 gold">Agenda tu Cita</h4>
-
-                        <input type="text" class="form-control mb-3" placeholder="Nombre completo" />
-                        <input type="email" class="form-control mb-3" placeholder="Correo electrónico" />
-                        <textarea class="form-control mb-3" rows="4" placeholder="Servicio deseado"></textarea>
-
-                        <button class="btn btn-gold w-100 fw-bold">Enviar</button>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -191,17 +90,6 @@
 
     <footer class="bg-black text-center py-4" style="border-top: 1px solid #d4af37;">
         <div class="container">
-            <h4 class="fw-bold mb-3 gold">Síguenos en nuestras redes</h4>
-
-            <div class="mb-3">
-                <a href="#" class="gold me-3"><i class="bi bi-facebook fs-4"></i></a>
-                <a href="#" class="gold me-3"><i class="bi bi-instagram fs-4"></i></a>
-                <a href="#" class="gold me-3"><i class="bi bi-twitter-x fs-4"></i></a>
-                <a href="#" class="gold me-3"><i class="bi bi-linkedin fs-4"></i></a>
-                <a href="#" class="gold"><i class="bi bi-youtube fs-4"></i></a>
-            </div>
-
-            <hr class="border-warning" />
 
             <p class="mb-0 small gold fw-semibold">
                 <span class="fw-bold">BARBERS ADSO</span> — Sistema de Gestión de Barbería
@@ -209,9 +97,4 @@
         </div>
     </footer>
 
-</form>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
+</asp:Content>
