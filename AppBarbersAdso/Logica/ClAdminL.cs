@@ -22,6 +22,13 @@ namespace AppBarbersAdso.Logica
 
             return false;
         }
+        public ClAdminM MtLoginAdmin_GetObject(string email, string contra)
+        {
+            ClAdminD oAdminD = new ClAdminD();
+            ClAdminM admin = oAdminD.MtLoginAdmin(email, contra);
+
+            return admin; // Puede ser null si no existe
+        }
 
         public List<ClBarberoM> ListarBarberosL()
         {

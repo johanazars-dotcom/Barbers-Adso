@@ -10,24 +10,33 @@ namespace AppBarbersAdso.Vista
 {
 	public partial class LoginAdmin : System.Web.UI.Page
 	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            // Si ya está logueado, enviarlo al panel admin
+            if (Session["usuarioLogueado"] != null)
+            {
+                Response.Redirect("PaginaAdmin.aspx");
+                return;
+            }
+        }
 
-		}
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtClave.Text))
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
+                string.IsNullOrWhiteSpace(txtClave.Text))
             {
                 lblMensaje.Text = "Debes llenar todos los campos.";
                 return;
             }
 
             ClAdminL logica = new ClAdminL();
-            bool ingreso = logica.MtLoginAdminL(txtUsuario.Text.Trim(), txtClave.Text.Trim());
+            var admin = logica.MtLoginAdmin_GetObject(txtUsuario.Text.Trim(), txtClave.Text.Trim());
 
-            if (ingreso)
+            if (admin != null)
             {
-                Session["usuario"] = txtUsuario.Text;
+                // Guardar el OBJETO en sesión
+                Session["usuarioLogueado"] = admin;
+
                 Response.Redirect("PaginaAdmin.aspx");
             }
             else
@@ -35,6 +44,5 @@ namespace AppBarbersAdso.Vista
                 lblMensaje.Text = "Correo o contraseña incorrectos.";
             }
         }
-
     }
 }

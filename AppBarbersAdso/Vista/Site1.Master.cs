@@ -9,9 +9,16 @@ namespace AppBarbersAdso.Vista
 {
 	public partial class Site1 : System.Web.UI.MasterPage
 	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            // Nada extra, todo se controla desde el Session directamente
+        }
 
-		}
-	}
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("LoginAdmin.aspx");
+        }
+    }
 }

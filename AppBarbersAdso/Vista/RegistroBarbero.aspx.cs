@@ -14,6 +14,11 @@ namespace AppBarbersAdso.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuarioLogueado"] == null)
+            {
+                Response.Redirect("LoginAdmin.aspx");
+                return;
+            }
             if (!IsPostBack)
             {
                 CargarPuestos();
@@ -29,7 +34,6 @@ namespace AppBarbersAdso.Vista
             ddlPuestos.DataValueField = "idPuesto";
             ddlPuestos.DataBind();
 
-            // 👉 ESTO HACE VISIBLE EL TEXTO SIEMPRE
             ddlPuestos.Attributes.Add("style", "background:white; color:black; font-weight:bold;");
         }
 
@@ -69,7 +73,7 @@ namespace AppBarbersAdso.Vista
             string nombreFoto = "";
             string nombrePdf = "";
 
-            // --- FOTO ---
+            // ========== FOTO ==========
             if (fuFoto.HasFile)
             {
                 string ext = Path.GetExtension(fuFoto.FileName).ToLower();
@@ -87,11 +91,12 @@ namespace AppBarbersAdso.Vista
                     return;
                 }
 
-                nombreFoto = documento + ext;
+                // GENERAR NOMBRE ÚNICO
+                nombreFoto = Guid.NewGuid().ToString() + ext;
                 fuFoto.SaveAs(Path.Combine(rutaFoto, nombreFoto));
             }
 
-            // --- HOJA DE VIDA ---
+            // ========== HOJA DE VIDA ==========
             if (fuHojaVida.HasFile)
             {
                 string ext = Path.GetExtension(fuHojaVida.FileName).ToLower();
@@ -109,11 +114,12 @@ namespace AppBarbersAdso.Vista
                     return;
                 }
 
-                nombrePdf = documento + ext;
+                // NOMBRE ÚNICO PARA PDF
+                nombrePdf = Guid.NewGuid().ToString() + ext;
                 fuHojaVida.SaveAs(Path.Combine(rutaHojaVida, nombrePdf));
             }
 
-            // --- MODELO ---
+            // ========== MODELO ==========
             ClBarberoM registroBarber = new ClBarberoM();
             registroBarber.nombreBarbero = txtNombre.Text;
             registroBarber.apellidoBarbero = txtApellidos.Text;
@@ -125,7 +131,7 @@ namespace AppBarbersAdso.Vista
             registroBarber.hojaVida = nombrePdf;
             registroBarber.idPuesto = int.Parse(ddlPuestos.SelectedValue);
 
-            // --- LÓGICA ---
+            // ========== LÓGICA ==========
             ClBarberoL logicaBarbero = new ClBarberoL();
             string mensaje = logicaBarbero.MtRegitroBarbero(registroBarber);
 
@@ -137,12 +143,12 @@ namespace AppBarbersAdso.Vista
 
             string r = mensaje.Trim().ToLower();
 
-            if (r == "duplicado")
+            if (r == "el correo ya está registrado")
             {
                 lblResultado.Text = "El correo ya está registrado.";
                 lblResultado.CssClass = "text-danger";
             }
-            else if (r == "ok")
+            else if (r == "registro exitoso")
             {
                 lblResultado.Text = "Registrado correctamente.";
                 lblResultado.CssClass = "text-success";

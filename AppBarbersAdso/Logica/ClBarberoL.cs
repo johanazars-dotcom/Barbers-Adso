@@ -49,5 +49,22 @@ namespace AppBarbersAdso.Logica
             return "ha ocurrido un error";
         }
 
+        public string MtEliminarBarberoL(int idBarbero)
+        {
+            ClBarberoD datos = new ClBarberoD();
+            string resultado = datos.MtEliminarBarbero(idBarbero);
+
+            if (resultado == "no_existe")
+            {
+                return "el barbero no existe";
+            }
+            if (resultado == "ok")
+            {
+                return "barbero eliminado correctamente";
+            }
+
+            return "ocurrió un error al eliminar";
+        }
+
     }
 }

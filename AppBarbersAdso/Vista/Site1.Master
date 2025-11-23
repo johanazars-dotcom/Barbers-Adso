@@ -5,10 +5,12 @@
 <head runat="server">
     <title>Barbers ADSO</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <style>
+        /* --------------------------- */
+        /*   ESTILOS GENERALES GLOBAL  */
+        /* --------------------------- */
         body {
             margin: 0;
             min-height: 100vh;
@@ -17,14 +19,9 @@
             font-family: 'Segoe UI', sans-serif;
         }
 
-        .overlay {
-            background: rgba(0, 0, 0, 0.85);
-            min-height: 100vh;
-        }
+        .overlay { background: rgba(0, 0, 0, 0.85); min-height: 100vh; }
 
-        .navbar {
-            border-bottom: 2px solid #d4af37;
-        }
+        .navbar { border-bottom: 2px solid #d4af37; }
 
         .navbar-brand {
             color: #d4af37 !important;
@@ -38,9 +35,7 @@
             font-weight: 600;
         }
 
-            .nav-link:hover {
-                color: #fff !important;
-            }
+        .nav-link:hover { color: #fff !important; }
 
         .dropdown-menu {
             background: #000;
@@ -52,41 +47,109 @@
             color: #000 !important;
         }
 
-        .contenido {
-            padding-top: 60px;
-        }
+        .contenido { padding-top: 60px; }
 
-        .card-barber {
-            background: rgba(0, 0, 0, 0.9);
+        .btn-gold {
             border: 1px solid #d4af37;
-            color: #fff;
-            border-radius: 15px;
+            color: #d4af37 !important;
+            font-weight: bold;
+            background: transparent;
         }
 
+        .btn-gold:hover {
+            background: #d4af37;
+            color: #000 !important;
+        }
+
+        .gold { color: #d4af37 !important; }
+
+
+        /* -------------------------------------- */
+        /*     🎨 ESTILO GLOBAL PARA PAGE ADMIN   */
+        /*  (IGUAL AL FORMULARIO DE INICIAR SESIÓN) */
+        /* -------------------------------------- */
+
+        /* Tarjetas del panel admin */
+        .card-barber {
+            background: #1a1a1a !important;
+            border: 2px solid #d4af37 !important;
+            color: #fff !important;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #d4af3777;
+        }
+
+        /* Títulos como el login */
+        .card-barber h2, 
+        h3, 
+        .panel-title {
+            color: #d4af37 !important;
+            font-weight: bold;
+        }
+
+        /* Botón dorado igual al login */
         .btn-dorado {
-            background: linear-gradient(135deg, #d4af37, #b8860b);
-            color: #000;
+            background: #e6c200 !important;
+            color: #000 !important;
             font-weight: bold;
             border: none;
+            border-radius: 6px;
         }
 
-            .btn-dorado:hover {
-                background: #e6c200;
-            }
-
-        label {
-            color: #d4af37;
+        .btn-dorado:hover {
+            background: #d4af37 !important;
+            color: #000 !important;
         }
+
+        /* Tabla oscura estilo login */
+        .table-dark {
+            background-color: #111 !important;
+            color: #fff !important;
+        }
+
+        .table-dark th {
+            background-color: #1a1a1a !important;
+            color: #d4af37 !important;
+            font-weight: bold;
+        }
+
+        .table-dark td {
+            background-color: #111 !important;
+            border-color: #333 !important;
+        }
+
+        /* Botones de acción */
+        .btn-outline-info {
+            border-color: #00c8ff !important;
+            color: #00c8ff !important;
+        }
+
+        .btn-outline-info:hover {
+            background: #00c8ff !important;
+            color: #000 !important;
+        }
+
+        .btn-outline-danger {
+            border-color: #ff4d4d !important;
+            color: #ff4d4d !important;
+        }
+
+        .btn-outline-danger:hover {
+            background: #ff4d4d !important;
+            color: #000 !important;
+        }
+
     </style>
 </head>
+
 <body>
     <form runat="server">
         <div class="overlay">
 
-            <!-- NAVBAR -->
+            <!-- NAVBAR GLOBAL -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-black px-4">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">✂ BARBERS ADSO</a>
+
+                    <a class="navbar-brand" href="Inicio.aspx">✂ BARBERS ADSO</a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuBarbers">
                         <span class="navbar-toggler-icon"></span>
@@ -95,32 +158,45 @@
                     <div class="collapse navbar-collapse justify-content-end" id="menuBarbers">
                         <ul class="navbar-nav">
 
+                            <% if (Session["usuarioLogueado"] == null) { %>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Login
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item text-white" href="WebForm1.aspx">Login Usuario</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item text-warning" href="LoginAdmin.aspx">Login Administrador
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item text-warning" href="LoginBarbero.aspx">Login Barbero
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle gold" href="#" role="button" data-bs-toggle="dropdown">
+                                        Login
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item text-white" href="WebForm1.aspx">Login Usuario</a></li>
+                                        <li><a class="dropdown-item text-warning" href="LoginAdmin.aspx">Login Administrador</a></li>
+                                        <li><a class="dropdown-item text-warning" href="LoginBarbero.aspx">Login Barbero</a></li>
+                                    </ul>
+                                </li>
 
+                            <% } else { %>
+
+                                <li class="nav-item d-flex align-items-center">
+
+                                    <span class="gold fw-bold me-3">
+                                        <i class="fa fa-user-circle"></i>
+                                        <%: ((AppBarbersAdso.Modelo.ClAdminM)Session["usuarioLogueado"]).email %>
+                                    </span>
+
+                                    <asp:Button ID="btnCerrarSesionMaster"
+                                        runat="server"
+                                        Text="Cerrar Sesión"
+                                        CssClass="btn btn-gold btn-sm"
+                                        OnClick="btnCerrarSesion_Click" />
+
+                                </li>
+
+                            <% } %>
 
                         </ul>
                     </div>
+
                 </div>
             </nav>
 
-            <!-- CONTENIDO -->
+            <!-- CONTENIDO INTERNO -->
             <div class="container contenido">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
             </div>
@@ -128,7 +204,6 @@
         </div>
     </form>
 
-    <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

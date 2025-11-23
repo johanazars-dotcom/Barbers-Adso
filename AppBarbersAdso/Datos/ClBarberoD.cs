@@ -157,5 +157,83 @@ namespace AppBarbersAdso.Datos
 
             return bar;
         }
+
+        public string MtEliminarBarbero(int idBarbero)
+        {
+            SqlConnection conex = conexion.MtabrirConexion();
+
+            // Obtener datos antes de eliminar
+            string consultaDatos = "SELECT foto, hojaVida, idPuesto FROM barbero WHERE idBarbero = @id";
+            SqlCommand cmdDatos = new SqlCommand(consultaDatos, conex);
+            cmdDatos.Parameters.AddWithValue("@id", idBarbero);
+
+            SqlDataReader dr = cmdDatos.ExecuteReader();
+
+            string foto = "";
+            string hojaVida = "";
+            int idPuesto = 0;
+
+            if (dr.Read())
+            {
+                foto = dr["foto"].ToString();
+                hojaVida = dr["hojaVida"].ToString();
+                idPuesto = Convert.ToInt32(dr["idPuesto"]);
+            }
+            else
+            {
+                dr.Close();
+                conexion.MtcerrarConexion();
+                return "no_existe";
+            }
+
+            dr.Close();
+
+            // 2. Eliminar barbero
+            string consultaEliminar = "DELETE FROM barbero WHERE idBarbero = @id";
+            SqlCommand cmdEliminar = new SqlCommand(consultaEliminar, conex);
+            cmdEliminar.Parameters.AddWithValue("@id", idBarbero);
+            cmdEliminar.ExecuteNonQuery();
+
+            // 3. Dejar disponible el puesto
+            string consultaPuestoLibre = "UPDATE puesto SET estado = 'Disponible' WHERE idPuesto = @puesto";
+            SqlCommand cmdPuestoLibre = new SqlCommand(consultaPuestoLibre, conex);
+            cmdPuestoLibre.Parameters.AddWithValue("@puesto", idPuesto);
+            cmdPuestoLibre.ExecuteNonQuery();
+
+            conex.Close();
+
+            // 4. ELIMINAR ARCHIVOS (Foto + PDF)
+            EliminarArchivos(foto, hojaVida);
+
+            return "ok";
+        }
+
+        private void EliminarArchivos(string foto, string hojaVida)
+        {
+            try
+            {
+                // Eliminar foto
+                if (!string.IsNullOrEmpty(foto))
+                {
+                    string rutaFoto = HttpContext.Current.Server.MapPath("~/Vista/foto/" + foto);
+                    if (System.IO.File.Exists(rutaFoto))
+                    {
+                        System.IO.File.Delete(rutaFoto);
+                    }
+                }
+
+                // Eliminar hoja de vida
+                if (!string.IsNullOrEmpty(hojaVida))
+                {
+                    string rutaHoja = HttpContext.Current.Server.MapPath("~/Vista/hojaVida/" + hojaVida);
+                    if (System.IO.File.Exists(rutaHoja))
+                    {
+                        System.IO.File.Delete(rutaHoja);
+                    }
+                }
+            }
+            catch { }
+        }
     }
+
 }
