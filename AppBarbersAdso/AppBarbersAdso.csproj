@@ -76,6 +76,7 @@
     <Content Include="Vista\LoginBarbero.aspx" />
     <Content Include="Vista\PaginaAdmin.aspx" />
     <Content Include="Vista\recuperacion.aspx" />
+    <Content Include="Vista\RecuperarCorreo.aspx" />
     <Content Include="Vista\Registro.aspx" />
     <Content Include="Vista\RegistroBarbero.aspx" />
     <Content Include="Vista\Site1.Master" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="Vista\recuperacion.aspx.designer.cs">
       <DependentUpon>recuperacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\RecuperarCorreo.aspx.cs">
+      <DependentUpon>RecuperarCorreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\RecuperarCorreo.aspx.designer.cs">
+      <DependentUpon>RecuperarCorreo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>

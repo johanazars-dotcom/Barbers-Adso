@@ -1,47 +1,53 @@
-﻿using AppBarbersAdso.Logica;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AppBarbersAdso.Logica;
 
 namespace AppBarbersAdso.Vista
 {
     public partial class recuperacion : System.Web.UI.Page
     {
+        ClUsuarioL logica = new ClUsuarioL();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnRestablecer_Click(object sender, EventArgs e)
-        {
-            
-
-
-            string token = Request.QueryString["token"];
-            string nuevaPass = txtNuevaContra.Text;
-            string confirmar = txtConfirmar.Text;
-
-            if (nuevaPass != confirmar)
+            if (!IsPostBack)
             {
-                Response.Write("<script>alert('Las contraseñas no coinciden');</script>");
-                return;
+                string token = Request.QueryString["token"];
+
+                if (string.IsNullOrEmpty(token))
+                {
+                    lblMsg.CssClass = "text-danger";
+                    lblMsg.Text = "Token inválido.";
+                    btnGuardar.Enabled = false;
+                    return;
+                }
+
+                hfToken.Value = token;
             }
-
-            ClUsuarioL logica = new ClUsuarioL();
-            bool cambiado = logica.RestablecerContrasena(token, nuevaPass);
-
-            if (cambiado)
-                Response.Write("<script>alert('Contraseña actualizada correctamente');</script>");
-            else
-                Response.Write("<script>alert('Token inválido o expirado');</script>");
         }
 
-        protected void txtNuevaContra_TextChanged(object sender, EventArgs e)
+        protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            string token = hfToken.Value;
+            string nuevaPass = txtNuevaPass.Text;
 
+            bool ok = logica.RestablecerContrasena(token, nuevaPass);
+
+            if (ok)
+            {
+                lblMsg.CssClass = "text-success";
+                lblMsg.Text = "Contraseña actualizada correctamente.";
+            }
+            else
+            {
+                lblMsg.CssClass = "text-danger";
+                lblMsg.Text = "El token no es válido.";
+            }
         }
+
     }
 }

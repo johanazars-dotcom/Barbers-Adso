@@ -1,44 +1,53 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="recuperacion.aspx.cs" Inherits="AppBarbersAdso.Vista.recuperacion" %>
 
 <!DOCTYPE html>
-
 <html lang="es">
-<head>
-    <meta charset="UTF-8" />
+<head runat="server">
+    <meta charset="utf-8" />
     <title>Restablecer Contraseña</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- BOOTSTRAP 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background: #f0f2f5;
+        }
+        .card {
+            border-radius: 12px;
+        }
+    </style>
 </head>
-<body class="bg-light">
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-5">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h4 class="text-center mb-3">Ingresar código de recuperación</h4>
-                        <p class="text-muted text-center">Escribe el código enviado a tu correo</p>
 
+<body>
+    <form id="form1" runat="server">
 
-                        <form runat="server">
+        <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+            <div class="card p-4 shadow" style="width: 100%; max-width: 400px;">
+                
+                <h4 class="text-center mb-3">Restablecer contraseña</h4>
 
+                <!-- Token oculto -->
+                <asp:HiddenField ID="hfToken" runat="server" />
 
-                            <div class="mb-3">
-                                <label class="form-label">Nueva contraseña</label>
-                                <asp:TextBox ID="txtNuevaContra" CssClass="form-control" runat="server" TextMode="Password" placeholder="Nueva contraseña" required OnTextChanged="txtNuevaContra_TextChanged"></asp:TextBox>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label class="form-label">Confirmar contraseña</label>
-                                <asp:TextBox ID="txtConfirmar" CssClass="form-control" runat="server" TextMode="Password" placeholder="Confirmar contraseña"></asp:TextBox>
-                            </div>
-
-
-                            <asp:Button ID="btnRestablecer" runat="server" Text="Restablecer contraseña" CssClass="btn btn-success w-100" OnClick="btnRestablecer_Click" />
-                        </form>
-                    </div>
+                <div class="mb-3">
+                    <label class="form-label">Nueva contraseña</label>
+                    <asp:TextBox ID="txtNuevaPass" runat="server" TextMode="Password" CssClass="form-control" placeholder="Ingresa tu nueva contraseña"></asp:TextBox>
                 </div>
+
+                <asp:Button ID="btnGuardar" runat="server" Text="Guardar contraseña"
+                    CssClass="btn btn-primary w-100" OnClick="btnGuardar_Click" />
+
+                <br /><br />
+                <asp:Label ID="lblMsg" runat="server" CssClass="text-center d-block"></asp:Label>
+
             </div>
         </div>
-    </div>
+
+    </form>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

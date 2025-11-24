@@ -18,11 +18,10 @@ namespace AppBarbersAdso.Vista
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-           ClUsuarioL logica = new ClUsuarioL();
+            ClUsuarioL logica = new ClUsuarioL();
 
-
-            bool enviado = logica.EnviarToken(txtCorreo.Text);
-
+           
+            bool enviado = logica.EnviarToken(txtCorreo.Text.Trim());
 
             if (enviado)
             {
