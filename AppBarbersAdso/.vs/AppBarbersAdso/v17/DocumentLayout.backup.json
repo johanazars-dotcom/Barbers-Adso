@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\logica\\clbarberol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\logica\\clusuariol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:logica\\clusuariol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|c:\\users\\jhona\\desktop\\proyecto\\barbers-adso\\appbarbersadso\\logica\\clbarberol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:logica\\clbarberol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,11 +15,11 @@
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:datos\\clbarberod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|c:\\users\\jhona\\desktop\\proyecto\\barbers-adso\\appbarbersadso\\modelo\\clbarberom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\modelo\\clbarberom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:modelo\\clbarberom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|c:\\users\\jhona\\desktop\\proyecto\\barbers-adso\\appbarbersadso\\vista\\recuperacion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\vista\\recuperacion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\recuperacion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -41,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\modelo\\clusuariom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:modelo\\clusuariom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\logica\\clusuariol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:logica\\clusuariol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\vista\\actualizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -94,11 +94,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
               "Title": "ClUsuarioL.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Logica\\ClUsuarioL.cs",
               "RelativeDocumentMoniker": "Logica\\ClUsuarioL.cs",
@@ -107,11 +107,12 @@
               "ViewState": "AgIAAEwAAAAAAAAAAAAswGsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-05T13:32:09.008Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ClBarberoM.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\ClBarberoM.cs",
               "RelativeDocumentMoniker": "Modelo\\ClBarberoM.cs",
@@ -119,12 +120,11 @@
               "RelativeToolTip": "Modelo\\ClBarberoM.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAA6wBIAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T15:41:35.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T15:41:35.587Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "recuperacion.aspx",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\recuperacion.aspx",
               "RelativeDocumentMoniker": "Vista\\recuperacion.aspx",
@@ -132,12 +132,11 @@
               "RelativeToolTip": "Vista\\recuperacion.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-21T15:04:01.291Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T15:04:01.291Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "recuperacion.aspx.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\recuperacion.aspx.cs",
               "RelativeDocumentMoniker": "Vista\\recuperacion.aspx.cs",
@@ -161,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ClUsuarioD.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClUsuarioD.cs",
               "RelativeDocumentMoniker": "Datos\\ClUsuarioD.cs",
@@ -173,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "envioCorreo.aspx",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\envioCorreo.aspx",
               "RelativeDocumentMoniker": "Vista\\envioCorreo.aspx",
@@ -208,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ClBarberoD.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClBarberoD.cs",
               "RelativeDocumentMoniker": "Datos\\ClBarberoD.cs",
@@ -216,25 +215,24 @@
               "RelativeToolTip": "Datos\\ClBarberoD.cs",
               "ViewState": "AgIAAG0AAAAAAAAAAAAuwIwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T11:38:46.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T11:38:46.734Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ClBarberoL.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Logica\\ClBarberoL.cs",
               "RelativeDocumentMoniker": "Logica\\ClBarberoL.cs",
               "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Logica\\ClBarberoL.cs",
               "RelativeToolTip": "Logica\\ClBarberoL.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAQwEsAAABrAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAQwEgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-20T12:34:37.816Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "recuperacion.aspx.designer.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\recuperacion.aspx.designer.cs",
               "RelativeDocumentMoniker": "Vista\\recuperacion.aspx.designer.cs",
@@ -257,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "envioCorreo.aspx.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\envioCorreo.aspx.cs",
               "RelativeDocumentMoniker": "Vista\\envioCorreo.aspx.cs",
@@ -281,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ClUsuarioM.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\ClUsuarioM.cs",
               "RelativeDocumentMoniker": "Modelo\\ClUsuarioM.cs",

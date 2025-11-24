@@ -70,10 +70,10 @@ namespace AppBarbersAdso.Logica
         {
             try
             {
-                // 🔥 CODIFICAR EL TOKEN PARA QUE NO SE ROMPA EN LA URL
+                
                 string tokenSeguro = HttpUtility.UrlEncode(token);
 
-                string url = $"https://localhost:44369/Vista/recuperacionBarbero.aspx?token={tokenSeguro}";
+                string url = $"https://localhost:44369/Vista/recuperacionBarbero.aspx?token={tokenSeguro}";  
 
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress("jhonale19pr@gmail.com");
