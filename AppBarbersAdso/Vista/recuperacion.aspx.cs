@@ -1,10 +1,10 @@
-﻿using AppBarbersAdso.Logica;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AppBarbersAdso.Logica;
 
 namespace AppBarbersAdso.Vista
 {
@@ -45,8 +45,9 @@ namespace AppBarbersAdso.Vista
             else
             {
                 lblMsg.CssClass = "text-danger";
-                lblMsg.Text = "El enlace ha expirado o el token no es válido.";
+                lblMsg.Text = "El token no es válido.";
             }
         }
+
     }
 }

@@ -1,17 +1,63 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistroBarbero.aspx.cs" Inherits="AppBarbersAdso.Vista.RegistroBarbero" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Vista/Site1.Master" CodeBehind="RegistroBarbero.aspx.cs" Inherits="AppBarbersAdso.Vista.RegistroBarbero" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Registro de Barbero</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
-    <form id="formRegistro" runat="server" class="container mt-5">
-        <div class="card shadow">
-            <div class="card-header bg-primary text-white">
-                <h3 class="mb-0">Formulario de Registro</h3>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <style>
+        .card-barbero {
+            background: rgba(0, 0, 0, 0.90);
+            border: 1px solid #d4af37;
+            border-radius: 15px;
+            color: #f2f2f2;
+            padding: 25px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card-header-adso {
+            background: #d4af37;
+            color: #000;
+            font-weight: bold;
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding: 15px;
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+
+        label, .form-label {
+            color: #d4af37 !important;
+            font-weight: 600;
+        }
+
+        .form-control, .form-select {
+            background-color: #ffffff !important;
+            color: #000 !important;
+            border: 1px solid #d4af37 !important;
+        }
+
+        .btn-dorado {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            border: none;
+            color: #000;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .btn-dorado:hover {
+            background: #e6c200;
+            color: #000;
+        }
+    </style>
+
+    <div class="container mt-5 mb-5">
+
+        <div class="card-barbero shadow">
+
+            <div class="card-header-adso">
+                Registro de Barbero
             </div>
+
             <div class="card-body">
 
                 <div class="mb-3">
@@ -30,7 +76,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <asp:Label ID="lblEmail" runat="server" Text="Email" CssClass="form-label" />
+                    <asp:Label ID="lblEmail" runat="server" Text="Correo Electrónico" CssClass="form-label" />
                     <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="form-control" />
                 </div>
 
@@ -44,24 +90,40 @@
                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" />
                 </div>
 
+                <!-- PUESTOS -->
                 <div class="mb-3">
-                    <label class="form-label">Foto (JPG/PNG)</label>
-                    <asp:FileUpload ID="fuFoto" runat="server" CssClass="form-control" OnChange="previewImage(this)" />
+                    <asp:Label ID="lblPuesto" runat="server" Text="Puesto de la Barbería" CssClass="form-label" />
+                    <asp:DropDownList 
+                        ID="ddlPuestos" 
+                        runat="server" 
+                        CssClass="form-control form-select"
+                        Style="background:white; color:black; font-weight:bold;">
+                    </asp:DropDownList>
+                </div>
+
+                <!-- FOTO -->
+                <div class="mb-3">
+                    <label class="form-label">Foto (JPG / PNG)</label>
+                    <asp:FileUpload ID="fuFoto" runat="server" CssClass="form-control" onchange="previewImage(this)" />
                     <img id="imgPreview" style="max-width: 150px; margin-top: 10px; display: none;" />
                 </div>
 
+                <!-- HOJA DE VIDA -->
                 <div class="mb-3">
                     <label class="form-label">Hoja de Vida (PDF)</label>
                     <asp:FileUpload ID="fuHojaVida" runat="server" CssClass="form-control" />
-                    <p id="pdfNombre" class="mt-2 text-muted"></p>
+                    <p id="pdfNombre" class="mt-2 text-warning"></p>
                 </div>
-                <asp:Button ID="btnRegistrar" runat="server" Text="Registrarse" CssClass="btn btn-success" OnClick="btnRegistrar_Click" />
-                
-                <asp:Label ID="lblResultado" runat="server" CssClass="form-text mt-3 text-success" />
+
+                <asp:Button ID="btnRegistrar" runat="server" Text="Registrarse" CssClass="btn-dorado" OnClick="btnRegistrar_Click" />
+
+                <br /><br />
+
+                <asp:Label ID="lblResultado" runat="server" CssClass="mt-3 fw-bold text-success" />
 
             </div>
         </div>
-    </form>
+    </div>
 
     <script>
         function previewImage(input) {
@@ -79,5 +141,4 @@
         });
     </script>
 
-</body>
-</html>
+</asp:Content>

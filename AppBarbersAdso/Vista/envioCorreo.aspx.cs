@@ -18,17 +18,16 @@ namespace AppBarbersAdso.Vista
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-           ClUsuarioL logica = new ClUsuarioL();
+            ClUsuarioL logica = new ClUsuarioL();
 
+           
+            bool enviado = logica.EnviarToken(txtCorreo.Text.Trim());
 
-            bool enviado = logica.EnviarToken(txtCorreo.Text);
-
-
-            if (enviado == true)
+            if (enviado)
             {
-                Response.Write("<script>alert('Se envió un link de restablecimiento a tu correo.');</script>");
+                Response.Write("<script>alert('Se envió un token a tu correo.');</script>");
             }
-            else 
+            else
             {
                 Response.Write("<script>alert('Correo no encontrado.');</script>");
             }

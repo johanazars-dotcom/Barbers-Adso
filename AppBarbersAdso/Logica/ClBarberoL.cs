@@ -3,8 +3,6 @@ using AppBarbersAdso.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Mail;
 using System.Web;
 
 namespace AppBarbersAdso.Logica
@@ -24,17 +22,17 @@ namespace AppBarbersAdso.Logica
 
             return false;
         }
-        public string MtActualizarPerfilBarberoL(ClBarberoM barbero)
+        public void MtActualizarBarberoPorIdL(ClBarberoM datos)
         {
-            ClBarberoD oBarberoD = new ClBarberoD();
-            oBarberoD.MtActualizarPerfilBarbero(barbero);
-            return "Datos actualizados correctamente.";
+            ClBarberoD d = new ClBarberoD();
+            d.MtActualizarBarberoPorId(datos);
         }
-        public ClBarberoM MtObtenerBarberoL(string email)
+        public ClBarberoM MtObtenerBarberoPorIdL(int id)
         {
             ClBarberoD datos = new ClBarberoD();
-            return datos.MtObtenerBarbero(email);
+            return datos.MtObtenerBarberoPorId(id);
         }
+
         public string MtRegitroBarbero(ClBarberoM barbero)
         {
             ClBarberoD datos = new ClBarberoD();
@@ -48,58 +46,24 @@ namespace AppBarbersAdso.Logica
             {
                 return "registro exitoso";
             }
-            return resultado;
-        }
-        ClBarberoD datos = new ClBarberoD();
-        public bool EnviarToken(string correo)
-        {
-            var barber = datos.ObtenerBarberoPorCorreo(correo);
-            if (barber == null)
-            {
-                return false;
-            }
-
-            string token = Guid.NewGuid().ToString();
-
-            datos.GuardarToken(barber.idBarbero, token);
-
-            return EnviarCorreoRecuperacion(correo, token);
+            return "ha ocurrido un error";
         }
 
-        private bool EnviarCorreoRecuperacion(string correo, string token)
+        public string MtEliminarBarberoL(int idBarbero)
         {
-            try
+            ClBarberoD datos = new ClBarberoD();
+            string resultado = datos.MtEliminarBarbero(idBarbero);
+
+            if (resultado == "no_existe")
             {
-                
-                string tokenSeguro = HttpUtility.UrlEncode(token);
-
-                string url = $"https://localhost:44369/Vista/recuperacionBarbero.aspx?token={tokenSeguro}";  
-
-                MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("jhonale19pr@gmail.com");
-                mail.To.Add(correo);
-                mail.Subject = "Recuperación de contraseña";
-                mail.Body =
-                    "Haz clic en el siguiente enlace para restablecer tu contraseña:\n" +
-                    url + "\n\n" +
-                    "Este enlace no expira hasta que lo uses.";
-
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.EnableSsl = true;
-                smtp.Credentials = new NetworkCredential("jhonale19pr@gmail.com", "hcwh xqbr uwod ysas");
-                smtp.Send(mail);
-
-                return true;
+                return "el barbero no existe";
             }
-            catch
+            if (resultado == "ok")
             {
-                return false;
+                return "barbero eliminado correctamente";
             }
-        }
 
-        public bool RestablecerContrasena(string token, string nuevaPass)
-        {
-            return datos.ActualizarContraseñaToken(token, nuevaPass);
+            return "ocurrió un error al eliminar";
         }
 
     }

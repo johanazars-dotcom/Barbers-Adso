@@ -9,33 +9,42 @@ namespace AppBarbersAdso.Datos
 {
     public class ClUsuarioD
     {
-        string cadena = "Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;Encrypt=False;";
         ClConexion conexion = new ClConexion();
+
+        // ================================
+        //     ACTUALIZAR PERFIL
+        // ================================
         public void MtActualizarPerfil(ClUsuarioM actualizar)
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
-            string consulta = "update usuario " + "set nombre = @nombre, apellido = @apellido, documento = @documento,email = @email, contraseña = @contraseña, telefono = @telefono " + "where email = @email";
+            string consulta = "UPDATE usuario " +
+                              "SET nombre = @nombre, apellido = @apellido, documento = @documento, email = @correo, contraseña = @contraseña, telefono = @telefono " +
+                              "WHERE email = @correo";
+
             SqlCommand cmd = new SqlCommand(consulta, conex);
 
-            cmd.Parameters.AddWithValue("@nombre", actualizar.nombre);
-            cmd.Parameters.AddWithValue("@apellido", actualizar.apellido);
-            cmd.Parameters.AddWithValue("@documento", actualizar.documento);
-            cmd.Parameters.AddWithValue("@email", actualizar.email);
-            cmd.Parameters.AddWithValue("@contraseña", actualizar.contraseña);
-            cmd.Parameters.AddWithValue("@telefono", actualizar.telefono);
+            cmd.Parameters.AddWithValue("@nombre", actualizar.nombre.Trim());
+            cmd.Parameters.AddWithValue("@apellido", actualizar.apellido.Trim());
+            cmd.Parameters.AddWithValue("@documento", actualizar.documento.Trim());
+            cmd.Parameters.AddWithValue("@correo", actualizar.email.Trim());
+            cmd.Parameters.AddWithValue("@contraseña", actualizar.contraseña.Trim());
+            cmd.Parameters.AddWithValue("@telefono", actualizar.telefono.Trim());
 
             cmd.ExecuteNonQuery();
-
             conexion.MtcerrarConexion();
         }
+
+        // ================================
+        //        OBTENER USUARIO
+        // ================================
         public ClUsuarioM MtObtenerUsuario(string email)
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
-            string consulta = "select * from usuario where email = @correo";
+            string consulta = "SELECT * FROM usuario WHERE email = @correo";
             SqlCommand cmd = new SqlCommand(consulta, conex);
-            cmd.Parameters.AddWithValue("@correo", email);
+            cmd.Parameters.AddWithValue("@correo", email.Trim());
 
             SqlDataReader lea = cmd.ExecuteReader();
 
@@ -43,29 +52,34 @@ namespace AppBarbersAdso.Datos
 
             if (lea.Read())
             {
-                usuario = new ClUsuarioM();
-                usuario.nombre = lea["nombre"].ToString();
-                usuario.apellido = lea["apellido"].ToString();
-                usuario.documento = lea["documento"].ToString();
-                usuario.email = lea["email"].ToString();
-                usuario.contraseña = lea["contraseña"].ToString();
-                usuario.telefono = lea["telefono"].ToString();
+                usuario = new ClUsuarioM
+                {
+                    nombre = lea["nombre"].ToString(),
+                    apellido = lea["apellido"].ToString(),
+                    documento = lea["documento"].ToString(),
+                    email = lea["email"].ToString(),
+                    contraseña = lea["contraseña"].ToString(),
+                    telefono = lea["telefono"].ToString()
+                };
             }
 
             lea.Close();
-
             conexion.MtcerrarConexion();
             return usuario;
         }
-        public ClUsuarioM MtLogin(string user, string contraseña)
+
+        // ================================
+        //              LOGIN
+        // ================================
+        public ClUsuarioM MtLogin(string user, string pass)
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
-            string consulta = $"select * from usuario where email = @user and contraseña = @pass";
+            string consulta = "SELECT * FROM usuario WHERE email = @user AND contraseña = @pass";
 
             SqlCommand cmd = new SqlCommand(consulta, conex);
-            cmd.Parameters.AddWithValue("@user", user);
-            cmd.Parameters.AddWithValue("@pass", contraseña);
+            cmd.Parameters.AddWithValue("@user", user.Trim());
+            cmd.Parameters.AddWithValue("@pass", pass.Trim());
 
             SqlDataReader lea = cmd.ExecuteReader();
 
@@ -73,22 +87,33 @@ namespace AppBarbersAdso.Datos
 
             if (lea.Read())
             {
-                usuario = new ClUsuarioM();
-                usuario.email = lea["email"].ToString();
-                usuario.contraseña = lea["contraseña"].ToString();
+                usuario = new ClUsuarioM
+                {
+                    idUsuario = Convert.ToInt32(lea["idUsuario"]),
+                    nombre = lea["nombre"].ToString(),
+                    apellido = lea["apellido"].ToString(),
+                    documento = lea["documento"].ToString(),
+                    email = lea["email"].ToString(),
+                    contraseña = lea["contraseña"].ToString(),
+                    telefono = lea["telefono"].ToString()
+                };
             }
 
+            lea.Close();
             conexion.MtcerrarConexion();
-
             return usuario;
         }
+
+        // ================================
+        //       REGISTRAR USUARIO
+        // ================================
         public string MtRegistrarUsuario(ClUsuarioM datos)
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
-            string consultaExiste = "select count(*) from usuario where email = @correo";
+            string consultaExiste = "SELECT COUNT(*) FROM usuario WHERE email = @correo";
             SqlCommand cmdExiste = new SqlCommand(consultaExiste, conex);
-            cmdExiste.Parameters.AddWithValue("@correo", datos.email);
+            cmdExiste.Parameters.AddWithValue("@correo", datos.email.Trim());
 
             int existe = (int)cmdExiste.ExecuteScalar();
 
@@ -98,85 +123,92 @@ namespace AppBarbersAdso.Datos
                 return "duplicado";
             }
 
-
-            string consulta = "insert into usuario (nombre, apellido, documento, email, contraseña, telefono) " + "values (@nom, @ape, @docu, @email, @contra, @tel)";
+            string consulta = "INSERT INTO usuario (nombre, apellido, documento, email, contraseña, telefono) " +
+                              "VALUES (@nom, @ape, @docu, @correo, @contra, @tel)";
 
             SqlCommand cmd = new SqlCommand(consulta, conex);
-            cmd.Parameters.AddWithValue("@nom", datos.nombre);
-            cmd.Parameters.AddWithValue("@ape", datos.apellido);
-            cmd.Parameters.AddWithValue("@docu", datos.documento);
-            cmd.Parameters.AddWithValue("@email", datos.email);
-            cmd.Parameters.AddWithValue("@contra", datos.contraseña);
-            cmd.Parameters.AddWithValue("@tel", datos.telefono);
+            cmd.Parameters.AddWithValue("@nom", datos.nombre.Trim());
+            cmd.Parameters.AddWithValue("@ape", datos.apellido.Trim());
+            cmd.Parameters.AddWithValue("@docu", datos.documento.Trim());
+            cmd.Parameters.AddWithValue("@correo", datos.email.Trim());
+            cmd.Parameters.AddWithValue("@contra", datos.contraseña.Trim());
+            cmd.Parameters.AddWithValue("@tel", datos.telefono.Trim());
 
             cmd.ExecuteNonQuery();
             conexion.MtcerrarConexion();
 
             return "ok";
         }
+
+        // ================================
+        //   OBTENER POR CORREO (TOKEN)
+        // ================================
         public ClUsuarioM ObtenerUsuarioPorCorreo(string email)
         {
-            ClUsuarioM modelo = null;
+            SqlConnection conex = conexion.MtabrirConexion();
 
-            using (SqlConnection conn = new SqlConnection(cadena))
+            string consulta = "SELECT * FROM usuario WHERE email=@correo";
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@correo", email.Trim());
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            ClUsuarioM usuario = null;
+
+            if (dr.Read())
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM usuario WHERE email=@email", conn);
-
-                cmd.Parameters.AddWithValue("@email", email);
-
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                if (dr.Read())
+                usuario = new ClUsuarioM
                 {
-                    modelo = new ClUsuarioM
-                    {
-                        documento = dr["documento"].ToString(),
-                        email = dr["email"].ToString(),
-                        contraseña = dr["contraseña"].ToString(),
-                        TokenRecuperacion = dr["tokenRecuperacion"].ToString(),
-                        idUsuario = Convert.ToInt32(dr["idUsuario"])
-                    };
-                }
+                    idUsuario = Convert.ToInt32(dr["idUsuario"]),
+                    nombre = dr["nombre"].ToString(),
+                    apellido = dr["apellido"].ToString(),
+                    documento = dr["documento"].ToString(),
+                    email = dr["email"].ToString(),
+                    contraseña = dr["contraseña"].ToString(),
+                    telefono = dr["telefono"].ToString(),
+                    TokenRecuperacion = dr["tokenRecuperacion"].ToString()
+                };
             }
 
-            return modelo;
+            dr.Close();
+            conexion.MtcerrarConexion();
+            return usuario;
         }
-        
 
-
+        // ================================
+        //       GUARDAR TOKEN
+        // ================================
         public void GuardarToken(int idUsuario, string token)
         {
-            using (SqlConnection conn = new SqlConnection(cadena))
-            {
-                conn.Open();
+            SqlConnection conex = conexion.MtabrirConexion();
 
-                SqlCommand cmd = new SqlCommand(
-                    "UPDATE usuario SET tokenRecuperacion=@token WHERE idUsuario=@id", conn);
+            string consulta = "UPDATE usuario SET tokenRecuperacion=@token WHERE idUsuario=@id";
 
-                cmd.Parameters.AddWithValue("@token", token);
-                cmd.Parameters.AddWithValue("@id", idUsuario);
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@token", token.Trim());
+            cmd.Parameters.AddWithValue("@id", idUsuario);
 
-                cmd.ExecuteNonQuery();
-            }
+            cmd.ExecuteNonQuery();
+            conexion.MtcerrarConexion();
         }
 
-
+      
         public bool ActualizarContraseñaToken(string token, string nuevaPass)
         {
-            using (SqlConnection conn = new SqlConnection(cadena))
-            {
-                conn.Open();
+            SqlConnection conex = conexion.MtabrirConexion();
 
-                SqlCommand cmd = new SqlCommand(
-                    "UPDATE usuario SET contraseña=@pass, tokenRecuperacion=NULL " +
-                    "WHERE tokenRecuperacion=@token", conn);
+            string consulta = @"UPDATE usuario 
+                                SET contraseña=@pass, tokenRecuperacion=NULL
+                                WHERE tokenRecuperacion=@token";
 
-                cmd.Parameters.AddWithValue("@pass", nuevaPass);
-                cmd.Parameters.AddWithValue("@token", token);
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@pass", nuevaPass.Trim());
+            cmd.Parameters.AddWithValue("@token", token.Trim());
 
-                return cmd.ExecuteNonQuery() > 0;
-            }
+            bool actualizado = cmd.ExecuteNonQuery() > 0;
+
+            conexion.MtcerrarConexion();
+            return actualizado;
         }
     }
-}
+}    

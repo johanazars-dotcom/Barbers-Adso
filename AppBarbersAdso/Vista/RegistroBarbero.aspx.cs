@@ -1,12 +1,12 @@
-﻿using AppBarbersAdso.Logica;
-using AppBarbersAdso.Modelo;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AppBarbersAdso.Logica;
+using AppBarbersAdso.Modelo;
 
 namespace AppBarbersAdso.Vista
 {
@@ -14,17 +14,58 @@ namespace AppBarbersAdso.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-        protected void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            string documento = txtDocumento.Text.Trim();
-
-            if (documento == "")
+            if (Session["usuarioLogueado"] == null)
             {
-                lblResultado.Text = "El documento es obligatorio.";
+                Response.Redirect("LoginAdmin.aspx");
                 return;
             }
+            if (!IsPostBack)
+            {
+                CargarPuestos();
+            }
+        }
+
+        private void CargarPuestos()
+        {
+            ClPuestosL logica = new ClPuestosL();
+
+            ddlPuestos.DataSource = logica.ListarPuestosDisponiblesL();
+            ddlPuestos.DataTextField = "numeroPuesto";
+            ddlPuestos.DataValueField = "idPuesto";
+            ddlPuestos.DataBind();
+
+            ddlPuestos.Attributes.Add("style", "background:white; color:black; font-weight:bold;");
+        }
+
+        private bool HayCamposVacios(Control contenedor)
+        {
+            foreach (Control ctrl in contenedor.Controls)
+            {
+                if (ctrl is TextBox txt)
+                {
+                    if (string.IsNullOrWhiteSpace(txt.Text))
+                        return true;
+                }
+
+                if (ctrl.HasControls())
+                {
+                    if (HayCamposVacios(ctrl))
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (HayCamposVacios(this))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerta",
+                    "alert('Debes llenar todos los campos antes de registrar');", true);
+                return;
+            }
+
+            string documento = txtDocumento.Text.Trim();
 
             string rutaFoto = Server.MapPath("~/Vista/foto/");
             string rutaHojaVida = Server.MapPath("~/Vista/hojaVida/");
@@ -32,11 +73,11 @@ namespace AppBarbersAdso.Vista
             string nombreFoto = "";
             string nombrePdf = "";
 
+            // ========== FOTO ==========
             if (fuFoto.HasFile)
             {
                 string ext = Path.GetExtension(fuFoto.FileName).ToLower();
                 int tam = fuFoto.PostedFile.ContentLength;
-                int limite = 2000000;
 
                 if (ext != ".jpg" && ext != ".png")
                 {
@@ -44,21 +85,22 @@ namespace AppBarbersAdso.Vista
                     return;
                 }
 
-                if (tam > limite)
+                if (tam > 3000000)
                 {
                     lblResultado.Text = "La foto no debe superar los 2 MB.";
                     return;
                 }
 
-                nombreFoto = documento + ext;
+                // GENERAR NOMBRE ÚNICO
+                nombreFoto = Guid.NewGuid().ToString() + ext;
                 fuFoto.SaveAs(Path.Combine(rutaFoto, nombreFoto));
             }
 
+            // ========== HOJA DE VIDA ==========
             if (fuHojaVida.HasFile)
             {
                 string ext = Path.GetExtension(fuHojaVida.FileName).ToLower();
                 int tam = fuHojaVida.PostedFile.ContentLength;
-                int limite = 5000000;
 
                 if (ext != ".pdf")
                 {
@@ -66,18 +108,19 @@ namespace AppBarbersAdso.Vista
                     return;
                 }
 
-                if (tam > limite)
+                if (tam > 5000000)
                 {
                     lblResultado.Text = "El PDF no debe superar los 5 MB.";
                     return;
                 }
 
-                nombrePdf = documento + ext;
+                // NOMBRE ÚNICO PARA PDF
+                nombrePdf = Guid.NewGuid().ToString() + ext;
                 fuHojaVida.SaveAs(Path.Combine(rutaHojaVida, nombrePdf));
             }
 
+            // ========== MODELO ==========
             ClBarberoM registroBarber = new ClBarberoM();
-
             registroBarber.nombreBarbero = txtNombre.Text;
             registroBarber.apellidoBarbero = txtApellidos.Text;
             registroBarber.documento = documento;
@@ -86,21 +129,38 @@ namespace AppBarbersAdso.Vista
             registroBarber.telefono = txtTelefono.Text;
             registroBarber.foto = nombreFoto;
             registroBarber.hojaVida = nombrePdf;
+            registroBarber.idPuesto = int.Parse(ddlPuestos.SelectedValue);
 
-            ClBarberoL logica = new ClBarberoL();
-            string mensaje = logica.MtRegitroBarbero(registroBarber);
+            // ========== LÓGICA ==========
+            ClBarberoL logicaBarbero = new ClBarberoL();
+            string mensaje = logicaBarbero.MtRegitroBarbero(registroBarber);
 
-            if (mensaje == "duplicado")
+            if (mensaje == null)
+            {
+                lblResultado.Text = "Mensaje llegó vacío";
+                return;
+            }
+
+            string r = mensaje.Trim().ToLower();
+
+            if (r == "el correo ya está registrado")
             {
                 lblResultado.Text = "El correo ya está registrado.";
+                lblResultado.CssClass = "text-danger";
             }
-            else if (mensaje == "ok")
+            else if (r == "registro exitoso")
             {
                 lblResultado.Text = "Registrado correctamente.";
+                lblResultado.CssClass = "text-success";
             }
-            
+            else
+            {
+                lblResultado.Text = "Ocurrió un error.";
+                lblResultado.CssClass = "text-danger";
+            }
         }
     }
-
 }
+
+
 
