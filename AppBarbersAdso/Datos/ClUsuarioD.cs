@@ -192,9 +192,7 @@ namespace AppBarbersAdso.Datos
             conexion.MtcerrarConexion();
         }
 
-        // ================================
-        //   ACTUALIZAR CONTRASEÑA TOKEN
-        // ================================
+      
         public bool ActualizarContraseñaToken(string token, string nuevaPass)
         {
             SqlConnection conex = conexion.MtabrirConexion();

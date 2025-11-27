@@ -100,7 +100,7 @@ namespace AppBarbersAdso.Logica
 
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                 smtp.EnableSsl = true;
-                smtp.Credentials = new NetworkCredential("jhonale19pr@gmail.com", "mahz owcn glwx yxf");
+                smtp.Credentials = new NetworkCredential("jhonale19pr@gmail.com", "dhid mrgg hjxs xsgu");
 
                 smtp.Send(mail);
 
@@ -112,17 +112,13 @@ namespace AppBarbersAdso.Logica
             }
         }
 
-        // ====================================
-        //     RESTABLECER CONTRASEÑA
-        // ====================================
+        
         public bool RestablecerContrasena(string token, string nuevaPass)
         {
             return datos.ActualizarContraseñaToken(token.Trim(), nuevaPass.Trim());
         }
 
-        // ====================================
-        //  CONFIRMACIÓN DE CORREO (REGISTRO)
-        // ====================================
+       
         public bool ConfirmacionCorreo(string correo)
         {
             try

@@ -16,10 +16,8 @@ namespace AppBarbersAdso.Logica
             return citaD.MtListarCitas();
         }
 
-        // GUARDAR O EDITAR CITA
         public string MtGuardarCita(CitaM c)
         {
-            // Validar si el barbero ya tiene una cita a esa misma fecha y hora
             if (citaD.BarberoOcupado(c.idBarbero, c.fechaCita, c.hora))
             {
                 return "ocupado";
@@ -29,7 +27,6 @@ namespace AppBarbersAdso.Logica
             return "ok";
         }
 
-        // ELIMINAR CITA
         public void MtEliminarCita(int id)
         {
             citaD.MtEliminarCita(id);
