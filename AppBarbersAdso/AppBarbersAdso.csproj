@@ -70,13 +70,16 @@
     <Content Include="Vista\Actualizar.aspx" />
     <Content Include="Vista\ActualizarBarbero.aspx" />
     <Content Include="Vista\Citas.aspx" />
+    <Content Include="Vista\confirmacionCuenta.aspx" />
     <Content Include="Vista\envioCorreo.aspx" />
+    <Content Include="Vista\envioCorreoBarbero.aspx" />
     <Content Include="Vista\Inicio.aspx" />
     <Content Include="Vista\LoginAdmin.aspx" />
     <Content Include="Vista\LoginBarbero.aspx" />
     <Content Include="Vista\PaginaAdmin.aspx" />
     <Content Include="Vista\PanelBarbero.aspx" />
     <Content Include="Vista\recuperacion.aspx" />
+    <Content Include="Vista\recuperacionBarbero.aspx" />
     <Content Include="Vista\RecuperarCorreo.aspx" />
     <Content Include="Vista\Registro.aspx" />
     <Content Include="Vista\RegistroBarbero.aspx" />
@@ -125,12 +128,26 @@
     <Compile Include="Vista\Citas.aspx.designer.cs">
       <DependentUpon>Citas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\confirmacionCuenta.aspx.cs">
+      <DependentUpon>confirmacionCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\confirmacionCuenta.aspx.designer.cs">
+      <DependentUpon>confirmacionCuenta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\envioCorreo.aspx.cs">
       <DependentUpon>envioCorreo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\envioCorreo.aspx.designer.cs">
       <DependentUpon>envioCorreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\envioCorreoBarbero.aspx.cs">
+      <DependentUpon>envioCorreoBarbero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\envioCorreoBarbero.aspx.designer.cs">
+      <DependentUpon>envioCorreoBarbero.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -173,6 +190,13 @@
     </Compile>
     <Compile Include="Vista\recuperacion.aspx.designer.cs">
       <DependentUpon>recuperacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\recuperacionBarbero.aspx.cs">
+      <DependentUpon>recuperacionBarbero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\recuperacionBarbero.aspx.designer.cs">
+      <DependentUpon>recuperacionBarbero.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\RecuperarCorreo.aspx.cs">
       <DependentUpon>RecuperarCorreo.aspx</DependentUpon>

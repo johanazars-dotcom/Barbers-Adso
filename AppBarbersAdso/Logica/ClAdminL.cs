@@ -49,6 +49,29 @@ namespace AppBarbersAdso.Logica
 
             return lista;
         }
+        public clContrato ObtenerContratoEditarL(int idContrato)
+        {
+            ClAdminD datos = new ClAdminD();
+            clContrato contrato = datos.ObtenerContratoPorId(idContrato);
+
+            if (contrato != null)
+            {
+                contrato.ultimoPago = datos.ObtenerUltimoPagoContrato(idContrato);
+            }
+
+            return contrato;
+        }
+        public void ActualizarContratoYUltimoPagoL(int idContrato, string estado, string tipoContrato, string ultimoPago, int idAdmin)
+        {
+            ClAdminD datos = new ClAdminD();
+            datos.ActualizarContrato(idContrato, estado, tipoContrato);
+            datos.ActualizarUltimoPagoContrato(idContrato, ultimoPago, idAdmin);
+        }
+        public void EliminarContratoL(int idContrato)
+        {
+            ClAdminD datos = new ClAdminD();
+            datos.EliminarContrato(idContrato);
+        }
         ClAdminD dal = new ClAdminD();
 
         public DataTable ListarPagos()

@@ -20,17 +20,7 @@ namespace AppBarbersAdso.Vista
             ClBarberoL logica = new ClBarberoL();
 
 
-            bool enviado = logica.EnviarToken(txtCorreo.Text);
-
-
-            if (enviado == true)
-            {
-                Response.Write("<script>alert('Se envió un link de restablecimiento a tu correo.');</script>");
-            }
-            else
-            {
-                Response.Write("<script>alert('Correo no encontrado.');</script>");
-            }
+            
 
         }
     }
