@@ -16,6 +16,6 @@ namespace AppBarbersAdso.Modelo
         public string nombreUsuario { get; set; }
         public string nombreBarbero { get; set; }
         public string nombrePuesto { get; set; }
-
+        public bool ocultarCliente { get; set; }
     }
 }

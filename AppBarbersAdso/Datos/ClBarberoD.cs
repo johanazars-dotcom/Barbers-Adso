@@ -162,7 +162,7 @@ namespace AppBarbersAdso.Datos
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
-            // Obtener datos antes de eliminar
+            // 1. Obtener datos antes de eliminar
             string consultaDatos = "SELECT foto, hojaVida, idPuesto FROM barbero WHERE idBarbero = @id";
             SqlCommand cmdDatos = new SqlCommand(consultaDatos, conex);
             cmdDatos.Parameters.AddWithValue("@id", idBarbero);
@@ -188,13 +188,19 @@ namespace AppBarbersAdso.Datos
 
             dr.Close();
 
-            // 2. Eliminar barbero
+            // 2. Eliminar citas del barbero (SOLUCIÓN AL CONFLICTO DEL FOREIGN KEY)
+            string consultaEliminarCitas = "DELETE FROM cita WHERE idBarbero = @id";
+            SqlCommand cmdEliminarCitas = new SqlCommand(consultaEliminarCitas, conex);
+            cmdEliminarCitas.Parameters.AddWithValue("@id", idBarbero);
+            cmdEliminarCitas.ExecuteNonQuery();
+
+            // 3. Eliminar barbero
             string consultaEliminar = "DELETE FROM barbero WHERE idBarbero = @id";
             SqlCommand cmdEliminar = new SqlCommand(consultaEliminar, conex);
             cmdEliminar.Parameters.AddWithValue("@id", idBarbero);
             cmdEliminar.ExecuteNonQuery();
 
-            // 3. Dejar disponible el puesto
+            // 4. Dejar disponible el puesto
             string consultaPuestoLibre = "UPDATE puesto SET estado = 'Disponible' WHERE idPuesto = @puesto";
             SqlCommand cmdPuestoLibre = new SqlCommand(consultaPuestoLibre, conex);
             cmdPuestoLibre.Parameters.AddWithValue("@puesto", idPuesto);
@@ -202,7 +208,7 @@ namespace AppBarbersAdso.Datos
 
             conex.Close();
 
-            // 4. ELIMINAR ARCHIVOS (Foto + PDF)
+            // 5. Eliminar archivos
             EliminarArchivos(foto, hojaVida);
 
             return "ok";

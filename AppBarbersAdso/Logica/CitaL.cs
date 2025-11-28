@@ -11,13 +11,20 @@ namespace AppBarbersAdso.Logica
     {
         CitaD citaD = new CitaD();
 
-        public List<CitaM> MtListarCitas()
+      
+        public List<CitaM> MtListarCitasBarbero(int idBarbero)
         {
-            return citaD.MtListarCitas();
+            return citaD.MtListarCitasBarbero(idBarbero);
+        }
+
+        public List<CitaM> MtListarCitasCliente(int idUsuario)
+        {
+            return citaD.MtListarCitasCliente(idUsuario);
         }
 
         public string MtGuardarCita(CitaM c)
         {
+            // Validar disponibilidad del barbero
             if (citaD.BarberoOcupado(c.idBarbero, c.fechaCita, c.hora))
             {
                 return "ocupado";
@@ -26,6 +33,7 @@ namespace AppBarbersAdso.Logica
             citaD.MtGuardarCita(c);
             return "ok";
         }
+
 
         public void MtEliminarCita(int id)
         {

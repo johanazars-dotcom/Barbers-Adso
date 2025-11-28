@@ -22,7 +22,7 @@ namespace AppBarbersAdso.Vista
 
             if (ingreso)
             {
-                Response.Redirect("ActualizarBarbero.aspx");
+                Response.Redirect("PanelBarbero.aspx");
             }
             else
             {

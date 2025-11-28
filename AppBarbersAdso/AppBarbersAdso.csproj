@@ -75,6 +75,7 @@
     <Content Include="Vista\LoginAdmin.aspx" />
     <Content Include="Vista\LoginBarbero.aspx" />
     <Content Include="Vista\PaginaAdmin.aspx" />
+    <Content Include="Vista\PanelBarbero.aspx" />
     <Content Include="Vista\recuperacion.aspx" />
     <Content Include="Vista\RecuperarCorreo.aspx" />
     <Content Include="Vista\Registro.aspx" />
@@ -98,8 +99,10 @@
     <Compile Include="Modelo\CitaM.cs" />
     <Compile Include="Modelo\ClAdminM.cs" />
     <Compile Include="Modelo\ClBarberoM.cs" />
+    <Compile Include="Modelo\clContrato.cs" />
     <Compile Include="Modelo\ClPuestosM.cs" />
     <Compile Include="Modelo\ClUsuarioM.cs" />
+    <Compile Include="Modelo\FinanzaM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\Actualizar.aspx.cs">
       <DependentUpon>Actualizar.aspx</DependentUpon>
@@ -156,6 +159,13 @@
     </Compile>
     <Compile Include="Vista\PaginaAdmin.aspx.designer.cs">
       <DependentUpon>PaginaAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PanelBarbero.aspx.cs">
+      <DependentUpon>PanelBarbero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PanelBarbero.aspx.designer.cs">
+      <DependentUpon>PanelBarbero.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\recuperacion.aspx.cs">
       <DependentUpon>recuperacion.aspx</DependentUpon>

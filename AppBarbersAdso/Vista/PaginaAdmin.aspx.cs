@@ -13,11 +13,14 @@ namespace AppBarbersAdso.Vista
 	{
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (Session["usuarioLogueado"] == null)
             {
                 Response.Redirect("LoginAdmin.aspx");
                 return;
+
             }
+
 
             if (!IsPostBack)
             {
@@ -26,6 +29,8 @@ namespace AppBarbersAdso.Vista
 
                 // Cargar barberos en la tabla
                 CargarBarberos();
+                CargarContratosHtml();
+                CargarPagos();
             }
 
             // PROCESAR ELIMINACIÓN
@@ -51,6 +56,12 @@ namespace AppBarbersAdso.Vista
             gvBarberos.DataSource = logica.ListarBarberosL();
             gvBarberos.DataBind();
         }
+        private void CargarContratosHtml()
+        {
+            ClAdminL logica = new ClAdminL();
+            rpContratos.DataSource = logica.ListarContratosPorBarberoL();
+            rpContratos.DataBind();
+        }
 
         protected void btnRegistrarBarbero_Click(object sender, EventArgs e)
         {
@@ -64,6 +75,13 @@ namespace AppBarbersAdso.Vista
             Session.Abandon();
             Response.Redirect("LoginAdmin.aspx");
         }
+        private void CargarPagos()
+        {
+            ClAdminL logica = new ClAdminL();
+            gvPagos.DataSource = logica.ListarPagos();
+            gvPagos.DataBind();
+        }
+
     }
 }
   

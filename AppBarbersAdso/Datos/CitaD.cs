@@ -12,34 +12,37 @@ namespace AppBarbersAdso.Datos
 
         ClConexion conexion = new ClConexion();
 
-        public List<CitaM> MtListarCitas()
+        public List<CitaM> MtListarCitasBarbero(int idBarbero)
         {
             List<CitaM> lista = new List<CitaM>();
             SqlConnection conex = conexion.MtabrirConexion();
 
             string consulta = @"
                 SELECT 
-                    c.idCita, 
-                    c.idUsuario, 
-                    c.idBarbero, 
-                    c.idPuesto, 
-                    c.fecha, 
+                    c.idCita,
+                    c.idUsuario,
+                    c.idBarbero,
+                    c.idPuesto,
+                    c.fecha,
                     c.hora,
+                    c.ocultarCliente,
                     u.nombre + ' ' + u.apellido AS nombreUsuario,
-                    b.nombreBarbero AS nombreBarbero,
                     p.numeroPuesto AS nombrePuesto
                 FROM cita c
                 INNER JOIN usuario u ON u.idUsuario = c.idUsuario
-                INNER JOIN barbero b ON b.idBarbero = c.idBarbero
                 INNER JOIN puesto p ON p.idPuesto = c.idPuesto
+                WHERE c.idBarbero = @idBarbero
+                ORDER BY c.fecha, c.hora
             ";
 
             SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@idBarbero", idBarbero);
+
             SqlDataReader dr = cmd.ExecuteReader();
 
             while (dr.Read())
             {
-                CitaM c = new CitaM
+                lista.Add(new CitaM
                 {
                     idCita = Convert.ToInt32(dr["idCita"]),
                     idUsuario = Convert.ToInt32(dr["idUsuario"]),
@@ -47,11 +50,10 @@ namespace AppBarbersAdso.Datos
                     idPuesto = Convert.ToInt32(dr["idPuesto"]),
                     fechaCita = Convert.ToDateTime(dr["fecha"]),
                     hora = dr["hora"].ToString(),
+                    ocultarCliente = Convert.ToBoolean(dr["ocultarCliente"]),
                     nombreUsuario = dr["nombreUsuario"].ToString(),
-                    nombreBarbero = dr["nombreBarbero"].ToString(),
                     nombrePuesto = dr["nombrePuesto"].ToString()
-                };
-                lista.Add(c);
+                });
             }
 
             dr.Close();
@@ -59,22 +61,89 @@ namespace AppBarbersAdso.Datos
             return lista;
         }
 
+
+        // ============================================================
+        // LISTAR CITAS DEL CLIENTE (SOLO LAS VISIBLES)
+        // ============================================================
+        public List<CitaM> MtListarCitasCliente(int idUsuario)
+        {
+            List<CitaM> lista = new List<CitaM>();
+            SqlConnection conex = conexion.MtabrirConexion();
+
+            string consulta = @"
+        SELECT 
+            c.idCita,
+            c.idUsuario,
+            c.idBarbero,
+            c.idPuesto,
+            c.fecha,
+            c.hora,
+            c.ocultarCliente,
+            u.nombre AS nombreUsuario,    -- SOLO NOMBRE
+            b.nombreBarbero,
+            p.numeroPuesto AS nombrePuesto
+        FROM cita c
+        INNER JOIN usuario u ON u.idUsuario = c.idUsuario   -- ALIAS CORRECTO
+        INNER JOIN barbero b ON b.idBarbero = c.idBarbero
+        INNER JOIN puesto p ON p.idPuesto = c.idPuesto
+        WHERE c.idUsuario = @idUsuario
+          AND c.ocultarCliente = 0
+        ORDER BY c.fecha, c.hora
+    ";
+
+            SqlCommand cmd = new SqlCommand(consulta, conex);
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                lista.Add(new CitaM
+                {
+                    idCita = Convert.ToInt32(dr["idCita"]),
+                    idUsuario = Convert.ToInt32(dr["idUsuario"]),
+                    idBarbero = Convert.ToInt32(dr["idBarbero"]),
+                    idPuesto = Convert.ToInt32(dr["idPuesto"]),
+                    fechaCita = Convert.ToDateTime(dr["fecha"]),
+                    hora = dr["hora"].ToString(),
+                    ocultarCliente = Convert.ToBoolean(dr["ocultarCliente"]),
+                    nombreUsuario = dr["nombreUsuario"].ToString(),
+                    nombreBarbero = dr["nombreBarbero"].ToString(),
+                    nombrePuesto = dr["nombrePuesto"].ToString()
+                });
+            }
+
+            dr.Close();
+            conexion.MtcerrarConexion();
+
+            return lista;
+        }
+
+
+
+        // ============================================================
+        // GUARDAR O EDITAR CITA
+        // ============================================================
         public void MtGuardarCita(CitaM cita)
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
-            string consulta = "";
+            string consulta;
 
             if (cita.idCita == 0)
             {
-                consulta = @"INSERT INTO cita (idUsuario, idBarbero, idPuesto, fecha, hora)
-                             VALUES (@idUsuario, @idBarbero, @idPuesto, @fecha, @hora)";
+                consulta = @"INSERT INTO cita 
+                             (idUsuario, idBarbero, idPuesto, fecha, hora, ocultarCliente)
+                             VALUES (@idUsuario, @idBarbero, @idPuesto, @fecha, @hora, 0)";
             }
             else
             {
                 consulta = @"UPDATE cita 
-                             SET idUsuario=@idUsuario, idBarbero=@idBarbero, idPuesto=@idPuesto, 
-                                 fecha=@fecha, hora=@hora 
+                             SET idUsuario=@idUsuario, 
+                                 idBarbero=@idBarbero, 
+                                 idPuesto=@idPuesto, 
+                                 fecha=@fecha, 
+                                 hora=@hora 
                              WHERE idCita=@idCita";
             }
 
@@ -95,17 +164,30 @@ namespace AppBarbersAdso.Datos
             conexion.MtcerrarConexion();
         }
 
+
+        // ============================================================
+        // EL CLIENTE “ELIMINA” LA CITA (SOLO SE OCULTA)
+        // ============================================================
         public void MtEliminarCita(int id)
         {
             SqlConnection conex = conexion.MtabrirConexion();
 
-            SqlCommand cmd = new SqlCommand("DELETE FROM cita WHERE idCita=@id", conex);
+            string consulta = @"
+                UPDATE cita 
+                SET ocultarCliente = 1
+                WHERE idCita = @id";
+
+            SqlCommand cmd = new SqlCommand(consulta, conex);
             cmd.Parameters.AddWithValue("@id", id);
 
             cmd.ExecuteNonQuery();
             conexion.MtcerrarConexion();
         }
 
+
+        // ============================================================
+        // VALIDAR SI EL BARBERO ESTÁ OCUPADO
+        // ============================================================
         public bool BarberoOcupado(int idBarbero, DateTime fecha, string hora)
         {
             SqlConnection conex = conexion.MtabrirConexion();
@@ -114,7 +196,8 @@ namespace AppBarbersAdso.Datos
                                 FROM cita 
                                 WHERE idBarbero=@idBarbero 
                                   AND fecha=@fecha 
-                                  AND hora=@hora";
+                                  AND hora=@hora
+                                  AND ocultarCliente = 0";
 
             SqlCommand cmd = new SqlCommand(consulta, conex);
             cmd.Parameters.AddWithValue("@idBarbero", idBarbero);
@@ -128,4 +211,5 @@ namespace AppBarbersAdso.Datos
         }
     }
 }
+
 

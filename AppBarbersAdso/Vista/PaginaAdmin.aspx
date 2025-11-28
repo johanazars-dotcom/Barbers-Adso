@@ -197,6 +197,54 @@
 
             </Columns>
         </asp:GridView>
+        <h3 class="text-center text-warning fw-bold mt-4 mb-3">
+    Contratos
+</h3>
+
+<div class="table-responsive">
+    <table class="table table-dark table-hover text-center">
+        <thead>
+            <tr>
+                <th>PUESTO</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>ESTADO CONTRATO</th>
+                <th>TIPO</th>
+                <th>ÚLTIMO PAGO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <asp:Repeater ID="rpContratos" runat="server">
+                <ItemTemplate>
+                    <tr>
+                        <td><%# Eval("numeroPuesto") %></td>
+                        <td><%# Eval("nombreBarbero") %></td>
+                        <td><%# Eval("apellidoBarbero") %></td>
+                        <td><%# Eval("estadoContrato") %></td>
+                        <td><%# Eval("tipoContrato") %></td>
+                        <td><%# Eval("ultimoPago") %></td>
+                    </tr>
+                </ItemTemplate>
+            </asp:Repeater>
+        </tbody>
+    </table>
+</div>
+
+
+        
+        <div>
+            <asp:GridView ID="gvPagos" runat="server" AutoGenerateColumns="False" CssClass="table table-dark">
+                <Columns>
+                    <asp:BoundField HeaderText="ID" DataField="idFinanzas" />
+                    <asp:BoundField HeaderText="Pago" DataField="pago" />
+                    <asp:BoundField HeaderText="Puesto" DataField="idPuesto" />
+                    <asp:BoundField HeaderText="Contrato" DataField="idContrato" />
+                    <asp:BoundField HeaderText="Administrador" DataField="idAdministrador" />
+                </Columns>
+            </asp:GridView>
+
+        </div>
+    
 
     </div>
 </div>

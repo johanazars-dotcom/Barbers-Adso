@@ -3,16 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|c:\\users\\jhona\\desktop\\proyecto\\barbers-adso\\appbarbersadso\\logica\\clusuariol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:logica\\clusuariol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\vista\\paginaadmin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\paginaadmin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\logica\\clbarberol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:logica\\clbarberol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\vista\\actualizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\actualizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\datos\\clusuariod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:datos\\clusuariod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\vista\\actualizar.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\actualizar.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|c:\\users\\jhona\\desktop\\proyecto\\barbers-adso\\appbarbersadso\\vista\\paginaadmin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\paginaadmin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|c:\\users\\jhona\\desktop\\proyecto\\barbers-adso\\appbarbersadso\\logica\\cladminl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:logica\\cladminl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\datos\\cladmind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:datos\\cladmind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\datos\\clbarberod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:datos\\clbarberod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\logica\\clusuariol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:logica\\clusuariol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\modelo\\clcontrato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:modelo\\clcontrato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|c:\\users\\jhona\\desktop\\proyecto\\barbers-adso\\appbarbersadso\\vista\\inicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\inicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\datos\\clconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:datos\\clconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\modelo\\finanzam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:modelo\\finanzam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\logica\\clbarberol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:logica\\clbarberol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\modelo\\clbarberom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,16 +83,8 @@
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\enviocorreo.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\datos\\clusuariod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:datos\\clusuariod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\modelo\\clusuariom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:modelo\\clusuariom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\vista\\actualizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\actualizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\vista\\loginbarbero.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -67,10 +103,6 @@
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\registro.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\datos\\clconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:datos\\clconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\vista\\registrobarbero.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\registrobarbero.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -81,10 +113,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\vista\\webform1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\webform1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\vista\\actualizar.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D98B55E1-2AEA-4FE9-934F-4645366B5624}|AppBarbersAdso.csproj|solutionrelative:vista\\actualizar.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,17 +122,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "ClUsuarioL.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Logica\\ClUsuarioL.cs",
               "RelativeDocumentMoniker": "Logica\\ClUsuarioL.cs",
               "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Logica\\ClUsuarioL.cs",
               "RelativeToolTip": "Logica\\ClUsuarioL.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAUwDMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAswDMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-05T13:32:09.008Z",
               "IsPinned": true,
@@ -112,31 +140,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ClBarberoM.cs",
-              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\ClBarberoM.cs",
-              "RelativeDocumentMoniker": "Modelo\\ClBarberoM.cs",
-              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\ClBarberoM.cs",
-              "RelativeToolTip": "Modelo\\ClBarberoM.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA6wBIAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T15:41:35.587Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "recuperacion.aspx",
-              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\recuperacion.aspx",
-              "RelativeDocumentMoniker": "Vista\\recuperacion.aspx",
-              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\recuperacion.aspx",
-              "RelativeToolTip": "Vista\\recuperacion.aspx",
+              "DocumentIndex": 0,
+              "Title": "PaginaAdmin.aspx",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\PaginaAdmin.aspx",
+              "RelativeDocumentMoniker": "Vista\\PaginaAdmin.aspx",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\PaginaAdmin.aspx",
+              "RelativeToolTip": "Vista\\PaginaAdmin.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-21T15:04:01.291Z"
+              "WhenOpened": "2025-11-27T21:35:32.119Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 16,
               "Title": "recuperacion.aspx.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\recuperacion.aspx.cs",
               "RelativeDocumentMoniker": "Vista\\recuperacion.aspx.cs",
@@ -144,11 +161,12 @@
               "RelativeToolTip": "Vista\\recuperacion.aspx.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T15:03:51.722Z"
+              "WhenOpened": "2025-11-21T15:03:51.722Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "Actualizar.aspx",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\Actualizar.aspx",
               "RelativeDocumentMoniker": "Vista\\Actualizar.aspx",
@@ -156,11 +174,12 @@
               "RelativeToolTip": "Vista\\Actualizar.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-06T13:27:21.483Z"
+              "WhenOpened": "2025-11-06T13:27:21.483Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "ClUsuarioD.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClUsuarioD.cs",
               "RelativeDocumentMoniker": "Datos\\ClUsuarioD.cs",
@@ -168,11 +187,155 @@
               "RelativeToolTip": "Datos\\ClUsuarioD.cs",
               "ViewState": "AgIAAIYAAAAAAAAAAAAswJAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T14:46:35.935Z"
+              "WhenOpened": "2025-11-05T14:46:35.935Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
+              "Title": "ClConexion.cs",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClConexion.cs",
+              "RelativeDocumentMoniker": "Datos\\ClConexion.cs",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClConexion.cs",
+              "RelativeToolTip": "Datos\\ClConexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAB/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T13:31:44.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClAdminL.cs",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Logica\\ClAdminL.cs",
+              "RelativeDocumentMoniker": "Logica\\ClAdminL.cs",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Logica\\ClAdminL.cs",
+              "RelativeToolTip": "Logica\\ClAdminL.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAYwCwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T23:17:48.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClBarberoD.cs",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClBarberoD.cs",
+              "RelativeDocumentMoniker": "Datos\\ClBarberoD.cs",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClBarberoD.cs",
+              "RelativeToolTip": "Datos\\ClBarberoD.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAuwIwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T11:38:46.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Actualizar.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\Actualizar.aspx.cs",
+              "RelativeDocumentMoniker": "Vista\\Actualizar.aspx.cs",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\Actualizar.aspx.cs",
+              "RelativeToolTip": "Vista\\Actualizar.aspx.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAkwBEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T13:28:31.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PaginaAdmin.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\PaginaAdmin.aspx.cs",
+              "RelativeDocumentMoniker": "Vista\\PaginaAdmin.aspx.cs",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\PaginaAdmin.aspx.cs",
+              "RelativeToolTip": "Vista\\PaginaAdmin.aspx.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAYwCAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T23:40:41.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClAdminD.cs",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClAdminD.cs",
+              "RelativeDocumentMoniker": "Datos\\ClAdminD.cs",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClAdminD.cs",
+              "RelativeToolTip": "Datos\\ClAdminD.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAUwIcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T23:14:58.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "recuperacion.aspx",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\recuperacion.aspx",
+              "RelativeDocumentMoniker": "Vista\\recuperacion.aspx",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\recuperacion.aspx",
+              "RelativeToolTip": "Vista\\recuperacion.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-21T15:04:01.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ClBarberoM.cs",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\ClBarberoM.cs",
+              "RelativeDocumentMoniker": "Modelo\\ClBarberoM.cs",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\ClBarberoM.cs",
+              "RelativeToolTip": "Modelo\\ClBarberoM.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA6wBIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:41:35.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FinanzaM.cs",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\FinanzaM.cs",
+              "RelativeDocumentMoniker": "Modelo\\FinanzaM.cs",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\FinanzaM.cs",
+              "RelativeToolTip": "Modelo\\FinanzaM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T23:26:56.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "clContrato.cs",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\clContrato.cs",
+              "RelativeDocumentMoniker": "Modelo\\clContrato.cs",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\clContrato.cs",
+              "RelativeToolTip": "Modelo\\clContrato.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T23:13:34.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Inicio.aspx",
+              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\Inicio.aspx",
+              "RelativeDocumentMoniker": "Vista\\Inicio.aspx",
+              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\Inicio.aspx",
+              "RelativeToolTip": "Vista\\Inicio.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-27T23:38:57.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "envioCorreo.aspx",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\envioCorreo.aspx",
               "RelativeDocumentMoniker": "Vista\\envioCorreo.aspx",
@@ -180,46 +343,25 @@
               "RelativeToolTip": "Vista\\envioCorreo.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-20T13:19:23.012Z"
+              "WhenOpened": "2025-11-20T13:19:23.012Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "Registro.aspx",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\Registro.aspx",
               "RelativeDocumentMoniker": "Vista\\Registro.aspx",
               "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\Registro.aspx",
               "RelativeToolTip": "Vista\\Registro.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-20T13:13:45.175Z"
+              "WhenOpened": "2025-11-20T13:13:45.175Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ClConexion.cs",
-              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClConexion.cs",
-              "RelativeDocumentMoniker": "Datos\\ClConexion.cs",
-              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClConexion.cs",
-              "RelativeToolTip": "Datos\\ClConexion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T13:31:44.965Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClBarberoD.cs",
-              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClBarberoD.cs",
-              "RelativeDocumentMoniker": "Datos\\ClBarberoD.cs",
-              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Datos\\ClBarberoD.cs",
-              "RelativeToolTip": "Datos\\ClBarberoD.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAuwIwAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T11:38:46.734Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 13,
               "Title": "ClBarberoL.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Logica\\ClBarberoL.cs",
               "RelativeDocumentMoniker": "Logica\\ClBarberoL.cs",
@@ -227,11 +369,12 @@
               "RelativeToolTip": "Logica\\ClBarberoL.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAQwEgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T12:34:37.816Z"
+              "WhenOpened": "2025-11-20T12:34:37.816Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 18,
               "Title": "recuperacion.aspx.designer.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\recuperacion.aspx.designer.cs",
               "RelativeDocumentMoniker": "Vista\\recuperacion.aspx.designer.cs",
@@ -239,22 +382,25 @@
               "RelativeToolTip": "Vista\\recuperacion.aspx.designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T15:03:57.449Z"
+              "WhenOpened": "2025-11-21T15:03:57.449Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "RegistroBarbero.aspx",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\RegistroBarbero.aspx",
               "RelativeDocumentMoniker": "Vista\\RegistroBarbero.aspx",
               "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\RegistroBarbero.aspx",
               "RelativeToolTip": "Vista\\RegistroBarbero.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-20T12:22:38.307Z"
+              "WhenOpened": "2025-11-20T12:22:38.307Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "envioCorreo.aspx.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\envioCorreo.aspx.cs",
               "RelativeDocumentMoniker": "Vista\\envioCorreo.aspx.cs",
@@ -262,11 +408,12 @@
               "RelativeToolTip": "Vista\\envioCorreo.aspx.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAIwBcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:46:37.266Z"
+              "WhenOpened": "2025-11-20T13:46:37.266Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 21,
               "Title": "LoginBarbero.aspx",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\LoginBarbero.aspx",
               "RelativeDocumentMoniker": "Vista\\LoginBarbero.aspx",
@@ -274,11 +421,12 @@
               "RelativeToolTip": "Vista\\LoginBarbero.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-20T15:02:42.314Z"
+              "WhenOpened": "2025-11-20T15:02:42.314Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "ClUsuarioM.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Modelo\\ClUsuarioM.cs",
               "RelativeDocumentMoniker": "Modelo\\ClUsuarioM.cs",
@@ -286,11 +434,12 @@
               "RelativeToolTip": "Modelo\\ClUsuarioM.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T13:32:22.054Z"
+              "WhenOpened": "2025-11-05T13:32:22.054Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 26,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Web.config",
               "RelativeDocumentMoniker": "Web.config",
@@ -303,18 +452,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "WebForm1.aspx",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\WebForm1.aspx",
               "RelativeDocumentMoniker": "Vista\\WebForm1.aspx",
               "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\WebForm1.aspx",
               "RelativeToolTip": "Vista\\WebForm1.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-05T13:32:37.099Z"
+              "WhenOpened": "2025-11-05T13:32:37.099Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 25,
               "Title": "RegistroBarbero.aspx.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\RegistroBarbero.aspx.cs",
               "RelativeDocumentMoniker": "Vista\\RegistroBarbero.aspx.cs",
@@ -322,11 +473,12 @@
               "RelativeToolTip": "Vista\\RegistroBarbero.aspx.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAiwGQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T12:25:22.498Z"
+              "WhenOpened": "2025-11-20T12:25:22.498Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "WebForm1.aspx.cs",
               "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\WebForm1.aspx.cs",
               "RelativeDocumentMoniker": "Vista\\WebForm1.aspx.cs",
@@ -334,19 +486,8 @@
               "RelativeToolTip": "Vista\\WebForm1.aspx.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:26:55.505Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Actualizar.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\Actualizar.aspx.cs",
-              "RelativeDocumentMoniker": "Vista\\Actualizar.aspx.cs",
-              "ToolTip": "C:\\Users\\jhona\\Desktop\\Proyecto\\Barbers-Adso\\AppBarbersAdso\\Vista\\Actualizar.aspx.cs",
-              "RelativeToolTip": "Vista\\Actualizar.aspx.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAABEAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:28:31.017Z"
+              "WhenOpened": "2025-11-06T13:26:55.505Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -45,10 +45,7 @@ namespace AppBarbersAdso.Vista
 
         private void CargarTabla(int idUsuario)
         {
-            gvCitas.DataSource = logica.MtListarCitas()
-                .Where(x => x.idUsuario == idUsuario)
-                .ToList();
-
+            gvCitas.DataSource = logica.MtListarCitasCliente(idUsuario);
             gvCitas.DataBind();
         }
 
