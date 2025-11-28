@@ -24,7 +24,6 @@ namespace AppBarbersAdso.Logica
 
         public string MtGuardarCita(CitaM c)
         {
-            // Validar disponibilidad del barbero
             if (citaD.BarberoOcupado(c.idBarbero, c.fechaCita, c.hora))
             {
                 return "ocupado";

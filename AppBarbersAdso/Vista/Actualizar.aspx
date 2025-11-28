@@ -113,49 +113,48 @@
             <i class="bi bi-person-lines-fill me-2"></i> Actualizar Perfil
         </div>
 
-        <!-- NOMBRE -->
+        
         <div class="update-group">
             <label class="form-label">Nombre</label>
             <i class="bi bi-person-fill update-icon"></i>
             <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control update-input"></asp:TextBox>
         </div>
 
-        <!-- APELLIDO -->
+        
         <div class="update-group">
             <label class="form-label">Apellido</label>
             <i class="bi bi-person-badge-fill update-icon"></i>
             <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control update-input"></asp:TextBox>
         </div>
 
-        <!-- TELEFONO -->
+   
         <div class="update-group">
             <label class="form-label">Teléfono</label>
             <i class="bi bi-telephone-fill update-icon"></i>
             <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control update-input"></asp:TextBox>
         </div>
 
-        <!-- DOCUMENTO -->
         <div class="update-group">
             <label class="form-label">Documento</label>
             <i class="bi bi-file-earmark-text-fill update-icon"></i>
             <asp:TextBox ID="txtDocumento" runat="server" CssClass="form-control update-input"></asp:TextBox>
         </div>
 
-        <!-- CONTRASEÑA -->
+        
         <div class="update-group">
             <label class="form-label">Contraseña</label>
             <i class="bi bi-key-fill update-icon"></i>
             <asp:TextBox ID="txtContra" runat="server" CssClass="form-control update-input"></asp:TextBox>
         </div>
 
-        <!-- BOTÓN GUARDAR -->
+       
         <div class="d-grid">
             <asp:Button ID="btnActualizar" runat="server"
                 Text="Guardar Cambios" CssClass="btn-update"
                 OnClick="btnActualizar_Click" />
         </div>
 
-        <!-- MENSAJE -->
+        
         <asp:Label ID="lblMensaje" runat="server" CssClass="msg text-success"></asp:Label>
 
     </div>

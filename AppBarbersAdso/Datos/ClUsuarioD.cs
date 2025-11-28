@@ -11,9 +11,6 @@ namespace AppBarbersAdso.Datos
     {
         ClConexion conexion = new ClConexion();
 
-        // ================================
-        //     ACTUALIZAR PERFIL
-        // ================================
         public void MtActualizarPerfil(ClUsuarioM actualizar)
         {
             SqlConnection conex = conexion.MtabrirConexion();
@@ -35,9 +32,6 @@ namespace AppBarbersAdso.Datos
             conexion.MtcerrarConexion();
         }
 
-        // ================================
-        //        OBTENER USUARIO
-        // ================================
         public ClUsuarioM MtObtenerUsuario(string email)
         {
             SqlConnection conex = conexion.MtabrirConexion();
@@ -68,9 +62,7 @@ namespace AppBarbersAdso.Datos
             return usuario;
         }
 
-        // ================================
-        //              LOGIN
-        // ================================
+   
         public ClUsuarioM MtLogin(string user, string pass)
         {
             SqlConnection conex = conexion.MtabrirConexion();
@@ -104,9 +96,7 @@ namespace AppBarbersAdso.Datos
             return usuario;
         }
 
-        // ================================
-        //       REGISTRAR USUARIO
-        // ================================
+  
         public string MtRegistrarUsuario(ClUsuarioM datos)
         {
             SqlConnection conex = conexion.MtabrirConexion();
@@ -140,9 +130,7 @@ namespace AppBarbersAdso.Datos
             return "ok";
         }
 
-        // ================================
-        //   OBTENER POR CORREO (TOKEN)
-        // ================================
+  
         public ClUsuarioM ObtenerUsuarioPorCorreo(string email)
         {
             SqlConnection conex = conexion.MtabrirConexion();
@@ -175,9 +163,7 @@ namespace AppBarbersAdso.Datos
             return usuario;
         }
 
-        // ================================
-        //       GUARDAR TOKEN
-        // ================================
+ 
         public void GuardarToken(int idUsuario, string token)
         {
             SqlConnection conex = conexion.MtabrirConexion();

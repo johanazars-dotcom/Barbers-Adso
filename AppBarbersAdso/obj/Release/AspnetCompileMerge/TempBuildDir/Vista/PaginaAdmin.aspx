@@ -201,35 +201,111 @@
     Contratos
 </h3>
 
-<div class="table-responsive">
-    <table class="table table-dark table-hover text-center">
-        <thead>
-            <tr>
-                <th>PUESTO</th>
-                <th>NOMBRE</th>
-                <th>APELLIDO</th>
-                <th>ESTADO CONTRATO</th>
-                <th>TIPO</th>
-                <th>ÚLTIMO PAGO</th>
-            </tr>
-        </thead>
-        <tbody>
-            <asp:Repeater ID="rpContratos" runat="server">
-                <ItemTemplate>
-                    <tr>
-                        <td><%# Eval("numeroPuesto") %></td>
-                        <td><%# Eval("nombreBarbero") %></td>
-                        <td><%# Eval("apellidoBarbero") %></td>
-                        <td><%# Eval("estadoContrato") %></td>
-                        <td><%# Eval("tipoContrato") %></td>
-                        <td><%# Eval("ultimoPago") %></td>
-                    </tr>
-                </ItemTemplate>
-            </asp:Repeater>
-        </tbody>
-    </table>
-</div>
+<div class="contratos-container mt-3">
+    <!-- Encabezados -->
+    <div class="row contratos-header text-uppercase fw-bold text-warning text-center">
+        <div class="col-2">PUESTO</div>
+        <div class="col-3">BARBERO</div>
+        <div class="col-2">ESTADO</div>
+        <div class="col-2">TIPO</div>
+        <div class="col-2">ÚLTIMO PAGO</div>
+        <div class="col-1">ACCIONES</div>
+    </div>
 
+    <!-- Filas -->
+    <asp:Repeater ID="rpContratos" runat="server" OnItemCommand="rpContratos_ItemCommand">
+        <ItemTemplate>
+            <div class="row contratos-row text-center align-items-center">
+                <div class="col-2">
+                    <%# Eval("numeroPuesto") %>
+                </div>
+
+                <div class="col-3">
+                    <%# Eval("nombreBarbero") %> <%# Eval("apellidoBarbero") %>
+                </div>
+
+                <div class="col-2">
+                    <%# Eval("estadoContrato") %>
+                </div>
+
+                <div class="col-2">
+                    <%# Eval("tipoContrato") %>
+                </div>
+
+                <div class="col-2">
+                    <%# Eval("ultimoPago") %>
+                </div>
+
+                <div class="col-1">
+                    <!-- Solo mostrar botones si existe contrato (idContrato > 0) -->
+                    <asp:PlaceHolder ID="phAcciones" runat="server"
+                        Visible='<%# Convert.ToInt32(Eval("idContrato")) > 0 %>'>
+
+                        <asp:LinkButton ID="btnEditarContrato" runat="server"
+                            CommandName="Editar"
+                            CommandArgument='<%# Eval("idContrato") %>'
+                            CssClass="btn btn-sm btn-outline-info me-1"
+                            ToolTip="Editar contrato">
+                            <i class="bi bi-pencil"></i>
+                        </asp:LinkButton>
+
+                        <asp:LinkButton ID="btnEliminarContrato" runat="server"
+                            CommandName="Eliminar"
+                            CommandArgument='<%# Eval("idContrato") %>'
+                            CssClass="btn btn-sm btn-outline-danger"
+                            ToolTip="Eliminar contrato"
+                            OnClientClick="return confirm('¿Seguro que deseas eliminar este contrato?');">
+                            <i class="bi bi-trash"></i>
+                        </asp:LinkButton>
+
+                    </asp:PlaceHolder>
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater>
+</div>
+<!-- PANEL PARA EDITAR CONTRATO -->
+<div class="contrato-edicion mt-4">
+    <asp:Panel ID="pnlEditarContrato" runat="server" Visible="false" CssClass="contrato-edit-panel">
+        <h4 class="text-warning fw-bold mb-3">Editar contrato</h4>
+
+        <asp:HiddenField ID="hfIdContrato" runat="server" />
+
+        <div class="row mb-3">
+            <div class="col-md-4 mb-3">
+                <label class="form-label text-light">Estado</label>
+                <asp:DropDownList ID="ddlEstadoContrato" runat="server" CssClass="form-select">
+                    <asp:ListItem Text="Activo" Value="Activo" />
+                    <asp:ListItem Text="No activo" Value="No activo" />
+                    <asp:ListItem Text="Finalizado" Value="Finalizado" />
+                </asp:DropDownList>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label text-light">Tipo</label>
+                <asp:DropDownList ID="ddlTipoContrato" runat="server" CssClass="form-select">
+                    <asp:ListItem Text="Fijo" Value="Fijo" />
+                    <asp:ListItem Text="Temporal" Value="Temporal" />
+                </asp:DropDownList>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label text-light">Último pago</label>
+                <asp:TextBox ID="txtUltimoPago" runat="server" CssClass="form-control" />
+            </div>
+        </div>
+
+        <asp:Button ID="btnGuardarContrato" runat="server"
+            Text="Guardar cambios"
+            CssClass="btn btn-warning me-2"
+            OnClick="btnGuardarContrato_Click" />
+
+        <asp:Button ID="btnCancelarEdicion" runat="server"
+            Text="Cancelar"
+            CssClass="btn btn-outline-light"
+            OnClick="btnCancelarEdicion_Click" />
+    </asp:Panel>
+</div>
 
         
         <div>

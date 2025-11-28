@@ -2,16 +2,16 @@
 <!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\inetpub\proyecto</_PublishTargetUrl>
-    <History>True|2025-11-28T12:19:37.1466243Z||;True|2025-11-27T20:21:05.7585776-05:00||;True|2025-11-27T20:20:52.8578463-05:00||;</History>
+    <_PublishTargetUrl>C:\inetpub\proyecto1</_PublishTargetUrl>
+    <History>True|2025-11-28T12:59:46.5409779Z||;True|2025-11-28T07:52:54.3283411-05:00||;True|2025-11-28T07:35:44.6266280-05:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AppBarbersAdso.dll">
-      <publishTime>11/28/2025 07:19:33</publishTime>
+      <publishTime>11/28/2025 07:59:41</publishTime>
     </File>
     <File Include="bin/AppBarbersAdso.pdb">
-      <publishTime>11/28/2025 07:19:33</publishTime>
+      <publishTime>11/28/2025 07:59:41</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>11/27/2025 18:12:12</publishTime>
@@ -164,7 +164,7 @@
       <publishTime>11/27/2025 18:12:12</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>11/28/2025 07:19:34</publishTime>
+      <publishTime>11/28/2025 07:59:42</publishTime>
     </File>
     <File Include="Vista/Actualizar.aspx">
       <publishTime>11/27/2025 18:12:12</publishTime>
@@ -221,7 +221,7 @@
       <publishTime>11/27/2025 18:12:12</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/27/2025 20:21:02</publishTime>
+      <publishTime>11/28/2025 07:35:40</publishTime>
     </File>
   </ItemGroup>
 </Project>

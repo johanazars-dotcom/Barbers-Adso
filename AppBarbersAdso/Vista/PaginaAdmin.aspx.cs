@@ -27,13 +27,13 @@ namespace AppBarbersAdso.Vista
                
                 var admin = (ClAdminM)Session["usuarioLogueado"];
 
-                // Cargar barberos en la tabla
+                
                 CargarBarberos();
                 CargarContratosHtml();
                 CargarPagos();
             }
 
-            // PROCESAR ELIMINACIÓN
+            
             if (Request.QueryString["eliminar"] != null)
             {
                 int id = int.Parse(Request.QueryString["eliminar"]);
@@ -41,11 +41,11 @@ namespace AppBarbersAdso.Vista
                 ClBarberoL logica = new ClBarberoL();
                 string resultado = logica.MtEliminarBarberoL(id);
 
-                // Alerta simple
+               
                 ScriptManager.RegisterStartupScript(this, GetType(), "alerta",
                     $"alert('{resultado}');", true);
 
-                // Recargar la página sin parámetros
+                
                 Response.AddHeader("Refresh", "1;URL=PaginaAdmin.aspx");
             }
         }
@@ -67,7 +67,7 @@ namespace AppBarbersAdso.Vista
             int idContrato;
             if (!int.TryParse(e.CommandArgument.ToString(), out idContrato) || idContrato <= 0)
             {
-                // fila sin contrato real (idContrato = 0)
+              
                 return;
             }
 
@@ -79,7 +79,7 @@ namespace AppBarbersAdso.Vista
             {
                 EliminarContrato(idContrato);
                 pnlEditarContrato.Visible = false;
-                CargarContratosHtml();   // recarga la tabla
+                CargarContratosHtml();  
             }
         }
 
@@ -92,7 +92,7 @@ namespace AppBarbersAdso.Vista
             {
                 hfIdContrato.Value = contrato.idContrato.ToString();
 
-                // selecciona los valores actuales
+                
                 if (ddlEstadoContrato.Items.FindByValue(contrato.estadoContrato) != null)
                     ddlEstadoContrato.SelectedValue = contrato.estadoContrato;
 
@@ -119,7 +119,7 @@ namespace AppBarbersAdso.Vista
             string tipo = ddlTipoContrato.SelectedValue;
             string ultimoPago = txtUltimoPago.Text.Trim();
 
-            // admin de la sesión
+           
             int idAdmin = 0;
             if (Session["usuarioLogueado"] != null)
             {
@@ -144,7 +144,7 @@ namespace AppBarbersAdso.Vista
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            // CERRAR SESIÓN
+            
             Session.Clear();
             Session.Abandon();
             Response.Redirect("LoginAdmin.aspx");

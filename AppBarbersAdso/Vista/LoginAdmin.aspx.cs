@@ -12,7 +12,7 @@ namespace AppBarbersAdso.Vista
 	{
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Si ya está logueado, enviarlo al panel admin
+            
             if (Session["usuarioLogueado"] != null)
             {
                 Response.Redirect("PaginaAdmin.aspx");
@@ -34,7 +34,7 @@ namespace AppBarbersAdso.Vista
 
             if (admin != null)
             {
-                // Guardar el OBJETO en sesión
+                
                 Session["usuarioLogueado"] = admin;
 
                 Response.Redirect("PaginaAdmin.aspx");

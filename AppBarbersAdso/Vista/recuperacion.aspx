@@ -133,7 +133,7 @@
             Ingresa tu nueva contraseña para completar el proceso.
         </p>
 
-        <!-- Token oculto -->
+     
         <asp:HiddenField ID="hfToken" runat="server" />
 
         <div class="group-recoverpass">

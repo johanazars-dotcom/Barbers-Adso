@@ -23,7 +23,6 @@
             min-height: 100vh;
         }
 
-        /* NAVBAR ULTRA PREMIUM */
         .navbar {
             background: rgba(0,0,0,0.65) !important;
             backdrop-filter: blur(12px);
@@ -34,7 +33,6 @@
             padding-bottom: 15px;
         }
 
-        /* Glow inferior */
         .navbar::after {
             content: "";
             position: absolute;
@@ -47,7 +45,6 @@
             opacity: .75;
         }
 
-        /* Marca */
         .navbar-brand {
             color: #d4af37 !important;
             font-size: 28px;
@@ -63,7 +60,6 @@
             transform: scale(1.05);
         }
 
-        /* Links */
         .nav-link {
             color: #f0e6c8 !important;
             font-weight: 600;
@@ -79,7 +75,6 @@
             transform: translateY(-2px);
         }
 
-        /* Botón de login */
         .btn-gold-nav {
             padding: 8px 18px;
             border-radius: 30px;
@@ -97,7 +92,6 @@
             transform: translateY(-3px);
         }
 
-        /* Dropdown super elegante */
         .dropdown-menu {
             background: rgba(0,0,0,0.85);
             border: 1px solid #d4af37;
@@ -123,7 +117,6 @@
             text-shadow: 0 0 10px #d4af37;
         }
 
-        /* Usuario logueado */
         .user-label {
             color: #ffd86b;
             font-weight: 800;

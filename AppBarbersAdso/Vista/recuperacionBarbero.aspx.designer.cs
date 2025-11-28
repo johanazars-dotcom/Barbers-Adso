@@ -11,7 +11,7 @@ namespace AppBarbersAdso.Vista
 {
 
 
-    public partial class recuperacionBarbero
+    public partial class recuperacion
     {
 
         /// <summary>

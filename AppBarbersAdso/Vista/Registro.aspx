@@ -120,42 +120,38 @@
             <i class="bi bi-person-plus-fill me-2"></i> Registro de Usuario
         </h2>
 
-        <!-- NOMBRE -->
         <div class="registro-group">
             <label class="form-label">Nombre</label>
             <i class="bi bi-person-fill registro-icon"></i>
             <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control registro-input"></asp:TextBox>
         </div>
 
-        <!-- APELLIDOS -->
         <div class="registro-group">
             <label class="form-label">Apellidos</label>
             <i class="bi bi-people-fill registro-icon"></i>
             <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control registro-input"></asp:TextBox>
         </div>
 
-        <!-- DOCUMENTO -->
         <div class="registro-group">
             <label class="form-label">Documento</label>
             <i class="bi bi-file-earmark-text-fill registro-icon"></i>
             <asp:TextBox ID="txtDocumento" runat="server" CssClass="form-control registro-input"></asp:TextBox>
         </div>
 
-        <!-- EMAIL -->
         <div class="registro-group">
             <label class="form-label">Email</label>
             <i class="bi bi-envelope-fill registro-icon"></i>
             <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="form-control registro-input"></asp:TextBox>
         </div>
 
-        <!-- CONTRASEÑA -->
+       
         <div class="registro-group">
             <label class="form-label">Contraseña</label>
             <i class="bi bi-key-fill registro-icon"></i>
             <asp:TextBox ID="txtContrasena" runat="server" TextMode="Password" CssClass="form-control registro-input"></asp:TextBox>
         </div>
 
-        <!-- TELÉFONO -->
+    
         <div class="registro-group">
             <label class="form-label">Teléfono</label>
             <i class="bi bi-telephone-fill registro-icon"></i>

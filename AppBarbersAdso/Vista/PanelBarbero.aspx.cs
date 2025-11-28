@@ -15,14 +15,14 @@ namespace AppBarbersAdso.Vista
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Validar si hay un usuario en sesión
+            
             if (Session["usuarioLogueado"] == null)
             {
                 Response.Redirect("LoginBarbero.aspx");
                 return;
             }
 
-            // Convertir la sesión en barbero
+            
             var barbero = (ClBarberoM)Session["usuarioLogueado"];
 
             if (!IsPostBack)

@@ -90,7 +90,6 @@
                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" />
                 </div>
 
-                <!-- PUESTOS -->
                 <div class="mb-3">
                     <asp:Label ID="lblPuesto" runat="server" Text="Puesto de la Barbería" CssClass="form-label" />
                     <asp:DropDownList 
@@ -101,14 +100,12 @@
                     </asp:DropDownList>
                 </div>
 
-                <!-- FOTO -->
                 <div class="mb-3">
                     <label class="form-label">Foto (JPG / PNG)</label>
                     <asp:FileUpload ID="fuFoto" runat="server" CssClass="form-control" onchange="previewImage(this)" />
                     <img id="imgPreview" style="max-width: 150px; margin-top: 10px; display: none;" />
                 </div>
 
-                <!-- HOJA DE VIDA -->
                 <div class="mb-3">
                     <label class="form-label">Hoja de Vida (PDF)</label>
                     <asp:FileUpload ID="fuHojaVida" runat="server" CssClass="form-control" />

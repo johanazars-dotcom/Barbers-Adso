@@ -28,7 +28,7 @@ namespace AppBarbersAdso.Logica
             ClAdminD oAdminD = new ClAdminD();
             ClAdminM admin = oAdminD.MtLoginAdmin(email, contra);
 
-            return admin; // Puede ser null si no existe
+            return admin; 
         }
 
         public List<ClBarberoM> ListarBarberosL()
@@ -41,7 +41,7 @@ namespace AppBarbersAdso.Logica
             ClAdminD datos = new ClAdminD();
             List<clContrato> lista = datos.ListarContratosPorBarbero();
 
-            // completar el último pago para cada contrato
+           
             foreach (clContrato item in lista)
             {
                 item.ultimoPago = datos.ObtenerUltimoPagoContrato(item.idContrato);

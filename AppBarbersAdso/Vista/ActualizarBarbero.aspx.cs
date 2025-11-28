@@ -42,7 +42,7 @@ namespace AppBarbersAdso.Vista
                 txtDocumento.Text = b.documento;
                 txtContra.Text = b.contraseña;
                 txtEmail.Text = b.email;
-                // Traer puestos libres (Disponible) + el puesto actual
+              
                 var puestos = logP.ListarPuestosDisponiblesSoloL();
 
                 ddlPuesto.DataSource = puestos;
@@ -61,7 +61,7 @@ namespace AppBarbersAdso.Vista
             ClBarberoL logB = new ClBarberoL();
             ClPuestosL logP = new ClPuestosL();
 
-            // Barbero antes de actualizar
+            
             var antiguo = logB.MtObtenerBarberoPorIdL(id);
 
             ClBarberoM datos = new ClBarberoM();
@@ -73,20 +73,20 @@ namespace AppBarbersAdso.Vista
             datos.contraseña = txtContra.Text;
             datos.email = antiguo.email;
 
-            // Nuevo puesto elegido
+           
             datos.idPuesto = int.Parse(ddlPuesto.SelectedValue);
 
-            // Si cambio de puesto
+           
             if (datos.idPuesto != antiguo.idPuesto)
             {
-                // LIBERAR el puesto previo
+                
                 logP.CambiarEstadoPuestoL(antiguo.idPuesto, "Disponible");
 
-                // OCUPAR el nuevo puesto
+
                 logP.CambiarEstadoPuestoL(datos.idPuesto, "Ocupado");
             }
 
-            // Actualizar barbero
+
             logB.MtActualizarBarberoPorIdL(datos);
 
             lblMensaje.Text = "Perfil actualizado correctamente ✔";

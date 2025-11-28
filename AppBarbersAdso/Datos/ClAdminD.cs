@@ -176,7 +176,6 @@ namespace AppBarbersAdso.Datos
         {
             SqlConnection cn = conexion.MtabrirConexion();
 
-            // Buscar último registro de finanza para ese contrato
             string sqlBuscar = @"
                 SELECT TOP 1 idFinanzas, idPuesto
                 FROM finanza
@@ -201,7 +200,7 @@ namespace AppBarbersAdso.Datos
 
             if (idFinanzas > 0)
             {
-                // Actualizar el último pago existente
+
                 string sqlUpdate = @"
                     UPDATE finanza 
                     SET pago = @pago, idAdministrador = @idAdmin
@@ -215,7 +214,7 @@ namespace AppBarbersAdso.Datos
             }
             else
             {
-                // No existe pago: creamos uno nuevo
+
                 if (idPuesto == 0)
                 {
                     string sqlPuesto = "SELECT idPuesto FROM contrato WHERE idContrato = @idContrato";
@@ -244,13 +243,12 @@ namespace AppBarbersAdso.Datos
         {
             SqlConnection cn = conexion.MtabrirConexion();
 
-            // (Opcional) eliminar pagos asociados a ese contrato
+ 
             string sqlFin = "DELETE FROM finanza WHERE idContrato = @idContrato";
             SqlCommand cmdFin = new SqlCommand(sqlFin, cn);
             cmdFin.Parameters.AddWithValue("@idContrato", idContrato);
             cmdFin.ExecuteNonQuery();
 
-            // Eliminar contrato
             string sql = "DELETE FROM contrato WHERE idContrato = @idContrato";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@idContrato", idContrato);

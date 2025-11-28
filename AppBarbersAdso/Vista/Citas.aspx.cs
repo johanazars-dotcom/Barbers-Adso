@@ -51,7 +51,7 @@ namespace AppBarbersAdso.Vista
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            // VALIDACIÓN IMPORTANTE
+      
             if (ddlBarbero.SelectedValue == "0")
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert",
@@ -61,7 +61,6 @@ namespace AppBarbersAdso.Vista
 
             int.TryParse(hfIdCita.Value, out int idCita);
 
-            // Obtener barbero seleccionado
             var barbero = barberoD.MtListarBarberos()
                 .FirstOrDefault(b => b.idBarbero == int.Parse(ddlBarbero.SelectedValue));
 

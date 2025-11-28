@@ -12,7 +12,7 @@ namespace AppBarbersAdso.Datos
 
         public ClConexion()
         {
-            oConexion = new SqlConnection("Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;Integrated Security=True;");
+            oConexion = new SqlConnection("Data Source=JHON\\SQLEXPRESS;Initial Catalog=dbBarbersAdso;User ID=Proyecto;Password=1234;");
         }
         public SqlConnection MtabrirConexion()
         {

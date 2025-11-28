@@ -108,7 +108,6 @@
     color: #fff !important;
 }
 
-/* Foto circular */
 .foto-barbero {
     width: 60px;
     height: 60px;
@@ -202,7 +201,7 @@
 </h3>
 
 <div class="contratos-container mt-3">
-    <!-- Encabezados -->
+    
     <div class="row contratos-header text-uppercase fw-bold text-warning text-center">
         <div class="col-2">PUESTO</div>
         <div class="col-3">BARBERO</div>
@@ -212,7 +211,7 @@
         <div class="col-1">ACCIONES</div>
     </div>
 
-    <!-- Filas -->
+  
     <asp:Repeater ID="rpContratos" runat="server" OnItemCommand="rpContratos_ItemCommand">
         <ItemTemplate>
             <div class="row contratos-row text-center align-items-center">
@@ -237,7 +236,7 @@
                 </div>
 
                 <div class="col-1">
-                    <!-- Solo mostrar botones si existe contrato (idContrato > 0) -->
+                    
                     <asp:PlaceHolder ID="phAcciones" runat="server"
                         Visible='<%# Convert.ToInt32(Eval("idContrato")) > 0 %>'>
 
@@ -264,7 +263,7 @@
         </ItemTemplate>
     </asp:Repeater>
 </div>
-<!-- PANEL PARA EDITAR CONTRATO -->
+
 <div class="contrato-edicion mt-4">
     <asp:Panel ID="pnlEditarContrato" runat="server" Visible="false" CssClass="contrato-edit-panel">
         <h4 class="text-warning fw-bold mb-3">Editar contrato</h4>

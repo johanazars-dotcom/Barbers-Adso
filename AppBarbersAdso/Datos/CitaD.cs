@@ -62,9 +62,6 @@ namespace AppBarbersAdso.Datos
         }
 
 
-        // ============================================================
-        // LISTAR CITAS DEL CLIENTE (SOLO LAS VISIBLES)
-        // ============================================================
         public List<CitaM> MtListarCitasCliente(int idUsuario)
         {
             List<CitaM> lista = new List<CitaM>();
@@ -121,9 +118,6 @@ namespace AppBarbersAdso.Datos
 
 
 
-        // ============================================================
-        // GUARDAR O EDITAR CITA
-        // ============================================================
         public void MtGuardarCita(CitaM cita)
         {
             SqlConnection conex = conexion.MtabrirConexion();
@@ -165,9 +159,7 @@ namespace AppBarbersAdso.Datos
         }
 
 
-        // ============================================================
-        // EL CLIENTE “ELIMINA” LA CITA (SOLO SE OCULTA)
-        // ============================================================
+
         public void MtEliminarCita(int id)
         {
             SqlConnection conex = conexion.MtabrirConexion();
@@ -185,9 +177,7 @@ namespace AppBarbersAdso.Datos
         }
 
 
-        // ============================================================
-        // VALIDAR SI EL BARBERO ESTÁ OCUPADO
-        // ============================================================
+  
         public bool BarberoOcupado(int idBarbero, DateTime fecha, string hora)
         {
             SqlConnection conex = conexion.MtabrirConexion();

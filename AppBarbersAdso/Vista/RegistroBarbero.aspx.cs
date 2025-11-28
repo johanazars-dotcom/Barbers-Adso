@@ -73,7 +73,7 @@ namespace AppBarbersAdso.Vista
             string nombreFoto = "";
             string nombrePdf = "";
 
-            // ========== FOTO ==========
+     
             if (fuFoto.HasFile)
             {
                 string ext = Path.GetExtension(fuFoto.FileName).ToLower();
@@ -91,12 +91,11 @@ namespace AppBarbersAdso.Vista
                     return;
                 }
 
-                // GENERAR NOMBRE ÚNICO
                 nombreFoto = Guid.NewGuid().ToString() + ext;
                 fuFoto.SaveAs(Path.Combine(rutaFoto, nombreFoto));
             }
 
-            // ========== HOJA DE VIDA ==========
+        
             if (fuHojaVida.HasFile)
             {
                 string ext = Path.GetExtension(fuHojaVida.FileName).ToLower();
@@ -114,12 +113,11 @@ namespace AppBarbersAdso.Vista
                     return;
                 }
 
-                // NOMBRE ÚNICO PARA PDF
+              
                 nombrePdf = Guid.NewGuid().ToString() + ext;
                 fuHojaVida.SaveAs(Path.Combine(rutaHojaVida, nombrePdf));
             }
 
-            // ========== MODELO ==========
             ClBarberoM registroBarber = new ClBarberoM();
             registroBarber.nombreBarbero = txtNombre.Text;
             registroBarber.apellidoBarbero = txtApellidos.Text;
@@ -131,7 +129,6 @@ namespace AppBarbersAdso.Vista
             registroBarber.hojaVida = nombrePdf;
             registroBarber.idPuesto = int.Parse(ddlPuestos.SelectedValue);
 
-            // ========== LÓGICA ==========
             ClBarberoL logicaBarbero = new ClBarberoL();
             string mensaje = logicaBarbero.MtRegitroBarbero(registroBarber);
 
